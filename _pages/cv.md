@@ -11,16 +11,6 @@ redirect_from:
 
 ([**Click here**](/files/CV-Mithil-Vakde.pdf) for my complete CV)  
 
-<!-- Research Interests
-======
-Quantum optics, nanophotonics
-Neuromorphic Systems and Engineering - Liquid State Machines
-
-Education
-======
-Bachelor of Technology in Engineering Physics, with a minor in Mathematics (2023)
-- Indian Institute of Technology, Bombay
-- Cumulative Performance Index (CPI) score of 8.93/10.0 -->
 
 Current Research
 ======
