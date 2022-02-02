@@ -27,7 +27,7 @@ This page contains a list of resources I've made for the students taking the cou
 
 ## Solutions to the tutorial problems
 
-I'll be updating this every week on wednesdays: [ph107-tutorial-solutions.pdf](../files/ph107-tutorial-solutions.pdf)  
+I'll be updating this every week on Wednesdays: [ph107-tutorial-solutions.pdf](../files/ph107-tutorial-solutions.pdf)  
 
 ## Tutorial questions
 [Tutorial 1](../files/2021-PH107-Tutorial01)  
@@ -36,6 +36,7 @@ I'll be updating this every week on wednesdays: [ph107-tutorial-solutions.pdf](.
 [Tutorial 4](../files/2021-PH107-Tutorial04)  
 [Tutorial 5](../files/2021-PH107-Tutorial05)  
 [Tutorial 6](../files/2021-PH107-Tutorial06)  
+[Tutorial 7](../files/2021-PH107-Tutorial07)  
 
 ## Resources
 

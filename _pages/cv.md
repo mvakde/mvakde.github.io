@@ -46,10 +46,11 @@ Other - LTspice, Arduino IDE, AutoCAD, SOLIDWORKS -->
     {% include archive-single-cv.html %}
   {% endfor %}</ul> -->
 
-Leadership and service
+Leadership / Positions of Responsibility
 ======
 **Teaching assistant - PH 107 Quantum Physics and Applications**  
-(See [tutorials](/tutorials))
+(See [tutorials](/tutorials))  
+
 **Institute Student Mentor and Department Academic mentor - SMP, IIT Bombay (May'21 -)**  
 ● One of the 13 juniors in a team of 120 seniors selected to provide support to the student community  
 ●	Assisted 180+ students in planning their careers by connecting them to alumni and hosting talk sessions  
