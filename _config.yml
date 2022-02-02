@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Mithil Vakde"
   avatar           : "profile.jpg "
-  bio              : "Aspiring researcher/do-gooder. 3rd year undergrad at IIT Bombay"
+  bio              : "Aspiring researcher. 3rd year undergrad at IIT Bombay."
   location         : "Bangalore, India"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -185,7 +185,7 @@ collections:
     output: false
     permalink: /:collection/:path/
   portfolio:
-    output: true
+    output: false
     permalink: /:collection/:path/
   talks:
     output: false

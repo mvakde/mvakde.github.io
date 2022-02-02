@@ -9,16 +9,16 @@ redirect_from:
 ---
 Hi there! I'm Mithil. I am a third year undergrad at IIT Bombay. I'm majoring in Engineering Physics, with a minor in Mathematics.  
 
-I'm currently looking for an internship this summer.  
+I'm currently looking for a research internship this summer.  
 
 ## Stuff I'm working on:
-- Working on my bachelor's thesis (given permission to start 1 sem early) in the field of quantum materials and nanophotonics  
+- Working on my bachelor's project this semester (which is 1 sem early) in the field of quantum materials and nanophotonics  
 - Research in the field of Neuromorphic Circuits and Algorithms at the Memory Logic Device & Design labs, IIT Bombay  
 - Working as a Teaching Assistant (TA) for the PH 107 Quantum Physics and Applications course at IIT Bombay.  
 - Serving as an Institute Student Mentor (one of the few juniors selected in a team of 120 seniors), and a Department Academic Mentor (guiding students who are currently in Academic Probation) under the SMP program.
 
 ## In my past:
-- Worked as a Jr. Machine Learning Engineer at UMIC. Designed the entire ML & Perceptions subsystem of an aerial robot and qualified 2 stages of the Barcelona Smart Drone Challenge (cancelled due to COVID-19). The subsystem was co-opted by later recruits, and was used in the aerial robot that won a World Championship.
+- Worked as a Jr. Machine Learning Engineer at UMIC. Designed the entire ML & Perceptions subsystem of an aerial robot and qualified 2 stages of the Barcelona Smart Drone Challenge (cancelled due to COVID-19). The subsystem was co-opted by later recruits, and was used in the aerial robot that won a [**world championship**](http://www.aerialroboticscompetition.org/simulation_challenge.php).
 - Served as the coordinator of the aerial robotics team - AeRoVe. During my tenure, I designed a pitch that won INR 0.8 Million in funding through IRCC.
 - Qualified the Indian National Astronomy Olympiad. I was invited to the selection camp for the Indian delegation to the International Olympiad in Astronomy and Astrophysics
 - Runner up at the IBM Bluemix Hackathon during high school (beating teams 2 years senior). I had developed a twitter monitoring tool using Watson's NLU API
@@ -32,7 +32,7 @@ I am an avid dancer. I have won prizes at prestigious dance competitions all ove
 
 I also love being on stage (that's why I picked up dancing :p) and I have hosted a live concert of the National Film Award winner, Rekha Bharadwaj, in front of a crowd of 2000 people during Mood Indigo 2019.  
 
-I also like to play volleybal and was a part of my high school volleyball team 
+I also like to play volleybal and was a part of my high school volleyball team
 
 <!-- Education:
 Bachelor of Technology in Engineering Physics, with a minor in Mathematics (2023) Indian Institute of Technology, Bombay Cumulative Performance Index (CPI) score of 8.93/10.0 -->

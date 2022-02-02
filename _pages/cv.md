@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Select highlights of my life"
+title: "Select highlights from my life:"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -14,19 +14,21 @@ redirect_from:
 
 Current Research
 ======
-**Undergraduate Thesis (Jan'22 -)**  
+**Bachelor's Project (Jan'22 - Apr'22)**  
 ● Advisor: Professor Anshuman Kumar, Laboratory of Optics of Quantum Materials, IIT Bombay  
-● We are working in the field of quantum materials and nanophotonics
+● We are working in the field of quantum materials and nanophotonics  
+● Providing theoretical support to a PhD student synthesizing a metamaterial for a specific experiment
 
-**Reservoir training in Liquid State Machines (Sep'21 -)**  
+**Reservoir training in Liquid State Machines (Sep'21 - Present)**  
 ● Advisor: Professor Udayan Ganguly, IIT Bombay  
 ● We are working on explaining the functioning of the reservoir  
-● Evaluating the performance of Liquid State Machines (LSM) through various changes to the functioning of the reservoir
+● Evaluating the performance of Liquid State Machines (LSM) through various changes to the functioning of the reservoir  
+● Implemented an original idea with an accuracy of 75%
 
 Past Work
 ======
 **Jr. Machine Learning Engineer - UMIC (Sep'19 - Sep'20)**  
-● **Impact**: Designed the ML subsystem of an aerial robot that won a world championship  
+● **Impact**: Designed the ML subsystem of an aerial robot which was later adopted & implemented by a team that won a [**world championship**](http://www.aerialroboticscompetition.org/simulation_challenge.php)  
 ● Developed deep learning code that can recognize 10-inch characters in complex backgrounds 80+ft away  
 ●	Reduced the runtime 45x by integrating a custom-built classification algorithm with YOLOv4  
 ●	Achieved an F1-Score of 0.81 despite capturing blurry frames due to high drone velocity  
@@ -46,7 +48,8 @@ Other - LTspice, Arduino IDE, AutoCAD, SOLIDWORKS -->
 
 Leadership and service
 ======
-
+**Teaching assistant - PH 107 Quantum Physics and Applications**  
+(See [tutorials](/tutorials))
 **Institute Student Mentor and Department Academic mentor - SMP, IIT Bombay (May'21 -)**  
 ● One of the 13 juniors in a team of 120 seniors selected to provide support to the student community  
 ●	Assisted 180+ students in planning their careers by connecting them to alumni and hosting talk sessions  
