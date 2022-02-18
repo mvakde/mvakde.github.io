@@ -20,9 +20,9 @@ This page contains a list of resources I've made for the students taking the cou
 |   |   |
 |---|---  |
 |Tutorial timings:|Wednesdays 4:00 - 4:55 PM|
-|Mode:|Meeting on MS Teams on this channel|
-|Doubts:|Ask them on the "Doubts" channel|
-|Logistic issues:|Ask them on the "Logistics" channel|
+|Mode:|Meeting on MS Teams|
+|Doubts:|Ask them on the "Doubts" channel on MS Teams|
+|Logistic issues:|Ask them on the "Logistics" channel on MS Teams|
 |Grading:|Based on (a ) Attendance (b) Interaction (c) quizzes|
 
 ## Solutions to the tutorial problems
@@ -37,6 +37,8 @@ I'll be updating this every week on Wednesdays: [ph107-tutorial-solutions.pdf](.
 [Tutorial 5](../files/2021-PH107-Tutorial05)  
 [Tutorial 6](../files/2021-PH107-Tutorial06)  
 [Tutorial 7](../files/2021-PH107-Tutorial07)  
+[Tutorial 8](../files/2021-PH107-Tutorial08)  
+[Tutorial 9](../files/2021-PH107-Tutorial09)  
 
 ## Resources
 

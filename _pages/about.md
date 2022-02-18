@@ -7,9 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi there! I'm Mithil. I am a third year undergrad at IIT Bombay. I'm majoring in Engineering Physics, with a minor in Mathematics.  
-
-I'm currently looking for a research internship this summer.  
+Hi there! I'm Mithil. I am a third year undergrad at IIT Bombay. I'm majoring in Engineering Physics, with a minor in Mathematics. I will be interning at the Laboratoire de Physique des Solides (Laboratory of Solid-State Physics: CNRS & Paris-Saclay University) in Paris this summer.
 
 ## Specific Research Interests:
  - I am currently learning **Condensed Matter Physics** and I find the topic to be very interesting
