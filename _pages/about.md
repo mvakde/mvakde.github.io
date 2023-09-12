@@ -5,7 +5,17 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics. Currently, I'm building a startup based on the principles of Neuromorphic Computing. My interests lie in the intersection of AI, Physics and Biology.
+Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+Currently, I'm building a startup based on the principles of Neuromorphic Computing.  
+My interests lie in the intersection of AI, Physics and Biology.  
+You can find my [**Resume/CV**](/cv) here.  
+
+## Fun things I've done over the years
+I love meeting people and this has put me in many fun situations over the years:
+ - I have danced along with, and been invited to socialize with some of Europe's most famous dancers after running into them at Annecy, France. This happened because I missed a connecting train to Switzerland and got stuck in the city at midnight without a room. The next earliest train was at 8am in the morning.  
+ - I've had a fun 1-on-1 discussion with a Nobel Laureate about life, hobbies after approaching him with playful wisecrack about his presentation  
+ - I've built a great rapport with the ex-CEO (currently he sits on the board of directors) of one of India's largest companies after cold mailing him. I now often ring him up for advice  
+ - I've (accidentally) deleted the employee database of Infosys (an IT giant in India), during a summer camp there in high school. (I blame our mentor for giving us full access. Luckily they had a backup. Also, I was a kid)  
 
 ## Interns/Entreprenuership
 I cofounded a startup earlier this year which won a grant of INR 50K. The company is now being run by my colleagues after a pivot. I interned in Paris at the University of Paris-Saclay last summer. This year I interned at Tata Industries, the new Ventures Arm of the Tata Group.
