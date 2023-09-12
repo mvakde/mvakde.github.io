@@ -6,7 +6,7 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
+<!-- Change to be made: Write everything in detail here. Make the concise one on PDF -->
 {% include base_path %}
 <span style = "margin-left: -25px;">This page only contains brief highlights of my career and achievements. You can find my resume in PDF form [**here**](/files/Mithil-Vakde-Resume.pdf)</span>  
 
@@ -15,7 +15,7 @@ Building a startup in the domain of neuromorphic engineering. I truly believe th
 
 **<span style = "font-size:1.7em; margin-left: -25px;">Professional Experience</span>**  
 **<span style = "font-size:1.2em;">[Tata Industries Limited (TIL)](https://tataindustries.com/) | Intern - Technology Investment Strategy (Mar'23 - Jun'23)</span>**  
-Faciliatated senior leadership in decision making through:  
+Facilitated senior leadership in decision making through:  
 ● Developing insights into ad-hoc techno-commercial opportunities presented to TIL  
 ● Consultant (Quantum Tech): Shared knowledge to aid development of an exploration roadmap  
 ● Developed a model for a CSR plan to create new revenue channels for farmer communities in water-scarce regions of India | Opportunity of up to INR 20M+ revenue per year  
@@ -24,7 +24,7 @@ Faciliatated senior leadership in decision making through:
 ● Carbon Credits via sustainable farming  
 ● Secured a grant of INR 50K through IDEAS, IIT Bombay  
 
-**<span style = "font-size:1.2em;">Universite Paris-Saclay (May'22 - July'22)</span>**  
+**<span style = "font-size:1.2em;">Université Paris-Saclay (May'22 - July'22)</span>**  
 ● Visiting Research Intern - Paris, France (on-site)  
 ● Performed 3 biophysics experiments to study the origin of biomolecular condensates  
 ●	Discovered a correlation in viral DNA content and light absorption using a novel analysis
@@ -34,9 +34,9 @@ Faciliatated senior leadership in decision making through:
 ● Advisor: Professor Anshuman Kumar, Laboratory of Optics of Quantum Materials, IIT Bombay  
 ● Discovered parameters allowing 0% radiation losses in a metamaterial
 
-**<span style = "font-size:1.2em;">Reservoir training in Liquid State Machines (Sep'21 - Present)</span>**  
+**<span style = "font-size:1.2em;">Reservoir training in Liquid State Machines (Oct'21 - Mar'22)</span>**  
 ● Advisor: Professor Udayan Ganguly, IIT Bombay  
-● Novel Idea: Hypothesised the underlying mechanism of a brain disorder and achieved 75% accuracy in simulating it
+● Novel Idea: Hypothesized the underlying mechanism of a brain disorder and achieved 75% accuracy in simulating it
 
 **<span style = "font-size:1.2em;">Jr. Machine Learning Engineer - UMIC (Sep'19 - Sep'20)</span>**  
 ● **Impact**: Designed the ML subsystem of an aerial robot which was later adopted & implemented by a team that won a [**world championship**](http://www.aerialroboticscompetition.org/simulation_challenge.php)  
@@ -57,7 +57,7 @@ Other - LTspice, Arduino IDE, AutoCAD, SOLIDWORKS -->
     {% include archive-single-cv.html %}
   {% endfor %}</ul> -->
 
-**<span style = "font-size:1.7em; margin-left: -25px;">Leadership and Organisational Experience</span>**  
+**<span style = "font-size:1.7em; margin-left: -25px;">Leadership and Organizational Experience</span>**  
 **<span style = "font-size:1.2em;">Student Mentor Program (2021 - 2023)</span>**  
 ● Head of Cabinets (Academic, DAMP Verticals)  
 &nbsp; &nbsp; &nbsp; &nbsp; □ Recommended by Institute Deans to lead a 340+ member team  
@@ -69,14 +69,14 @@ Other - LTspice, Arduino IDE, AutoCAD, SOLIDWORKS -->
 
 **<span style = "font-size:1.2em;">Coordinator - AeRoVe (Sep'19 - Sep'20)</span>**  
 ● Impact: Secured INR 0.8 million in funding through a grant proposal pitched to the STP committee, IRCC  
-●	Reduced expenses by 40% per aircraft by finding inexpensive procurement methods  
+●	Reduced expenses by 40% per drone by finding inexpensive procurement methods  
 ● Designed a rigorous 7-day training program for recruits & mentored them through a month-long project  
 
 **<span style = "font-size:1.2em;">Teaching Assistant (TA)</span>** (See [tutorials](/tutorials))  
-● Head TA, PH 112 Quantum Mechanics 2023  
-&nbsp; &nbsp; &nbsp; &nbsp; □ In-charge of the 40 TAs & ~1500 freshmen taking the Quantum Mechanics course (PH 112)  
+● Head TA, Quantum Mechanics (PH112 2023)  
+&nbsp; &nbsp; &nbsp; &nbsp; □ In-charge of the 40 TAs & ~1500 freshmen taking the course   
 &nbsp; &nbsp; &nbsp; &nbsp; □ Conducted weekly tutorials, weekly quizzes and course examinations  
-● TA, PH 107 Quantum Physics and Applications 2021  
+● TA, Quantum Physics and Applications (PH107 2021)  
 &nbsp; &nbsp; &nbsp; &nbsp; □ Created a 50 page booklet with detailed solutions to 100+ challenging problems  
 &nbsp; &nbsp; &nbsp; &nbsp; □ Taught 45 students
   

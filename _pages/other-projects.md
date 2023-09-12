@@ -22,7 +22,7 @@ Chaotic Attractors [Link](/files/Strange-Attractors.pdf)
 Analysis of proton-proton collisions [Link](https://github.com/mvakde/proton-collision-analysis)
 ------
 ● Reconfirmed deviations from the expected results of the transverse momentum of emitted particles  
-● Analysed 19 million datapoints (Monte Carlo data of 13 TeV collisions from PYTHIA 8) in CERN’s ROOT  
+● Analyzed 19 million datapoints (Monte Carlo data of 13 TeV collisions from PYTHIA 8) in CERN’s ROOT  
 
 Shop Monitor [Link](https://github.com/mvakde/shop-monitors)
 ------
@@ -31,17 +31,17 @@ Shop Monitor [Link](https://github.com/mvakde/shop-monitors)
 
 Quantum Computing Reading Project [Link](/files/Quantum-Computing-Mithil-Vakde.pdf)
 ------
-● Studied the basics of QIC and various quantum algorithms including the Deutsch-Josza, Quantum Fourier
+● Studied the basics of QIC and various quantum algorithms including the Deutsch-Jozsa, Quantum Fourier
 Transform, Grover’s algorithm, and their implementations using quantum gates on Qiskit  
 
-Self Balancing Arm
+Self-Balancing Arm
 ------
-● Built a self balancing arm using propellers fed with IMU and potentiometer data to identify alignment  
-● Facilitated smooth and efficient movement by optimising the mechanical components and tuning the sensors  
+● Built a self-balancing arm using propellers fed with IMU and potentiometer data to identify alignment  
+● Facilitated smooth and efficient movement by optimizing the mechanical components and tuning the sensors  
 ● Built a PID control algorithm to deploy on Arduino framework to provide continuously modulated control  
 
 Optical Character Reader
 ------
 ● Built a 2D Convoluted NN using Keras to detect and classify alphanumeric text in document-like imagery  
-● Optimised the algorithm using various techniques including Transfer Learning and data augmentation  
+● Optimized the algorithm using various techniques including Transfer Learning and data augmentation  
 ● Trained the model on an augmented form of the Chars 74K Dataset and achieved accuracy upwards of 90%  
