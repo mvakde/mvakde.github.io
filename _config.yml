@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Mithil Vakde - About me"
+title                    : "About me"
 title_separator          : "-"
 name                     : &name Mithil Vakde
 description              : &description "personal description"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Mithil Vakde"
   avatar           : "profile.jpg "
-  bio              : "Aspiring researcher. 3rd year undergrad at IIT Bombay."
+  bio              : "Co-Founder interested in<br>AI, Physics and Biology,<br>IIT Bombay Graduate"
   location         : "Bangalore, India"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "mvakde"
+  github           :
   google_plus      :
   keybase          :
   instagram        :

@@ -1,8 +1,9 @@
 /* ==========================================================================
-   ARCHIVE
+   resume
    ========================================================================== */
 
-.archive {
+
+.resume {
   margin-bottom: 2em;
 
   @include breakpoint($medium) {
@@ -13,6 +14,30 @@
     @include span(10 of 12 last);
     @include prefix(0.5 of 12);
   }
+  
+  p {
+    padding-left: 25px;
+  }
+
+  // h1 {
+  //   display: inline;
+  //   font-size: 2em;
+  //   margin-top: 0;
+  //   margin-bottom: 0;
+  //   margin-left: -25px;
+  //   margin-right: 0;
+  //   font-weight: bold;
+  // }
+
+  // h2 {
+  //   display: inline;
+  //   font-size: 1.5em;
+  //   margin-top: 0;
+  //   margin-bottom: 0;
+  //   margin-left: 0;
+  //   margin-right: 0;
+  //   font-weight: bold;
+  // }
 
   a {
     text-decoration: underline;
@@ -27,18 +52,18 @@
   }
 }
 
-.archive__subtitle {
+.resume__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
   font-size: $type-size-5;
   color: mix(#fff, $gray, 25%);
   border-bottom: 1px solid $border-color;
-  + .list__item .archive__item-title {
+  + .list__item .resume__item-title {
     margin-top: 0.5em;
   }
 }
 
-.archive__item-title {
+.resume__item-title {
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
   a + a {
@@ -49,13 +74,13 @@
 /* remove border*/
 .page__content {
 
-  .archive__item-title {
+  .resume__item-title {
     margin-top: 1em;
     border-bottom: none;
   }
 }
 
-.archive__item-excerpt {
+.resume__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
 
@@ -64,7 +89,7 @@
   }
 }
 
-.archive__item-teaser {
+.resume__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
   img {
@@ -72,12 +97,12 @@
   }
 }
 
-.archive__item:hover {
-  .archive__item-teaser {
+.resume__item:hover {
+  .resume__item-teaser {
     box-shadow: 0 0 10px rgba(#000, 0.25);
   }
 
-  .archive__item-title {
+  .resume__item-title {
     text-decoration: underline;
   }
 }
@@ -117,18 +142,18 @@
     margin: 0 0 4px;
   }
 
-  .archive__item-title {
+  .resume__item-title {
     margin-top: 0.5em;
     font-size: $type-size-5;
   }
 
-  .archive__item-excerpt {
+  .resume__item-excerpt {
     display: none;
   }
 
   @include breakpoint($small) {
     @include gallery(5 of 10);
-    .archive__item-teaser {
+    .resume__item-teaser {
       max-height: 200px;
     }
   }
@@ -138,11 +163,11 @@
     margin-right: 0; /* reset before mixin does its thing*/
     @include gallery(2.5 of 10);
 
-    .archive__item-teaser {
+    .resume__item-teaser {
       max-height: 120px;
     }
 
-    .archive__item-excerpt {
+    .resume__item-excerpt {
       display: block;
       font-size: $type-size-6;
     }
@@ -177,16 +202,16 @@
     @include full();
     font-size: 1.25rem;
 
-    .archive__item-teaser {
+    .resume__item-teaser {
       margin-bottom: 2em;
     }
 
     @include breakpoint($small) {
-      .archive__item-teaser {
+      .resume__item-teaser {
         @include span(5 of 12);
       }
 
-      .archive__item-body {
+      .resume__item-body {
         @include span(7 of 12 last);
         @include prefix(0.5 of 12);
         @include suffix(1 of 12);
@@ -198,18 +223,18 @@
     @include full();
     font-size: 1.25rem;
 
-    .archive__item-teaser {
+    .resume__item-teaser {
       margin-bottom: 2em;
     }
 
     @include breakpoint($small) {
       text-align: right;
 
-      .archive__item-teaser {
+      .resume__item-teaser {
         @include span(5 of 12 rtl);
       }
 
-      .archive__item-body {
+      .resume__item-body {
         @include span(7 of 12 last rtl);
         @include prefix(0.5 of 12);
         @include suffix(1 of 12);
@@ -221,19 +246,19 @@
     @include full();
     font-size: 1.25rem;
 
-    .archive__item-teaser {
+    .resume__item-teaser {
       margin-bottom: 2em;
     }
 
     @include breakpoint($small) {
       text-align: center;
 
-      .archive__item-teaser {
+      .resume__item-teaser {
         margin: 0 auto;
         width: span(5 of 12);
       }
 
-      .archive__item-body {
+      .resume__item-body {
         margin: 0 auto;
         width: span(7 of 12);
       }
