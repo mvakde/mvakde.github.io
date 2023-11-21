@@ -22,6 +22,7 @@ Facilitated senior leadership in decision making through:
 
 **<span style = "font-size:1.2em;">Co-founder - Agriphany (Jan'23 - July'23)</span>**  
 ● Carbon Credits via sustainable farming  
+● Developed a marker recognition ML algorithm for drones with 92% accuracy despite a vibration-induced blurry video input  
 ● Secured a grant of INR 50K through IDEAS, IIT Bombay  
 
 **<span style = "font-size:1.2em;">Université Paris-Saclay (May'22 - July'22)</span>**  

@@ -6,7 +6,7 @@ redirect_from:
   - /about.html
 ---
 Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
-Currently, I'm building a product based on the principles of Neuromorphic Computing.  
+<!-- Currently, I'm building a product based on the principles of Neuromorphic Computing.   -->
 My interests lie in the intersection of AI, Physics and Biology.  
 I have a couple of job offers, but the start date is January.  
 You can find my [**Resume/CV**](/cv) here.  
