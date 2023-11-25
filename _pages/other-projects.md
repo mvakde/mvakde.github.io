@@ -1,5 +1,5 @@
 ---
-permalink: /other-projects/
+permalink: /projects/
 # title: "Other Projects"
 author_profile: true
 redirect_from: 
@@ -7,8 +7,12 @@ redirect_from:
   - "/nmp.html"
 ---
 
-Here is a list of minor projects I did during my time in college.  
-My major research can be found in the [**CV**](/cv) page
+Here is a list of projects I did during my time in college, excluding my intern in Paris.  
+(Need to add : Machine Learning @ UMIC, Neuromorphic Computing @ MELODE Labs)
+
+Bachelor's Thesis @ LOQM, IITB [Link](/files/Bachelor's-Thesis-Mithil.pdf)
+------
+● Discovered parameters allowing 0% radiation losses in a photonic crystal  
 
 Parity-Time Symmetry [Link](https://github.com/mvakde/parity-time-symmetry)
 ------

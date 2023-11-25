@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "About me"
+title                    : "Home/About me"
 title_separator          : "-"
 name                     : &name Mithil Vakde
 description              : &description "personal description"

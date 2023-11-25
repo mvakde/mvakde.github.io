@@ -8,9 +8,13 @@ redirect_from:
 ---
 <!-- Change to be made: Write everything in detail here. Make the concise one on PDF -->
 {% include base_path %}
-<span style = "margin-left: -25px; margin-top: -200px">To respect your time, I include only points relevant to the role. Find my standard, full resume [**here**](/files/Mithil-Vakde-Resume.pdf) (read at your own peril)</span>  
+Click [**here**](/files/Concise-Resume-Mithil.pdf) to download my resume (deliberately concise to save your time)  
 
-**<span style = "font-size:1.7em; margin-left: -25px;">Education</span>**  
+If you have loads of time, click [**here**](/files/Mithil-Vakde-Resume.pdf) to download my full (IITB-format) placement resume  
+
+<!-- <span style = "margin-left: -25px;">To respect your time, I include only points relevant to the role. Find my standard, full resume [**here**](/files/Mithil-Vakde-Resume.pdf) (read at your own peril)</span>   -->
+
+<!-- **<span style = "font-size:1.7em; margin-left: -25px;">Education</span>**  
 IIT Bombay, B.Tech Engineering Physics (8.59/10), Graduated in 2023  
 
 **<span style = "font-size:1.7em; margin-left: -25px;">Academic Achievements</span>**  
@@ -36,5 +40,4 @@ Student rep. - Academic Rehabilitation Committee | Led the post-COVID onboarding
 Secured INR 0.8M in funding | Reduced project costs by 40% | Designed the recruit training program 
 
 **<span style = "font-size:1.2em;">Head choreographer, IIT Bombay Dance Team</span>**
-1 Gold, 3 Silvers and thrice finalists @ IIITH, IITM, IIM-C, Inter-IITs, Mood Indigo
-
+1 Gold, 3 Silvers and thrice finalists @ IIITH, IITM, IIM-C, Inter-IITs, Mood Indigo -->

@@ -14,8 +14,8 @@ main:
   - title: "All Tutorials"
     url: /tutorials/
   
-  - title: "Minor Projects"
-    url: /other-projects  
+  - title: "Projects"
+    url: /projects  
   
   - title: "TAship"
     url: /teaching/ph107-ph112
