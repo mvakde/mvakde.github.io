@@ -7,7 +7,8 @@ redirect_from:
 ---
 Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
 <!-- Currently, I'm building a product based on the principles of Neuromorphic Computing.   -->
-I have a couple of job offers (a corporate venture gig & an engineering gig), but I'm looking to work at a startup instead.  
+I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead.  
+
 If you're a current student looking for the resources I made, go to the [**Tutorials**](/tutorials) page  
 
 ## Interns/Entrepreneurship
