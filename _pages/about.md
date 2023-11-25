@@ -7,20 +7,17 @@ redirect_from:
 ---
 Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
 <!-- Currently, I'm building a product based on the principles of Neuromorphic Computing.   -->
-I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead. Find my [**Resume/CV**](/cv) here. 
+I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead.  
 
-If you're a current student looking for the resources I made, go to the [**Tutorials**](/tutorials) page  .
-
-## Interns/Entrepreneurship
-I cofounded a startup earlier this year which won a grant of INR 50K. Its now being run by my colleagues after a pivot. I interned in Paris at the University of Paris-Saclay last summer. This year I interned at Tata Industries, the new Ventures Arm of the Tata Group.  
+I've interned at the new ventures arm of the Tata Group & at Université Paris-Saclay. I've also cofounded a startup & won a grant. Find my [**Resume/CV**](/cv) here.  
+<!-- If you're a current student looking for the resources I made, go to the [**Tutorials**](/tutorials) page  . -->
 
 ## Fun things I've done over the years
-I love meeting people and this has put me in many fun situations over the years:
  - I've built a great rapport with the ex-CEO of one of India's largest companies (currently he sits on the board of directors) after cold mailing him. I now often ring him up for advice  
  - I have danced and exchanged life stories with some of Europe's most famous dancers after befriending them on a solo trip to the French Alps.  
  *How it happened: while tavelling to Chamonix, I missed a connecting train and subsequently got stuck in a random French city at midnight without a room. The next train was only at 8am so I began exploring the city and ran into them at a famous tourist site. They were nice enough to give me company till my train the next morning.*   
  - I've had a fun 1-on-1 discussion with a Nobel Laureate about life & hobbies after approaching him with a playful wisecrack about his presentation  
- - I (accidentally) deleted the employee database of Infosys (the Indian IT giant) during a school summer camp there.  
+ - I (accidentally) deleted the employee database of Infosys (the Indian IT giant) during a summer camp there.  
  *Luckily, it was a non-production database. I was forgiven because we shouldn't have had such access in the first place (also because they didn't want to discourage an excited kid like me from learning advanced computer science)*  
 
 
