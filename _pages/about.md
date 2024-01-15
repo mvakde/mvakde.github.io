@@ -15,7 +15,7 @@ I've interned at the new ventures arm of the Tata Group & at Université Paris-S
 ## Fun things I've done over the years
  - I've built a great rapport with the ex-CEO of one of India's largest companies (currently he sits on the board of directors) after cold mailing him. I now often ring him up for advice  
  - I have danced and exchanged life stories with some of Europe's most famous dancers after befriending them on a solo trip to the French Alps.  
- *How it happened: while tavelling to Chamonix, I missed a connecting train and subsequently got stuck in a random French city at midnight without a room. The next train was only at 8am so I began exploring the city and ran into them at a famous tourist site. They were nice enough to give me company till my train the next morning.*   
+ ><span style = "margin-left: 100px;"> *How it happened: while tavelling to Chamonix, I missed a connecting train and subsequently got stuck in a random French city at midnight without a room. The next train was only at 8am so I began exploring the city and ran into them at a famous tourist site. They were nice enough to give me company till my train the next morning.*   </span>
  - I've had a fun 1-on-1 discussion with a Nobel Laureate about life & hobbies after approaching him with a playful wisecrack about his presentation  
  - I (accidentally) deleted the employee database of Infosys (the Indian IT giant) during a summer camp there.  
  *Luckily, it was a non-production database. I was forgiven because we shouldn't have had such access in the first place (also because they didn't want to discourage an excited kid like me from learning advanced computer science)*  
