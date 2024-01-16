@@ -3,7 +3,7 @@ title: "Crash Course in Machine Learning"
 collection: teaching
 venue: "Innovation Cell, IIT Bombay"
 type: "ML Subdivision"
-permalink: https://github.com/mvakde/mvakde.github.io/blob/master/files/ML-Training-Mithil.pdf
+permalink: /files/ML-Training-Mithil.pdf
 date: 2020-10-01
 location: "Mumbai, India"
 ---
