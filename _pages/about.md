@@ -6,11 +6,15 @@ redirect_from:
   - /about.html
 ---
 Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+Curretly I'm building a healthcare startup. Find my CV here: [**CV**](/cv)  
+If you're a current student looking for the Quantum Mechanics resources I previously made, go to the [**Tutorials**](/tutorials) page  
+  
+Note: This is an older website I made in college. Not updated regularly, might be cringe. 
 <!-- Currently, I'm building a product based on the principles of Neuromorphic Computing.   -->
-I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead.  
+<!-- I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead.  -->
 
-I've interned at the new ventures arm of the Tata Group & at Université Paris-Saclay. I've also cofounded a startup & won a grant. Find my [**Resume/CV**](/cv) here.  
-<!-- If you're a current student looking for the resources I made, go to the [**Tutorials**](/tutorials) page  . -->
+<!-- I've interned at the new ventures arm of the Tata Group & at Université Paris-Saclay. I've also cofounded a startup & won a grant. Find my [**Resume/CV**](/cv) here.  -->
+
 
 ## Fun things I've done over the years
  - I've built a great rapport with the ex-CEO of one of India's largest companies (currently he sits on the board of directors) after cold mailing him. I now often ring him up for advice  
