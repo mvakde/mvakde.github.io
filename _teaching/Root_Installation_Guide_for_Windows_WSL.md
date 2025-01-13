@@ -3,7 +3,7 @@ title: "ROOT Installation Guide for Windows (WSL)"
 collection: teaching
 venue: "Sophomore EP Course"
 type: "PH 219 Data Analysis"
-permalink: /files/Root_Installation_Guide_for_Windows_WSL.pdf
+permalink: https://mvakde.github.io/files/Root_Installation_Guide_for_Windows_WSL.pdf
 date: 2020-09-01
 location: "Mumbai, India"
 ---
