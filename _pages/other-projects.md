@@ -6,14 +6,12 @@ redirect_from:
   - "/nmp/"
   - "/nmp.html"
 ---
-
-Here is a list of projects I did during my time in college, excluding my intern in Paris.  
-(Need to add : Machine Learning @ UMIC)
-
+> **NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
+(Need to add : Machine Learning @ UMIC, Research Intern @ Paris, etc.)  
+  
 Simulating a brain disorder @ MELODE Labs, IITB [Link](/files/Report_Split_Personality_Simulation.pdf)
 ------
 ● Novel Idea: Simulated a brain disorder using neuromorphic computing principles   
-● 75% accuracy in preliminary tests on models with low training    
 
 Bachelor's Thesis @ LOQM, IITB [Link](/files/Bachelor's-Thesis-Mithil.pdf)
 ------
