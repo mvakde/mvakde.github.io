@@ -8,14 +8,15 @@ redirect_from:
 ---
 <!-- Change to be made: Write everything in detail here. Make the concise one on PDF -->
 {% include base_path %}
-<span style = "font-size:1.7em; margin-left: -25px;"> [Download in PDF Form](/files/Concise-Resume-Mithil.pdf) </span>  
-<span style = "margin-left: -25px;">This is deliberately concise to save your time. Here’s my standard [**placement resume**](/files/Mithil-Vakde-Resume.pdf) 
-(if you have a lot of time)  </span>  
+**NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
+
+<!-- <span style = "font-size:1.7em; margin-left: -25px;"> [Concise](/files/Concise-Resume-Mithil.pdf) </span>  -->
+<span style = "margin-left: -25px;">PDF forms: [**Concise**](/files/Concise-Resume-Mithil.pdf)  [**Long**](/files/Mithil-Vakde-Resume.pdf)</span>  
 
 <!-- <span style = "margin-left: -25px;">To respect your time, I include only points relevant to the role. Find my standard, full resume [**here**](/files/Mithil-Vakde-Resume.pdf) (read at your own peril)</span>   -->
 
 **<span style = "font-size:1.7em; margin-left: -25px;">Education</span>**  
-IIT Bombay, B.Tech Engineering Physics (8.59/10), Graduated in 2023  
+IIT Bombay, B.Tech Engineering Physics, Graduated in 2023  
 
 **<span style = "font-size:1.7em; margin-left: -25px;">Academic Achievements</span>**  
 International Olympiads: Invited to the Team India selection camp (Astronomy)  
