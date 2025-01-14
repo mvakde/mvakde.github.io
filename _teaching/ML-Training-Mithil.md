@@ -12,9 +12,8 @@ I created this back in 2020 to help train potential UMIC recruits in the basics 
   
 Note: This guide is now outdated, but still useful in my opinion. Find the [PDF version here](https://mvakde.github.io/files/ML-Training-Mithil.pdf)
   
--------------------------
-  
-# ML tutorials - UMIC 2020
+ML tutorials - UMIC 2020
+================
 Author: Mithil Vakde 
 
 ## Brief Intro 
