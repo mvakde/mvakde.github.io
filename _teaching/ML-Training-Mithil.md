@@ -18,7 +18,7 @@ Note: This guide is now outdated, but still useful in my opinion. Find the [PDF 
 Author: Mithil Vakde 
 
 ## Brief Intro 
-#### *What is computation?*
+### *What is computation?*
 Every single* computation done by computers today can be thought of as a solution to this problem:  
 >Given an input $X$, you want an output $Y$ 
 >To do so, design an operator $\hat{O}$ that acts on $X$ and gives the output $Y$
@@ -28,14 +28,15 @@ In other words,
 
 How? Simple, $\hat{O}$ is nothing but the program you write in python/assembly/binary/etc.
 
-#### *Wtf? Explain more*
+### *Wtf? Explain more*
 Try finding any counterexample. You'll see that you can always reduce the computation to a version of the above problem. Spend some time thinking, seriously.  
 The only variations you should be able to come up with are: 
 - Given $X$ and $\hat{O}$, find $Y$
 - Given $Y$ and $\hat{O}$, find $X$
 - Combine/chain any of the above 3 problems
-- Modify any of the above with partial information on $X$, $Y$ and/or $\hat{O}$
-#### *Hint please*
+- Modify any of the above with partial information on $X$, $Y$ and/or $\hat{O}$  
+  
+### *Hint please*
 The method computers use to implement this problem is by converting it to Boolean or Fuzzy logic (or a mix of the two). 
 
 | Boolean logic:                         | Fuzzy logic:                       |
@@ -44,7 +45,7 @@ The method computers use to implement this problem is by converting it to Boolea
 | $Y \in \{0,1\}^m$                      | $Y \in [0,1]^m$                    |
 | $\hat{O}: \{0,1\}^{n} \to \{0,1\}^{m}$ | $\hat{O}: [0,1]^{n} \to [0,1]^{m}$ |
 
-#### *Okay what is Machine Learning?*
+### *Okay what is Machine Learning?*
 Very simple. Given your input X and output Y:
 - Normal programming is `manually` designing $\hat{O}$
 - Machine learning is `automatically` designing $\hat{O}$
@@ -69,7 +70,7 @@ We encourage you to refer material apart from the stuff given below as well to e
 
 **This assignment, in particular, has a lot more material for the allocated time in the proposed timeline. Finish off the things as fast as you can, to explore more concepts included here. Try to be ahead of the given timeline here to cover extra material given in this guide (It is highly encouraged and recommended to do so)**
 
-### Details of material in this training module:
+## Details of material in this training module:
 
 (You will not have to complete all of these. What all you have to complete will be given below)
 1.  **Machine Learning crash course, Google**
@@ -112,7 +113,7 @@ We encourage you to refer material apart from the stuff given below as well to e
     *   [Link to the Guide](https://keras.io/guides/)
    
 
-### Timeline:
+## Timeline:
 
 **Day 1:**
 **Machine Learning Crash Course:** Complete at least 6+ hours worth of material (Essentially,
@@ -128,7 +129,7 @@ crash course
 **Udacity's Course:** Complete Lessons 3,4,5 (Lessons 1 & 2 are somewhat of a recap of what
 you've learnt in the past 2 days. Please go through them first if time permits)
 
-### Ahead of the timeline:
+## Ahead of the timeline:
 
 1.  Complete Lesson 7 of the Udacity course (We assume you've done Lesson 1 and Lesson 2 before reaching here).
 2.  Now you will be given a small assignment to do. **(This assignment is not related in any way to the actual project you will be doing after the training week.)** There are two projects given below: Intermediate and Advanced. You can choose any **ONE** assignment to do from below. You will receive the problem statement and the dataset for this when you ask for it from your mentor. But note that this will **NOT** be given unless you have completed all the above material or you know it from before. This project might require slightly more knowledge than what the above material provides. For those reasons, these can be helpful:
