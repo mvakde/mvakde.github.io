@@ -11,14 +11,14 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
 
-  - title: "All Tutorials"
+  - title: "Tutorials"
     url: /tutorials/
   
   - title: "Projects"
     url: /projects  
   
-  - title: "TAship"
-    url: /teaching/ph107-ph112
+  # - title: "TAship"
+  #   url: /teaching/ph107-ph112
 
   # - title: "Blog Posts"
   #   url: /year-archive/
