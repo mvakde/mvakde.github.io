@@ -7,11 +7,11 @@ redirect_from:
   - /resume
 ---
 <!-- Change to be made: Write everything in detail here. Make the concise one on PDF -->
-{% include base_path %}
-**NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
+{% include base_path %}  
+> **NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
 
 <!-- <span style = "font-size:1.7em; margin-left: -25px;"> [Concise](/files/Concise-Resume-Mithil.pdf) </span>  -->
-<span style = "margin-left: -25px;">PDF forms: [**Concise**](/files/Concise-Resume-Mithil.pdf)  [**Long**](/files/Mithil-Vakde-Resume.pdf)</span>  
+<span style = "margin-left: -25px;">PDF version: [**Concise form**](/files/Concise-Resume-Mithil.pdf),  [**Long form**](/files/Mithil-Vakde-Resume.pdf)</span>  
 
 <!-- <span style = "margin-left: -25px;">To respect your time, I include only points relevant to the role. Find my standard, full resume [**here**](/files/Mithil-Vakde-Resume.pdf) (read at your own peril)</span>   -->
 
