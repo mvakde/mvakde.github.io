@@ -20,7 +20,7 @@ Author: Mithil Vakde
 ## Brief Intro 
 ### *What is computation?*
 Every single* computation done by computers today can be thought of as a solution to this problem:  
->Given an input $X$, you want an output $Y$ 
+>Given an input $X$, you want an output $Y$  
 >To do so, design an operator $\hat{O}$ that acts on $X$ and gives the output $Y$
 
 In other words, 
