@@ -6,6 +6,7 @@ type: "ML Subdivision"
 permalink: 
 date: 2020-10-01
 location: "Mumbai, India"
+snip: "**A crash course in Machine Learning tools, Innovation Cell (UMIC), a student-run tech team at IIT Bombay**<br>I created this back in 2020 to help train potential UMIC recruits in the basics of ML. This was followed up by multiple assignments and a month-long project, mentored by me. I made the timeline very short, expecting them to finish 60-80% of the required tasks. Ideally, this will take a much longer time.<br><br>Note: This guide is now outdated, but still useful in my opinion. Find the [PDF version here](https://mvakde.github.io/files/ML-Training-Mithil.pdf)"
 ---
 **A crash course in Machine Learning tools, Innovation Cell (UMIC), a student-run tech team at IIT Bombay**  
 I created this back in 2020 to help train potential UMIC recruits in the basics of ML. This was followed up by multiple assignments and a month-long project, mentored by me. I made the timeline very short, expecting them to finish 60-80% of the required tasks. Ideally, this will take a much longer time.
