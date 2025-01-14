@@ -5,11 +5,17 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
-Curretly I'm building a healthcare startup. Find my CV here: [**CV**](/cv)  
+Note: This is an older website I made in college. Not updated regularly, might be cringe.  
 If you're a current student looking for the Quantum Mechanics resources I previously made, go to the [**Tutorials**](/tutorials) page  
+
+---  
+   
+Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+Currently I'm building a healthcare startup.  
+Find my CV here: [**CV**](/cv)  
+
   
-Note: This is an older website I made in college. Not updated regularly, might be cringe. 
+
 <!-- Currently, I'm building a product based on the principles of Neuromorphic Computing.   -->
 <!-- I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead.  -->
 
