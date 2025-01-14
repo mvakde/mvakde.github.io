@@ -5,16 +5,13 @@ redirect_from:
   - /about/
   - /about.html
 ---
-> **NOTE**: This website has NOT been updated for a long time. Might be cringe.  
-> If you're a current student, go to the [**Tutorials**](/tutorials) page for the QM resources  
-
----  
-   
-Hi there! I'm Mithil. I recently graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+Hi there! I'm Mithil. I graduated from IIT Bombay with a B.Tech in Engineering Physics.  
 Currently I'm building a healthcare startup.  
-Find my CV here: [**CV**](/cv)  
-
   
+> **NOTE**: This website has NOT been updated for a long time. Might be cringe.  
+> If you're a current student, go to the [**Tutorials**](/tutorials) page for the Quantum Mechanics resources  
+
+---    
 
 <!-- Currently, I'm building a product based on the principles of Neuromorphic Computing.   -->
 <!-- I have a couple of job offers (a corporate venture role & an engineering role), but I'm looking to work at a startup instead.  -->
