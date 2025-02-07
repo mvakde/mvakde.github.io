@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Questionnaire</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- A header area for messages -->
+      <header>
+        <h1>Daily Questionnaire</h1>
+      </header>
+      <!-- The main container where questions will be rendered -->
+      <div id="question-container"></div>
+      <!-- Navigation buttons -->
+      <div id="navigation">
+        <button id="back-button" style="display: none;">Back</button>
+        <button id="next-button" style="display: none;">Next</button>
+      </div>
+      <!-- CSV Export & Restart controls -->
+      <div id="controls">
+        <button id="export-csv">Export CSV</button>
+        <button id="restart-session">Restart Questionnaire</button>
+      </div>
+    </div>
+
+    <!-- Include Dexie.js (for IndexedDB) from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/dexie@latest/dist/dexie.js"></script>
+    <!-- Main Application JavaScript -->
+    <script src="app.js"></script>
+    <script>
+      // Register Service Worker for offline support
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('Service Worker registration failed:', error);
+          });
+      }
+    </script>
+  </body>
+</html>
