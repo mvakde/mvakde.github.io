@@ -1,0 +1,40 @@
+{
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Do you feel happy today?",
+        "type": "yesno",
+        "answers": ["Yes", "No"],
+        "branch": {
+          "Yes": "q2",
+          "No": "q3"
+        }
+      },
+      {
+        "id": "q2",
+        "text": "What made you happy?",
+        "type": "free-text",
+        "branch": {
+          "default": "q4"
+        }
+      },
+      {
+        "id": "q3",
+        "text": "Why are you not feeling happy?",
+        "type": "free-text",
+        "branch": {
+          "default": "q4"
+        }
+      },
+      {
+        "id": "q4",
+        "text": "Select your preferred activities.",
+        "type": "multiple-choice",
+        "answers": ["Reading", "Sports", "Music", "Gaming"],
+        "branch": {
+          "default": null
+        }
+      }
+    ]
+  }
+  
