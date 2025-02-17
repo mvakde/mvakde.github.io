@@ -1,12 +1,16 @@
 // User provided Gemini API key will be used. Enter your key in the API Key field on the home page.
 function getApiKey() {
-  const keyInput = document.getElementById("apiKeyInput");
-  const key = keyInput ? keyInput.value.trim() : "";
-  if (!key) {
-    alert("Please enter a valid API key in the API Key field.");
-    throw new Error("Missing API key");
-  }
-  return key;
+  // const keyInput = document.getElementById("apiKeyInput");
+  // const key = keyInput ? keyInput.value.trim() : "";
+  // if (!key) {
+  //   alert("Please enter a valid API key in the API Key field.");
+  //   throw new Error("Missing API key");
+  // }
+  // return key;
+
+  // Hardcoded Sample API Key (change as needed)
+  const sampleApiKey = "AIzaSyBnAr3CE4U-dOBMlbB9NKdOxeq8s48dMJA";
+  return sampleApiKey;
 }
 
 // Custom system prompts for each LLM call.
