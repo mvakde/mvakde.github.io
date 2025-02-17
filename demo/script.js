@@ -143,45 +143,45 @@ document.getElementById("refreshAudio").addEventListener("click", () => {
 
 // --- Photo Capture Functionality ---
 const capturePhotoButton = document.getElementById("capturePhoto");
-const photoCanvas = document.getElementById("photoCanvas");
+if (capturePhotoButton) {
+  capturePhotoButton.addEventListener("click", async () => {
+    try {
+      // Request access to the camera.
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      // Create a temporary video element to access the stream.
+      const video = document.createElement("video");
+      video.style.display = "none";
+      document.body.appendChild(video);
+      video.srcObject = stream;
+      await video.play();
 
-capturePhotoButton.addEventListener("click", async () => {
-  try {
-    // Request access to the camera.
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-    // Create a temporary video element to access the stream.
-    const video = document.createElement("video");
-    video.style.display = "none";
-    document.body.appendChild(video);
-    video.srcObject = stream;
-    await video.play();
+      // Brief delay to ensure the video is playing.
+      await new Promise(resolve => setTimeout(resolve, 500));
 
-    // Brief delay to ensure the video is playing.
-    await new Promise(resolve => setTimeout(resolve, 500));
+      // Set the canvas dimensions and capture the frame.
+      photoCanvas.width = video.videoWidth;
+      photoCanvas.height = video.videoHeight;
+      const ctx = photoCanvas.getContext("2d");
+      ctx.drawImage(video, 0, 0, photoCanvas.width, photoCanvas.height);
+      photoCanvas.style.display = "block";
 
-    // Set the canvas dimensions and capture the frame.
-    photoCanvas.width = video.videoWidth;
-    photoCanvas.height = video.videoHeight;
-    const ctx = photoCanvas.getContext("2d");
-    ctx.drawImage(video, 0, 0, photoCanvas.width, photoCanvas.height);
-    photoCanvas.style.display = "block";
-
-    // Convert the canvas to a Blob and then to a File.
-    photoCanvas.toBlob(blob => {
-      if (blob) {
-        const photoFile = new File([blob], "captured_photo.png", { type: blob.type });
-        extraFiles.push(photoFile);
-      }
-    }, "image/png");
-    
-    // Stop the camera stream and remove the temporary video element.
-    stream.getTracks().forEach(track => track.stop());
-    document.body.removeChild(video);
-  } catch (error) {
-    console.error("Error capturing photo:", error);
-    alert("Error capturing photo: " + error.message);
-  }
-});
+      // Convert the canvas to a Blob and then to a File.
+      photoCanvas.toBlob(blob => {
+        if (blob) {
+          const photoFile = new File([blob], "captured_photo.png", { type: blob.type });
+          extraFiles.push(photoFile);
+        }
+      }, "image/png");
+      
+      // Stop the camera stream and remove the temporary video element.
+      stream.getTracks().forEach(track => track.stop());
+      document.body.removeChild(video);
+    } catch (error) {
+      console.error("Error capturing photo:", error);
+      alert("Error capturing photo: " + error.message);
+    }
+  });
+}
 
 // Modified submit button handler
 submitButton.addEventListener("click", async () => {
