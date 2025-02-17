@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This file allows you to upload, record audio, or capture a photo related to a doctor's visit and generate a structured summary using the Gemini API. -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Did your doctor miss something?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="initial-screen">
+    <h1>Did your doctor miss something?</h1>
+    <div class="main-content">
+      <h2>New Visit</h2>
+      <p class="subtext">Upload/Record audio, image, and/or PDF files from the doctor's visit</p>
+      
+      <div class="controls-container">
+        <button id="startAudioRecord" class="action-button">Start Recording</button>
+        <button id="stopAudioRecord" class="action-button" style="display: none;">Stop Recording</button>
+        <button id="refreshAudio" class="refresh-button" style="display: none;">↻</button>
+        <audio id="audioPlayback" controls style="display:none;"></audio>
+        
+        <button id="capturePhoto" class="action-button">Capture Photo</button>
+        <canvas id="photoCanvas" style="display:none;"></canvas>
+        
+        <div class="file-upload">
+          <button id="uploadButton" class="action-button">Upload Files</button>
+          <input type="file" id="fileInput" accept="audio/*, image/*, application/pdf" multiple style="display: none;" />
+        </div>
+        
+        <div id="filesInfo" style="display: none;"></div>
+      </div>
+
+      <button id="submitButton" class="submit-button">Submit</button>
+      <div id="apiKeyContainer" style="margin-top: 10px;">
+        <label for="apiKeyInput">API Key:</label>
+        <input type="text" id="apiKeyInput" placeholder="Enter your API key here" />
+      </div>
+    </div>
+    <div class="previous-visits">
+      <h2>Previous Visits</h2>
+      <p>Under construction</p>
+    </div>
+  </div>
+
+  <div id="results-screen" style="display: none;">
+    <button id="newVisitButton" class="new-visit-button">New Visit</button>
+    <h1>Did your doctor miss something?</h1>
+
+    <div class="results-container">
+      <section class="result-section">
+        <h2>Follow up Questions</h2>
+        <div id="followUpQuestions" class="content-area">Processing...</div>
+      </section>
+
+      <section class="result-section">
+        <h2>Second Opinion</h2>
+        <div class="collapsible">
+          <div id="secondOpinion" class="content-area">Processing...</div>
+          <div id="secondOpinionDetails">
+            <h3>Second opinion on what?</h3>
+            <div id="secondOpinionOnWhat" class="content-area"></div>
+            <h3>Type of doctor for second visit</h3>
+            <div id="typeOfDoctor" class="content-area"></div>
+            <h3>Other info</h3>
+            <div id="otherInfo" class="content-area"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <h2>Visit Details</h2>
+        <div class="collapsible">
+          <h3>Summary of Visit</h3>
+          <div id="summaryOfVisit" class="content-area">Processing...</div>
+          <h3>Diagnosis</h3>
+          <div id="diagnosis" class="content-area">Processing...</div>
+          <h3>Symptoms</h3>
+          <div id="symptoms" class="content-area">Processing...</div>
+          <h3>Doctor's Notes</h3>
+          <div id="doctorsNotes" class="content-area">Processing...</div>
+          <h3>Medicines Prescribed</h3>
+          <div id="medicinesPrescribed" class="content-area">Processing...</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
