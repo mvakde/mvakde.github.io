@@ -164,3 +164,98 @@ button:disabled {
   background-color: #555;
   cursor: not-allowed;
 } 
+
+/* Follow-up Container */
+.followup-container {
+  display: none;  /* Hidden by default */
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.followup-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.followup-icon {
+  background: #1565c0;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.followup-title {
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.why-button {
+  background-color: transparent;
+  color: #1565c0;
+  border: 1px solid #1565c0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.why-button:hover {
+  background-color: rgba(21, 101, 192, 0.1);
+}
+
+.custom-followup {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.followup-input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #424242;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.followup-input:focus {
+  outline: none;
+  border-color: #1565c0;
+}
+
+.submit-followup {
+  background-color: #1565c0;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.submit-followup:hover {
+  background-color: #0d47a1;
+}
+
+.followup-response {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #1e1e1e;
+  border-radius: 6px;
+  border-left: 4px solid #1565c0;
+}

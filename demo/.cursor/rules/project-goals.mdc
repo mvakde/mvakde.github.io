@@ -1,0 +1,27 @@
+---
+description: Describes the main goals and purpose of the application
+globs: 
+---
+# Project Goals
+
+The primary goal of this application is to empower patients by:
+
+1. Bridging the Communication Gap
+   - Help patients who struggle to advocate for themselves
+   - Provide structured analysis of medical visits
+   - Generate relevant follow-up questions
+
+2. Quality of Care Assurance
+   - Analyze if adequate care was provided
+   - Identify potential missed diagnoses or concerns
+   - Recommend second opinions when necessary
+
+3. Medical Documentation Management
+   - Organize and analyze medical visit documentation
+   - Convert various media types into structured information
+   - Make medical information more accessible and understandable
+
+4. Patient Advocacy
+   - Guide patients to ask the right questions
+   - Help identify when additional medical opinions are needed
+   - Provide specific recommendations for specialist consultations

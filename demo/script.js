@@ -78,6 +78,112 @@ const newVisitButton = document.getElementById("newVisitButton");
 const uploadButton = document.getElementById("uploadButton");
 const filesInfo = document.getElementById("filesInfo");
 
+let lastUploadedFiles = [];
+
+async function handleFollowup(section, originalContent, customQuestion = null) {
+  const followupPrompt = customQuestion || 
+    `Why is "${originalContent}" the recommended answer for the "${section}" section? Please elaborate and provide more detailed explanation.`;
+
+  // We need to use the same files that were uploaded for the original request
+  if (lastUploadedFiles.length === 0) {
+    alert("Cannot perform follow-up without the original files. Please try again with a new submission.");
+    return;
+  }
+
+  // Build parts with the uploaded files
+  const userParts = lastUploadedFiles.map(fileData => ({
+    file_data: {
+      mime_type: fileData.mimeType,
+      file_uri: fileData.fileUri
+    }
+  }));
+
+  // Add the follow-up question
+  userParts.push({ text: followupPrompt });
+
+  const payload = {
+    generationConfig: {
+      temperature: 1,
+      topK: 40,
+      topP: 0.95,
+      maxOutputTokens: 8192,
+    },
+    contents: [
+      { role: "user", parts: [{ text: secondSystemPrompt }] },
+      { role: "model", parts: [{ text: "Understood." }] },
+      // Include the original files and the follow-up question
+      { role: "user", parts: userParts }
+    ]
+  };
+
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${getApiKey()}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed to get followup: ${response.statusText}`);
+    }
+
+    const result = await response.json();
+    const followupText = result.candidates?.[0]?.content?.parts?.[0]?.text || "No explanation available";
+
+    // Create a proper follow-up response container
+    const followupResponse = document.createElement('div');
+    followupResponse.className = 'followup-response';
+    
+    // Create a header for the follow-up response
+    const followupHeader = document.createElement('h4');
+    followupHeader.textContent = 'Follow-up: ' + (customQuestion || `Why this recommendation?`);
+    followupHeader.style.marginTop = '1rem';
+    followupHeader.style.marginBottom = '0.5rem';
+    followupHeader.style.color = '#e0e0e0';
+    
+    // Create the content container
+    const followupContent = document.createElement('div');
+    followupContent.className = 'content-area';
+    followupContent.textContent = followupText;
+    
+    // Assemble the follow-up response
+    followupResponse.appendChild(followupHeader);
+    followupResponse.appendChild(followupContent);
+    
+    // Find the parent container and insert the response
+    const containerElement = event.target.closest('.result-section');
+    containerElement.appendChild(followupResponse);
+  } catch (error) {
+    console.error('Error getting followup:', error);
+    alert('Failed to get followup response: ' + error.message);
+  }
+}
+
+// Add event listeners for followup buttons
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('why-button')) {
+    const container = event.target.closest('div[id]');
+    const sectionId = container.id;
+    const content = container.textContent;
+    handleFollowup(sectionId, content);
+  }
+  
+  if (event.target.classList.contains('submit-followup')) {
+    const container = event.target.closest('div[id]');
+    const sectionId = container.id;
+    const inputElement = event.target.parentElement.querySelector('.followup-input');
+    const customQuestion = inputElement.value.trim();
+    
+    if (customQuestion) {
+      handleFollowup(sectionId, null, customQuestion);
+      inputElement.value = ''; // Clear input after submission
+    }
+  }
+});
+
 // Update file input handler
 uploadButton.addEventListener("click", () => {
   fileInput.click();
@@ -200,6 +306,11 @@ submitButton.addEventListener("click", async () => {
   initialScreen.style.display = "none";
   resultsScreen.style.display = "block";
   
+  // Hide all followup containers initially
+  document.querySelectorAll('.followup-container').forEach(container => {
+    container.style.display = 'none';
+  });
+  
   // Clear previous outputs and show "Processing..."
   const outputElements = [
     followUpQuestionsEl, secondOpinionEl, summaryOfVisitEl,
@@ -226,15 +337,12 @@ submitButton.addEventListener("click", async () => {
   try {
     // --- First API call for structured output ---
     const { firstResponse, uploadedFiles } = await handleMultipleFiles(files);
+    
+    // Store uploaded files for follow-up requests
+    lastUploadedFiles = uploadedFiles;
 
-    // Extract and parse the first response text.
-    const firstResponseText =
-      firstResponse.candidates &&
-      firstResponse.candidates[0] &&
-      firstResponse.candidates[0].content &&
-      firstResponse.candidates[0].content.parts
-        ? firstResponse.candidates[0].content.parts[0].text
-        : "";
+    // Extract and parse the first response text
+    const firstResponseText = firstResponse.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
     let structuredData = {};
     try {
@@ -358,6 +466,58 @@ If the answer to the second question (on second opinion) is yes, answer the foll
     } else {
       secondOpinionDetailsEl.style.display = "none";
     }
+    
+    // After all responses are successfully processed, show the followup containers
+    document.querySelectorAll('.followup-container').forEach(container => {
+      container.style.display = 'block';
+    });
+
+    // Remove any existing event listeners to prevent duplicates
+    document.querySelectorAll('.why-button').forEach(button => {
+      const newButton = button.cloneNode(true);
+      button.parentNode.replaceChild(newButton, button);
+    });
+    
+    document.querySelectorAll('.submit-followup').forEach(button => {
+      const newButton = button.cloneNode(true);
+      button.parentNode.replaceChild(newButton, button);
+    });
+
+    // Add click handlers for the followup buttons 
+    document.querySelectorAll('.why-button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const section = this.closest('.result-section').querySelector('h2').textContent;
+        let content = "";
+        
+        // Get the content for the specific section or subsection
+        if (this.closest('h3')) {
+          // This is a subsection
+          const subsectionTitle = this.closest('h3').textContent;
+          const subsectionContent = this.closest('.collapsible').querySelector(`#${getIdFromTitle(subsectionTitle)}`).textContent;
+          content = subsectionContent;
+        } else {
+          // This is a main section
+          const sectionEl = this.closest('.result-section').querySelector('.content-area');
+          content = sectionEl.textContent;
+        }
+        
+        handleFollowup(section, content);
+      });
+    });
+
+    // Add submit handlers for custom followup inputs
+    document.querySelectorAll('.submit-followup').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const section = this.closest('.result-section').querySelector('h2').textContent;
+        const input = this.parentElement.querySelector('.followup-input');
+        const question = input.value.trim();
+        
+        if (question) {
+          handleFollowup(section, null, question);
+          input.value = ''; // Clear input after submission
+        }
+      });
+    });
     
     // Optionally, clear the extraFiles array now that we've used them.
     extraFiles = [];
@@ -492,3 +652,19 @@ if ('serviceWorker' in navigator) {
       });
   });
 } 
+
+function getIdFromTitle(title) {
+  // Normalize based on the IDs used in the HTML
+  const titleMap = {
+    "Summary of Visit": "summaryOfVisit",
+    "Diagnosis": "diagnosis",
+    "Symptoms": "symptoms",
+    "Doctor's Notes": "doctorsNotes",
+    "Medicines Prescribed": "medicinesPrescribed",
+    "Second opinion on what?": "secondOpinionOnWhat",
+    "Type of doctor for second visit": "typeOfDoctor",
+    "Other info": "otherInfo"
+  };
+  
+  return titleMap[title] || title.toLowerCase().replace(/\s+/g, '');
+}

@@ -1,0 +1,36 @@
+---
+description: Describes the current functionality and features of the application
+globs: 
+---
+# Current Application Functionality
+
+The application is a web-based tool that helps patients analyze their doctor visits by:
+
+1. Allowing users to upload multiple types of medical documentation:
+   - Audio recordings (can be recorded directly in app)
+   - Images (can be captured directly in app)
+   - PDF files
+
+2. Using Gemini AI API to analyze the uploaded files and generate:
+   - Structured summary of the visit
+   - Diagnosis details
+   - Symptoms list
+   - Prescribed medications
+   - Doctor's notes
+
+3. Providing AI-powered recommendations:
+   - Follow-up questions for next visit
+   - Whether a second opinion is needed
+   - Specific aspects requiring second opinion
+   - Type of specialist to consult
+   - Additional relevant information
+   - Asking followups to each of these recommendations (under construction currently)
+
+4. Technical Features:
+   - Progressive Web App (PWA) functionality
+   - Offline support via Service Worker
+   - Responsive design
+   - Dark mode UI
+   - File upload handling
+   - Audio recording capabilities
+   - Image capture support
