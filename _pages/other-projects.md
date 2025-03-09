@@ -6,6 +6,15 @@ redirect_from:
   - "/nmp/"
   - "/nmp.html"
 ---
+```
+Updating this to include all recent projects. Will be done by 9th March EOD
+.
+.
+.
+.
+.
+.
+```
 > **NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
 
 (Need to add : Machine Learning @ UMIC, Research Intern @ Paris, etc.)  
