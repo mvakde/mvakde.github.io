@@ -80,7 +80,7 @@ const filesInfo = document.getElementById("filesInfo");
 
 let lastUploadedFiles = [];
 
-async function handleFollowup(section, originalContent, customQuestion = null) {
+async function handleFollowup(section, originalContent, customQuestion = null, clickedElement = null) {
   const followupPrompt = customQuestion || 
     `Why is "${originalContent}" the recommended answer for the "${section}" section? Please elaborate and provide more detailed explanation.`;
 
@@ -117,6 +117,17 @@ async function handleFollowup(section, originalContent, customQuestion = null) {
   };
 
   try {
+    // Find the container to append the response to
+    const containerElement = clickedElement ? 
+      clickedElement.closest('.collapsible, .result-section') : 
+      document.querySelector(`#${section}`).closest('.collapsible, .result-section');
+    
+    // Create a response placeholder
+    const followupResponsePlaceholder = document.createElement('div');
+    followupResponsePlaceholder.className = 'followup-response';
+    followupResponsePlaceholder.innerHTML = '<div class="content-area">Processing follow-up request...</div>';
+    containerElement.appendChild(followupResponsePlaceholder);
+    
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${getApiKey()}`,
       {
@@ -133,9 +144,8 @@ async function handleFollowup(section, originalContent, customQuestion = null) {
     const result = await response.json();
     const followupText = result.candidates?.[0]?.content?.parts?.[0]?.text || "No explanation available";
 
-    // Create a proper follow-up response container
-    const followupResponse = document.createElement('div');
-    followupResponse.className = 'followup-response';
+    // Update the placeholder with the actual response
+    followupResponsePlaceholder.innerHTML = '';
     
     // Create a header for the follow-up response
     const followupHeader = document.createElement('h4');
@@ -150,12 +160,9 @@ async function handleFollowup(section, originalContent, customQuestion = null) {
     followupContent.textContent = followupText;
     
     // Assemble the follow-up response
-    followupResponse.appendChild(followupHeader);
-    followupResponse.appendChild(followupContent);
+    followupResponsePlaceholder.appendChild(followupHeader);
+    followupResponsePlaceholder.appendChild(followupContent);
     
-    // Find the parent container and insert the response
-    const containerElement = event.target.closest('.result-section');
-    containerElement.appendChild(followupResponse);
   } catch (error) {
     console.error('Error getting followup:', error);
     alert('Failed to get followup response: ' + error.message);
@@ -164,23 +171,67 @@ async function handleFollowup(section, originalContent, customQuestion = null) {
 
 // Add event listeners for followup buttons
 document.addEventListener('click', function(event) {
+  // Handle "Why this recommendation?" button clicks
   if (event.target.classList.contains('why-button')) {
-    const container = event.target.closest('div[id]');
-    const sectionId = container.id;
-    const content = container.textContent;
-    handleFollowup(sectionId, content);
+    // Prevent multiple clicks
+    if (event.target.disabled) return;
+    event.target.disabled = true;
+    
+    const container = event.target.closest('.collapsible') || event.target.closest('.result-section');
+    let sectionName = '';
+    let content = '';
+    
+    // Handle section-specific content extraction
+    if (event.target.closest('h3')) {
+      // This is a subsection
+      const heading = event.target.closest('h3');
+      sectionName = heading.textContent.trim();
+      
+      // Find the corresponding content div
+      const contentId = getIdFromTitle(sectionName);
+      const contentElement = container.querySelector(`#${contentId}`);
+      
+      if (contentElement) {
+        content = contentElement.textContent.trim();
+      }
+    } else {
+      // This is a main section
+      const heading = container.querySelector('h2');
+      sectionName = heading ? heading.textContent.trim() : '';
+      const contentElement = event.target.closest('.result-section').querySelector('.content-area');
+      
+      if (contentElement) {
+        content = contentElement.textContent.trim();
+      }
+    }
+    
+    // Pass the clicked element to the handler
+    handleFollowup(sectionName, content, null, event.target);
   }
   
+  // Handle custom follow-up question submissions
   if (event.target.classList.contains('submit-followup')) {
-    const container = event.target.closest('div[id]');
-    const sectionId = container.id;
-    const inputElement = event.target.parentElement.querySelector('.followup-input');
+    // Prevent multiple clicks
+    if (event.target.disabled) return;
+    event.target.disabled = true;
+    
+    const inputElement = event.target.closest('.custom-followup').querySelector('.followup-input');
     const customQuestion = inputElement.value.trim();
     
     if (customQuestion) {
-      handleFollowup(sectionId, null, customQuestion);
+      const container = event.target.closest('.collapsible') || event.target.closest('.result-section');
+      const heading = container.querySelector('h3') || container.querySelector('h2');
+      const sectionName = heading ? heading.textContent.trim() : '';
+      
+      // Pass the clicked element to the handler
+      handleFollowup(sectionName, null, customQuestion, event.target);
       inputElement.value = ''; // Clear input after submission
     }
+    
+    // Re-enable the button after a short delay
+    setTimeout(() => {
+      event.target.disabled = false;
+    }, 1000);
   }
 });
 
@@ -470,53 +521,6 @@ If the answer to the second question (on second opinion) is yes, answer the foll
     // After all responses are successfully processed, show the followup containers
     document.querySelectorAll('.followup-container').forEach(container => {
       container.style.display = 'block';
-    });
-
-    // Remove any existing event listeners to prevent duplicates
-    document.querySelectorAll('.why-button').forEach(button => {
-      const newButton = button.cloneNode(true);
-      button.parentNode.replaceChild(newButton, button);
-    });
-    
-    document.querySelectorAll('.submit-followup').forEach(button => {
-      const newButton = button.cloneNode(true);
-      button.parentNode.replaceChild(newButton, button);
-    });
-
-    // Add click handlers for the followup buttons 
-    document.querySelectorAll('.why-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        const section = this.closest('.result-section').querySelector('h2').textContent;
-        let content = "";
-        
-        // Get the content for the specific section or subsection
-        if (this.closest('h3')) {
-          // This is a subsection
-          const subsectionTitle = this.closest('h3').textContent;
-          const subsectionContent = this.closest('.collapsible').querySelector(`#${getIdFromTitle(subsectionTitle)}`).textContent;
-          content = subsectionContent;
-        } else {
-          // This is a main section
-          const sectionEl = this.closest('.result-section').querySelector('.content-area');
-          content = sectionEl.textContent;
-        }
-        
-        handleFollowup(section, content);
-      });
-    });
-
-    // Add submit handlers for custom followup inputs
-    document.querySelectorAll('.submit-followup').forEach(button => {
-      button.addEventListener('click', function(e) {
-        const section = this.closest('.result-section').querySelector('h2').textContent;
-        const input = this.parentElement.querySelector('.followup-input');
-        const question = input.value.trim();
-        
-        if (question) {
-          handleFollowup(section, null, question);
-          input.value = ''; // Clear input after submission
-        }
-      });
     });
     
     // Optionally, clear the extraFiles array now that we've used them.
