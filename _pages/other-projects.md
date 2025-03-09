@@ -6,15 +6,6 @@ redirect_from:
   - "/nmp/"
   - "/nmp.html"
 ---
-```
-Updating this to include all recent projects. Will be done by 9th March EOD
-.
-.
-.
-.
-.
-.
-```
 ## Recent Healthcare exploration 
 (One full app + Quick MVPs to test user demands)
 - [PatternLogs](https://github.com/mvakde/PatternLogs) - I use this app to track my muscle twitches. They occur in bursts and I match the pattern and intensity of the twitches by tapping on the screen. (TODO - Add the apk and update readme)
