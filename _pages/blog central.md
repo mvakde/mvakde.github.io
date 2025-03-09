@@ -2,9 +2,6 @@
 permalink: /blog/
 # title: "Other Projects"
 author_profile: true
-redirect_from: 
-  - "/nmp/"
-  - "/nmp.html"
 ---
 ```
 Updating this to include 2 more blogposts. Will be done by 9th March EOD
