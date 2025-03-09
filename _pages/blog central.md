@@ -36,6 +36,7 @@ Random thoughts:
 - "AGI will be like building the brain" -> I feel the same way, but those aren't the arguments I'd use. (I should read up on human and animal intelligence more)
 - Reject scaling hypothesis -> Yes. Scaling up improves capabilities on tasks in training set. Doesn't increase overall intelligence
 - (Unhinged mode) I want to understand how these concepts connect with intelligence: Fractals, Chaos, Analog computing. For some reason, a lot of people (including me) intuitively think that these concepts are inherently linked with intelligence. Suchir brushes by each of these concepts in the essay too
+
 ## Tyler's essay: 
 So the overall argument is that takeoff is slow because of human and societal factors that constrain change. Its a fair premise tbh -> Talk to any old indian doctor about AI or look at the regulatory hurdles for healthcare.
 
