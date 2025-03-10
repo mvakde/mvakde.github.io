@@ -27,8 +27,8 @@ Top 25 all India @ INAO | KVPY Fellowship – All India Rank 326
 **<span style = "font-size:1em;">[Tata Industries](https://tataindustries.com/) - Intern, New ventures arm (Mar'23 - Jun'23)</span>**  
 Evaluated business models: AgriTech sector | Regularly presented industry research to the C-suite: Deeptech sectors
 
-**<span style = "font-size:1em;">Co-founder - Soilo (Feb'23 - Aug'23)</span>**  
-Secured INR 50K in funding | Developed a marker recognition algorithm for drones  
+<!-- **<span style = "font-size:1em;">Co-founder - Soilo (Feb'23 - Aug'23)</span>**  
+Secured INR 50K in funding | Developed a marker recognition algorithm for drones   -->
 
 **<span style = "font-size:1em;">Research Intern - Université Paris-Saclay (May'22 - July'22)</span>**  
 In person @ Paris, France | Discovered a correlation between viral DNA content & light absorption
