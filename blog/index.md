@@ -1,5 +1,8 @@
-# Blogs
-Decided to start blogging  
+---
+permalink: /blog/
+title: "Blog"
+---
+Decided to start blogging 
 
 ### [JEE was easy](./jee-was-easy) 10th March 2025
 Anecdotes about intelligence
