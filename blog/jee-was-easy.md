@@ -1,4 +1,5 @@
 # Jee was easy
+> Note: Need to make some small changes. But all the points I want to talk about is here
 Anecdotes about intelligence, and my experience with JEE. (There's some boasting here, apologies in advance)
 
 ## About Intelligence
@@ -31,14 +32,19 @@ Examples of people I know:
     - I grok concepts in any domain pretty fast. Ended up pretty good at some domains (dance, drums, volleyball, public speaking, MUNs, etc.)
     - Want to startup
 
-So yeah guysing grok concepts super fast in any domain. Other things in common - Taking risky paths in life, willing to stand out, skills in different fields, etc.
+So main thing in common - grokking concepts super fast in any domain. Other things in common - Taking risky paths in life, willing to stand out, skills in different fields, etc.
 
 ## About JEE
-I found JEE (Advanced) to be super easy. I got a 1505 rank (common rank list) without studying much or practicing much. Among the 1k IITB batchmates of mine, I estimate there were only ~10 other people in my batch who cpuld boast the same. Why?
+Intelligence is not correlated with your JEE rank. I think its correlated with your rank vs the effort you put in for it.
 
-How do people generally clear JEE? 
+#### How do people generally clear JEE? 
 1) Spend 2-6 years studying for this exam
 2) Study 10+ hours a day
-3) Practice an insane number of questions (10K or sometimes higher than that)
+3) Practice an insane number of questions (30K+ or sometimes even higher than that)
+Anyone, regardless of intelligence (above a baseline) would qualify if they did this. It becomes a test of grit, not intelligence. The reward of this path is the ability to work hard on anything + decent analytical skills.
 
-Anyone, regardless of intelligence (above a baseline) would qualify if they did this. It becomes a test of grit, not intelligence. You 
+I didn't do this though. I found JEE (Advanced) to be super easy. I studied for about a year, not those crazy hours, and would have practiced ~1K questions in total. I got a 1505 rank (common rank list). Among the 1k IITB batchmates of mine, I estimate there were only ~10 other people in my batch who could boast the same. A few of the people mentioned above fall into this category.
+
+#### How else can you crack JEE?
+- Understand the concepts deeply. That's all I did. This would apply to Physics, Maths and a bit more than one-third of chemistry (I skipped memorisation heavy stuff - inorganic chemistry, organic chemistry and Integration in Mathematics). That should be enough for a ~600 or lower rank in 2025 (In my year, it would have been enough for ~300 rank. I made a bunch of silly mistakes that overall cost me 40 marks and landed me 1500)
+- If you want to get something like ~100 or below, you'd need a bunch of memorisation for organic and inorganic chemsitry and a decent amount of practice for integration and a few other topics in Math.
