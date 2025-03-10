@@ -13,26 +13,26 @@ IMO intelligence is a measure of how little data you need to pick up a new skill
  Almost anyone can do the former. Its Close to 99% of those who score high fall into the former category.  -->
 
 ### The smartest people I know:  
-1) **Friend from IISc with off-the-charts athletic intelligence**
+1. **Friend from IISc with off-the-charts athletic intelligence**
     - Acadmically brilliant. He's now doing physics research in Germany. Also a brilliant tennis player. Could have built a career playing the sport
     - One time in high school, he took part in the soccer camp for the *state* (or *national*, I forget) level football team. Fun part - <kbd> He had NEVER played soccer before!</kbd> He learnt to play soccer _during the camp_ and almost made the team!! Anyone who's played a sport competitively know that massive skill differences in each level of the sport. This rapid increase in skill is beyond comprehension.
-    - Few months ago, we played basketball together. I was teaching him some of the basics of play. In the course of 1 hour, it went from me being able to score easily to him playing _way_ better than me. (And I am pretty decent at sports myself)
-2) **Classmate at IITB: JEE without coaching + brilliant artist**
+    - Few months ago, we played basketball together. I was teaching him some of the basics of play. In the course of 1 hour, it went from me being able to score easily to him playing _way_ better than me. (And I am pretty decent at sports myself)  
+2. **Classmate at IITB: JEE without coaching + brilliant artist**
     - IITB batchmate, top of our class and super quick at grokking new concepts.
     - Qualified JEE without coaching
     - Is also extremely talented at dancing, filmaking and other arts. Learns anything new here extremely quickly
     - Decided to drop a promising research career in favor of filmmaking
-3) **Batchmate at IITB: Academics + research + startup**
+3. **Batchmate at IITB: Academics + research + startup**
     - Started tech teams and ended up guiding seniors for projects. 
     - Graduated top of his class, groks everything superfast  and took on leadership roles. 
     - Now building a robot company is SF
-4) **Batchmate at IITB:  High scrores on JEE and AIIMS + technically brilliant**
+4. **Batchmate at IITB:  High scrores on JEE and AIIMS + technically brilliant**
     - Qualified JEE and AIIMS/NEET (he had a better NEET rank than JEE). Studying both these exams in the same time is crazy
     - Got heavily into coding. Built a startup in college and raised $300K. Working on another startup
-3) **Batchmate at IITB: JEE without coaching + research brilliance**
+5. **Batchmate at IITB: JEE without coaching + research brilliance**
     - Qualified JEE without coaching. Took a risky research path in college, which payed off handsomely. 
     - Is now trying to startup
-6) **Me**
+6. **Me**
     - Great score on JEE without studying much or solving many problems (AIR 1500 common rank list)
     - Solved my own health problems by reading medical literature
     - I grok concepts in any domain pretty fast. Ended up pretty good at some domains (dance, drums, volleyball, public speaking, MUNs, etc.)
