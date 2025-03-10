@@ -5,17 +5,19 @@ main:
   #
   - title: "Blog"
     url: /blog/
-  - title: "CV"
-    url: /cv/
+  # - title: "CV"
+  #   url: /cv/
 
   # - title: "Portfolio"
   #   url: /portfolio/
+  
+  - title: "Projects"
+    url: /projects  
 
   - title: "Tutorials"
     url: /tutorials/
   
-  - title: "Projects"
-    url: /projects  
+
   
   # - title: "TAship"
   #   url: /teaching/ph107-ph112

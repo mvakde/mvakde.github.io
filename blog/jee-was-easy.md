@@ -2,7 +2,7 @@
 title: "JEE was easy"
 permalink: /blog/jee-was-easy/
 ---
-
+> Hey Alexa, remind me to improve my writing skills.
 Anecdotes about intelligence, and my experience with JEE.
 
 ## Intelligence

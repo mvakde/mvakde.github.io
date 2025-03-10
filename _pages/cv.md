@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: resume
 title:
 permalink: /cv/
@@ -52,4 +52,4 @@ Only freshman to manage a subsystem (a role usually reserved for 3rd year studen
 Cleared 2 rounds: Barcelona smart drone challenge | Reduced code execution time 45x  
 
 **<span style = "font-size:1em;"> Algorithms subdivision, MELODE Labs</span>**  
-Novel Idea: 75% accuracy in simulating a brain disorder using neuromorphic computing principles  
+Novel Idea: 75% accuracy in simulating a brain disorder using neuromorphic computing principles   -->
