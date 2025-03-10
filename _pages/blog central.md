@@ -1,4 +1,4 @@
----
+<!-- ---
 permalink: /blog/
 # title: "Other Projects"
 author_profile: true
@@ -50,4 +50,4 @@ Other random thoughts:
 - We are also entering a world with high geopolitical uncertainty. Which direction would this swing AI adoption? I assume there will be high adoption in the National security apparatuses (a la manhattan-style projects)
 
 [0] mvakde.github.io/blog/chat-with-a-nobel-laureate
-[1] mvakde.github.io/blog/jee-was-easy
+[1] mvakde.github.io/blog/jee-was-easy -->
