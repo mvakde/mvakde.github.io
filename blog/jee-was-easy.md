@@ -2,7 +2,8 @@
 title: "JEE was easy"
 permalink: /blog/jee-was-easy/
 ---
-> Hey Alexa, remind me to improve my writing skills.  
+> Okay this should be 2 different blog posts. Split into "Anecdotes about intelligence" and "JEE is easy". Sorry for this mess
+
 Anecdotes about intelligence, and my experience with JEE.
 
 ## Intelligence
@@ -44,9 +45,9 @@ So main thing in common - grokking concepts super fast in any domain, not requir
 Intelligence is not correlated with your JEE rank. Intelligence is correlated with your rank when taking into account the effort put in.
 
 ### How do people generally clear JEE? 
-1) Spend 2-6 years studying for this exam
-2) Study 10+ hours a day
-3) Practice an insane number of questions (30K+ or sometimes even higher than that)  
+1. Spend 2-6 years studying for this exam
+2. Study 10+ hours a day
+3. Practice an insane number of questions (30K+ or sometimes even higher than that)  
 
 Anyone, regardless of intelligence (above a baseline) would qualify if they did this. It becomes a test of grit, not intelligence. The reward of this path is the ability to work hard on anything + decent analytical skills. The entire coaching industry is built around this system.
 
