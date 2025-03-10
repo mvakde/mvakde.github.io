@@ -10,11 +10,11 @@ redirect_from:
 (One full app + Quick MVPs to test user demands)
 - [PatternLogs](https://github.com/mvakde/PatternLogs) - I use this app to track my muscle twitches. They occur in bursts and I match the pattern and intensity of the twitches by tapping on the screen. (TODO - Add the apk and update readme)
 - [Did your doctor Mess up?](https://mvakde.github.io/demo/) - Record the audio of your doctor visit to check if they made a mistake. This seemed popular, got decent usage when I demoed to friends. Built an [alternate version](https://mvakde.github.io/demo2/) as an audio EHR software for doctors. Was not popular. Probably due to low demand.
-- AIIMS Delhi (TODO - Organize the files and upload) - "Which resident is currently on call?" - There is no system in place to know which resident is on call for consults leading to massive delays and medical issues (even deaths sometimes) everyday. It was seriously depressing to explore all the problems in govt. hospitals. 
-- proto-research-paper-finder (TODO - Organize the files and upload): Finding relevant research papers for your disease (this was pre-deepresearch, helped me sometimes come up with new things to read about)
+- [AIIMS Delhi](https://github.com/mvakde/AIIMS-Delhi-Which-Resident-On-Call) - "Which resident is currently on call?" - There is no system in place to know which resident is on call for consults leading to massive delays and medical issues (even deaths sometimes) everyday. It was seriously depressing to explore all the problems in govt. hospitals. 
+- [proto-research-paper-finder](https://github.com/mvakde/proto-research-paper-finder): Finding relevant research papers for your disease (this was pre-deepresearch, helped me sometimes come up with new things to read about)
 
 Others I made and closed quickly:
-- Mood Tracker - For a friend who wanted to track his mental health. He didn't end up using it. No link this for obvious reasons
+- Mood Tracker - For a friend who wanted to track his mental health. He didn't end up using it. No link for obvious reasons
 - Daily Checklist - For another friend who wanted to track her pain levels. She didn't end up using it. No link for obvious reasons
 
 Self initiated project while working at Crux:
