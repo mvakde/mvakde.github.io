@@ -1,5 +1,5 @@
 ---
-permalink: /blog/Novelty
+permalink: /blog/novelty
 title: "Novelty & the chat with a Nobel Laureate"
 redirect_from: 
     - /blog/chat-with-a-nobel-laureate

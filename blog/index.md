@@ -2,10 +2,11 @@
 permalink: /blog/
 title: "Blog"
 ---
-Decided to start blogging 
+Decided to start blogging.  
+> Todo: Split JEE was easy into 2 blog posts. Add Rhabdo incident. Add thoughts about recent media - 3body, pantheon, seveneves. Add Paris trips (citymapper and stuff)
 
 ### [JEE was easy](./jee-was-easy) 10th March 2025
-Anecdotes about intelligence
+Anecdotes about intelligence & My experience with JEE
 
 ### [Chat with a Nobel Laureate](./chat-with-a-nobel-laureate) 10th March 2025
 Reflecting on a chat with the 2016 Nobel Prize Winner J. Michael Kosterlitz
