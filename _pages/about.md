@@ -24,10 +24,10 @@ What I am doing now:
 - Hobbies -->
   
 
-A few claims to fame:  
+<!-- A few claims to fame:  
  - Biohacked my way out of a chronic disease  
  - Saved my own life during a medical emergency  
- - Qualified JEE without really studying (decent score and rank)  
+ - Qualified JEE without really studying (decent score and rank)   -->
 
 > **NOTE**: I am in the process of updating this website. I had made this in college. Expect cringe.  
 > If you're a current student, go to the [**Tutorials**](/tutorials) page for the Quantum Mechanics resources  
