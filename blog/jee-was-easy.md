@@ -2,9 +2,11 @@
 title: "JEE was easy"
 permalink: /blog/jee-was-easy/
 ---
-Misconceptions about JEE and why I found it easy. 
+Misconceptions about JEE and why I found it easy.  
 
-## Points I want to add
+Got some feedback. updating this
+
+<!-- ## Points I want to add
 Most people in IITs aren't smart / IIT people aren't the smartest
 They have a high skill level in one particular domain: JEE/high school analytic tests
 olympiads - possibly smarter - still can be gamed
@@ -45,4 +47,4 @@ Among my 1k batchmates, here are my estimates:
 - If you want to get something like ~100 or below, you'd have to take the "best of both worlds" approach. Memorise the rest of chemistry and practice a decent amount of questions for a few topics like integration in Maths. 
 
 ## Why am I writing this? 
-IITs are viewed as a ticket out of socioeconomic backwardness because the media hypes up the relatively high salaries recieved by graduates. There's a massive industry set up around qualifying it. A section of media revveres people who qualify. Another section considers them trash memorisers.  
+IITs are viewed as a ticket out of socioeconomic backwardness because the media hypes up the relatively high salaries recieved by graduates. There's a massive industry set up around qualifying it. A section of media revveres people who qualify. Another section considers them trash memorisers.   -->
