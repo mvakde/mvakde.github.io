@@ -26,4 +26,4 @@ Other common things I've noticed amongst such folks (not sure why though):
 - willing to stand out
 - high curiosity / question everything
 - cannot stand mediocrity or grift
-- extremely high agency
+- high agency

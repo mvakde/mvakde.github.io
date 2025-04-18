@@ -5,24 +5,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi there! I'm Mithil. I graduated from IIT Bombay with a B.Tech in Engineering Physics. I'm currently a builder / researcher at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company.
-
-
-
-<!-- Contact me if you want to:
-- Collaborate on research ideas -->
-<!-- - Fund my startup -->
-<!-- - Date me  -->
-
-<!-- Other blogs to know more about me
-- My failures 
-(cancelling 3 research projects, depression, foray into placements/non-tech)
-- (Some of) the craziest things I did
-- My Paris trip
-- Hobbies -->
-  
-
-
+Hi there! I'm Mithil. I graduated from IIT Bombay with a B.Tech in Engineering Physics. I'm currently a builder / researcher at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company.  
 
 Here's some cool/stupid shit I've done:
 - Biohacked my way out of a chronic disease  
@@ -30,13 +13,20 @@ Here's some cool/stupid shit I've done:
 - Got stuck solo in a random French city at midnight without a room 
   - Greatest night of my life
 - Slid down a slope in the swiss alps taking a shortcut on a trek
-- Ended up in Italy accidentally due to altitude sickness (unrelated)
+- Ended up in Italy accidentally due to altitude sickness (unrelated to above)
 - Cracked JEE in an extremely unconventional manner
-
 - Accidentally deleted an employee database of Infosys as a kid
 
-My hobbies are dancing and drumming. I also casually play soccer/badminton/snooker (hmu if you're playing in blr!)
+My hobbies are dancing and drumming.  
+I casually play soccer/badminton/snooker (HMU if you're playing in BLR!)
 
 [xeets @evilmathkid](x.com/evilmathkid)  
 [LinkedIn for the cv](www.linkedin.com/in/mvakde)  
 mvakde [11 + 1] at gmail
+
+<!-- Todo?
+- (Some of) the craziest things I did
+- My Paris trip
+- My failures (cancelling 3 research projects, depression, foray into placements/non-tech)
+- Dance videos like Akshay's blog?
+- Chris olah like date me page?-->
