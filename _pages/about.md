@@ -7,6 +7,7 @@ redirect_from:
 ---
 Hi there! I'm Mithil. I graduated from IIT Bombay with a B.Tech in Engineering Physics. I'm currently a builder / researcher at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company.  
 
+---
 Here's some cool/stupid shit I've done:
 - Biohacked my way out of a chronic disease  
 - Saved my own life during a medical emergency 
