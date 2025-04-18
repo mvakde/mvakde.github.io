@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Mithil Vakde"
   avatar           : "profile.jpg "
-  bio              : "B.Tech IIT Bombay Grad<br>Engineering Physics"
+  bio              : "B.Tech @ IIT Bombay<br>Engineering Physics"
   location         : "Bangalore, India"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : "mvakde@iitb.ac.in"
+  email            : #"mvakde@iitb.ac.in"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : #"replacethistwitterhandle"
+  twitter          : "evilmathkid"
   vine             :
   weibo            :
   xing             :
