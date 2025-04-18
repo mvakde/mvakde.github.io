@@ -15,7 +15,7 @@ redirect_from:
 
 Others I made and closed quickly:
 - Mood Tracker - For a friend who wanted to track his mental health. He didn't end up using it. No link for obvious reasons
-- Daily Checklist - For another friend who wanted to track her pain levels. She didn't end up using it. No link for obvious reasons
+<!-- - Daily Checklist - For another friend who wanted to track her pain levels. She didn't end up using it. No link for obvious reasons -->
 
 ## Self initiated project while working at Crux:
 - Extremely quick text-to-sql for a customer: Our text-to-sql product had a latency of 30s-2min depending on the question. I noticed that a particular customer had a limited set of query types. Created a few postgres functions that spanned their entire query space. When the user asked a question in natural language, a tiny Llama model would extract parameters (parameters being SQL operators) for the functions based on examples in the system prompt. The functions were overloaded such that the list of parameters outputted by the llama model was enough to call it. This entire pipeline required ~2s to run. Made this entirely myself

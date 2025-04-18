@@ -4,13 +4,36 @@ permalink: /blog/jee-was-easy/
 ---
 Misconceptions about JEE and why I found it easy.  
 
-Got some feedback. updating this
+See the appendix for the following: (ADD HYPERLINKS) Why am I writing this, proof of all my claims here.
+
+## Why am I writing this?
+(1) My experience with JEE is very unique, (2) the age of LLMs has makes my path much less riskier and (3) JEE is a great demonstration of Goodhart's law
+
+## What is JEE?
+This is the entrance examination for IITs (a group of the top engineering schools in India) and is colloqially considered one of the hardest high school examinations in the world. ~1.5 million kids write it every year, with only the top 10,000 qualifying.
+
+## Misconceptions
+Now that you know all the above, what can you infer?
+| Myth | Fact |
+|--|--|
+| IIT grads are extremely intelligent | They have the skills required to pass competitive analytical examinations - the capability to work extremely hard and above average analytical skills |
+
+I don't mean to shit on all my fellow IIT grads. Due to the competitive nature of the exam, those who pass generally are smarter than average, but not as much as society seems to believe. They do have 2 skills that are extremely valuable - the ability to work extremely hard and analytical problem solving skills.  
+
+
+
+## What should an ideal replacement test for?
+I assume the intent of JEE is to find the smartest/most capable students in India, and reward them with a great education so that they can contribute positively to the country. With this goal in mind, I don't think much needs to be changed about JEE since imo intelligence is overrated and hardworkers better contribute to society. , but But JEE is no longer is a good measure of smartness/capability because of this $3B coaching industry that now revolves it. It is a great demonstration of Goodhart's law:
+> When a measure becomes a target, it ceases to be a good measure
+
+Not everything needs to be changed though. I think intelligence is overrated and an exam that rewards hardworkers is better for society. What I rue? THe "JEE coaching" industry breeds prestige-chasers who often end up in roles that negatively affect society. It squashes both contrarian and critical thinking skills, rewards rote memorisation and leaves a mental toll on a huge number of teenagers every year.
+
+## What are better signals of intelligence?
+- 
+
 
 <!-- ## Points I want to add
-Most people in IITs aren't smart / IIT people aren't the smartest
-They have a high skill level in one particular domain: JEE/high school analytic tests
 olympiads - possibly smarter - still can be gamed
-the adage that when a measure becomes a goal, it stops becoming a good measure
 Smart people are everywhere, not just at IITs. Finding them is hard.
 Jamwal
 JEE might be an antisignal to intellect. It is a good signal for ?? (people who like science?)
@@ -19,12 +42,15 @@ There's a difference between skill level and intellect
 Do I recommend this path? No if you're only goal is getting into IITs. I am just telling you its possible so that those of you who are smart but don't want to slog. Bewarned though. If you are smart enough, slogging will essentially guarantee you qualifying. Concepts is riskier
 List books which you used (Jerry march, etc.)
 It is true that obsession gets you in. Obsess over practice or concepts - your choice. In today's day and age, LLMs should allow you to choose the concepts path.
+Here is my exact score and paper for proof
 
 ## About JEE
 This is the entrance examination for IITs (a group of the top engineering schools in India) and is colloqially considered the hardest high school examination in the world. ~1.5 million kids write it every year, with only the top 10,000 qualifying.
 
 ## Misconceptions
-- JEE is a hard exam
+- Qualifying JEE requires high intellect
+- JEE is a difficult exam to prepare for
+
 
 ## How do people generally clear JEE? 
 1. Spend 2-6 years studying for this exam. Study 10+ hours a day
@@ -47,4 +73,11 @@ Among my 1k batchmates, here are my estimates:
 - If you want to get something like ~100 or below, you'd have to take the "best of both worlds" approach. Memorise the rest of chemistry and practice a decent amount of questions for a few topics like integration in Maths. 
 
 ## Why am I writing this? 
-IITs are viewed as a ticket out of socioeconomic backwardness because the media hypes up the relatively high salaries recieved by graduates. There's a massive industry set up around qualifying it. A section of media revveres people who qualify. Another section considers them trash memorisers.   -->
+IITs are viewed as a ticket out of socioeconomic backwardness because the media hypes up the relatively high salaries recieved by graduates. There's a massive industry set up around qualifying it. A section of media revveres people who qualify. Another section considers them trash memorisers.   
+
+From intelligence blog
+How is this related to JEE? Its a common misconception that scoring high in this exam implies you are smart. I disagree. Scoring high can be done in 2 ways: (1) A lot of time & effort memorizing an insane amount of problems or (2) understanding the theory in depth and solving a few problems. The JEE coaching industry is a system built around the former. Intelligence doesn't really matter for this (though it helps). 
+
+ Almost anyone can do the former. Its Close to 99% of those who score high fall into the former category. 
+ 
+ -->

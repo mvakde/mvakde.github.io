@@ -18,10 +18,10 @@ Novelty would have been useful for Claude while playing Pokemon. It keeps gettin
 
 My hypothesis - stochasticity is one of the core failures of LLMs, even reasoning models. R1 doesn't backtrack in a smart manner on a difficult math problem, its purely statistical. Hence reasoners perform well on problems in training set -> Statistically more likely to produce the right reasoning trace while backtracking. Problems outside the training set? Horrid performance. Clearly RL on reasoning traces can't make the model metalearn a smart way to get out of a local minima. o3 using search on reasoning traces is smarter method, but again not smart enough. I think token generation itself should look different for reasoning traces and normal tokens.
 
-Anecdote about novelty -> My chat with a Nobel Laureate [0](../chat-with-a-nobel-laureate) (Tl;dr: He said he was too stupid to know what he was doing was impossible)
+Anecdote about novelty -> My chat with a Nobel Laureate [[0]](../chat-with-a-nobel-laureate) (Tl;dr: He said he was too stupid to know what he was doing was impossible)
 
 Random thoughts:
-- "Intelligence is data efficiency not capabilities" -> YES. Cannot agree more. Matches my anecdotal experience [1](../jee-was-easy) (Tl;dr: The smartest people learn new skills incredibly fast)
+- "Intelligence is data efficiency not capabilities" -> YES. Cannot agree more. Matches my anecdotal experience [[1]](../anecdotes-on-intelligence) (Tl;dr: The smartest people learn new skills incredibly fast)
 - "Speculation that level 4 paradigm is computationally more expensive / unwieldy" -> I feel the opposite, but I have no evidence for my claim. If Suchir is right, then bad implications for power concentration
 - "Reject embodied" -> Yes. We learn skills in our sleep
 - "Big blobs of compute" -> Right overall conclusion, wrong arguments. Yes, in the contemporary ML, modifying architecture and weights won't give us improvements and working on SGD+DNNs makes sense. But, IMO a new framework is needed. Who knows if terms like weights or architectures would apply when we finally get AGI?
@@ -42,4 +42,4 @@ Other random thoughts:
 - We are also entering a world with high geopolitical uncertainty. Which direction would this swing AI adoption? I assume there will be high adoption in the National security apparatuses (a la manhattan-style projects)
 
 [0] [mvakde.github.io/blog/chat-with-a-nobel-laureate](../chat-with-a-nobel-laureate)
-[1] [mvakde.github.io/blog/jee-was-easy](../jee-was-easy)
+[1] [mvakde.github.io/blog/anecdotes-on-intelligence](../anecdotes-on-intelligence)
