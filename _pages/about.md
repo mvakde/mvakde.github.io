@@ -5,9 +5,13 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi there! I'm Mithil. I graduated from IIT Bombay with a B.Tech in Engineering Physics. I'm currently a builder / researcher at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company.  
+Hi there! I'm Mithil.  
+I graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+I'm currently a builder / researcher at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company. 
 
 ---
+Here's my [blog](/blog/)  
+
 Here's some cool/stupid shit I've done:
 - Biohacked my way out of a chronic disease  
 - Saved my own life during a medical emergency 
@@ -18,8 +22,8 @@ Here's some cool/stupid shit I've done:
 - Cracked JEE in an extremely unconventional manner
 - Accidentally deleted an employee database of Infosys as a kid
 
-My hobbies are dancing and drumming.  
-I casually play soccer/badminton/snooker (HMU if you're playing in BLR!)
+I casually play soccer/badminton/snooker/squash/the drums.  
+HMU if you're playing in blr - always up for a game or for jamming
 
 [xeets @evilmathkid](x.com/evilmathkid)  
 [LinkedIn for the cv](www.linkedin.com/in/mvakde)  
