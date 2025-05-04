@@ -2,7 +2,7 @@
 permalink: /blog/thoughts-on-AGI-essays/
 title: "Thoughts on AGI Essays"
 ---
-[Paras Chopra](https://invertedpassion.com/about/) is starting a long term builders program (deeptech incubator) under lossfunk. This is my answer to one of the questions on the application:  
+[Paras Chopra](https://invertedpassion.com/about/) is starting a long-term deeptech incubator/research program under [Lossfunk](lossfunk.com). This is my answer to one of the questions on the application:  
 > Read these two docs and write a short note about what you think about them (i.e. questions, follow on ideas or what you agree and disagree with)
 > - [Suchir Balaji's note on AGI](https://docs.google.com/document/d/1ItRqrpgQHJ05rQx0zc26t1_NgpUcw3znwTWpXxqH8uI/edit?tab=t.0#heading=h.qslpqdtnxw1r)
 > - [Tyler Cowen on Slow Takeoff](https://marginalrevolution.com/marginalrevolution/2025/02/why-i-think-ai-take-off-is-relatively-slow.html)
