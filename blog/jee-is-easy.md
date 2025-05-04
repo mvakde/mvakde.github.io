@@ -11,9 +11,9 @@ I cleared the JEE exam in an **extremely unconventional** manner. I did not memo
 
 My rank after all this - 1505 (general, no reservation). Pretty good for an exam written by a million people.
 
-Now compare that to what most people who get ranks under 3K do:
+Now compare that to what most people who get ranks under 3000 do:
 1. Study 10-14 hours a day for 2-5 years
-2. Memorise a massive list of formulae (> 5K) and facts (I can't even estimate this)
+2. Memorise a massive list of formulae (> 5K) and facts
 3. Solve an insane number of questions (10K-30K) to the point of memorising question types and their solutions
 4. No social life, no fun, pure cramming
 
@@ -34,7 +34,7 @@ This strategy works if you want a ~600 or lower rank. (In my year, it would have
 If you choose the "best of both worlds" approach, be wary of how much rote memorisation you do. It makes you stupid. Solving a lot of problems sort of mitigates this by forcing you to think, but its still superficial thinking ("How do I manipulate this question so that it fits into this formula I memorised"). 
 
 ---
-A rant:
+P.S.
 This "blindly memorise everything and work insanely hard" mentality that the JEE coaching industry promotes is extremely harmful to you and society. It breeds rat-race loving prestige-chasers who often end up in roles that negatively affect society. It also squashes both your contrarian and critical thinking skills and leaves a mental toll that takes a long time to heal.
 
 
