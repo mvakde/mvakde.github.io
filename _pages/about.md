@@ -7,7 +7,7 @@ redirect_from:
 ---
 Hi there! I'm Mithil.  
 I graduated from IIT Bombay with a B.Tech in Engineering Physics.  
-I'm currently a builder / researcher at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company. 
+I'm a builder at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company. 
 
 ---
 Here's my [blog](/blog/)  
@@ -32,6 +32,5 @@ mvakde [11 + 1] at gmail
 <!-- Todo?
 - (Some of) the craziest things I did
 - My Paris trip
-- My failures (cancelling 3 research projects, depression, foray into placements/non-tech)
-- Dance videos like Akshay's blog?
-- Chris olah like date me page?-->
+- My failures (cancelling 3 research projects, depression, foray into non-tech)
+- Dance videos like Akshay's blog?-->
