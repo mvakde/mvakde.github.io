@@ -2,23 +2,25 @@
 title: "JEE is easy"
 permalink: /blog/jee-is-easy/
 ---
-The JEE coaching system is bullshit and harmful. There is an easier way. Here is how I did it.
+The JEE coaching system is bullshit and harmful. Here's an easier way.
 
 ---
 
 ### What I did
-I cleared the JEE exam in an **extremely unconventional** manner. I did not memorize a single formula (other than fundamental laws/principles) and I barely solved any practice questions. I studied for only ~1 year and for the last 8 months before the exam, I stayed home binging Netflix and Wikipedia instead of going to school. 
+I cleared the JEE exam in an extremely unconventional manner. I skipped 2/3rds of the entire Chemistry syllabus. I also skipped a few topics in Math and Physics. I did not memorize a single formula (other than fundamental laws/principles) and I barely solved any practice questions. 
+
+Also, I studied for only ~1 year, ran away from my boarding school/coaching centre and for the last 8 months before the exam, I stayed home binging Netflix and Wikipedia instead of going to school. 
 
 My rank after all this - 1505 (general, no reservation). Pretty good for an exam written by a million people.
 
 Now compare that to what most people who get ranks under 3000 do:
-1. Study 10-14 hours a day for 2-5 years
+1. Study 10-14 hours a day, 7 days a week for 2-5 years
 2. Memorise a massive list of formulae (> 5K) and facts
 3. Solve an insane number of questions (10K-30K) to the point of memorising question types and their solutions
 4. No social life, no fun, pure cramming
 
 ### Okay how?
-The core difference in my approach is that I spent an unreasonable amount of time on conceptual understanding and zero time on rote memorisation.
+The core difference in my approach is that I spent an *unreasonable* amount of time on conceptual understanding and zero time on rote memorisation.
 - Understand the concepts deeply, and practice ~10 difficult questions per chapter. (That's all I did. This is enough for all of Physics, most of Maths and a third of chemistry.)
 - To understand the concepts, I had a book where I broke down each and every concept. (I didn't know any formulae by heart, but I could derive every single one of them.)
 - Skip the rest of the chapters. (I skipped all the memorisation heavy stuff - all of inorganic and organic chemistry, integral calculus, etc.)  

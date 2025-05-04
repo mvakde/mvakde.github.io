@@ -7,7 +7,8 @@ Decided to start blogging.
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
 ### [JEE is easy](./jee-is-easy) 4th May 2025  
-The JEE coaching system is bullshit and harmful. There is an easier way. Here is how I did it.  
+The JEE coaching system is bullshit and harmful.  
+Here's an easier way.
 
 ### [Anecdotes on intelligence](./anecdotes-on-intelligence) 10th March 2025
 Interesting stories of some of the smartest people I know
