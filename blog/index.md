@@ -10,8 +10,8 @@ Decided to start blogging.
 The JEE coaching system is bullshit and harmful.  
 Here's an easier way.
 
-### [Anecdotes on intelligence](./anecdotes-on-intelligence) 10th March 2025
-Interesting stories of some of the smartest people I know
+<!-- ### [Anecdotes on intelligence](./anecdotes-on-intelligence) 10th March 2025
+Interesting stories of some of the smartest people I know -->
 
 ### [Chat with a Nobel Laureate](./chat-with-a-nobel-laureate) 10th March 2025
 Reflecting on a chat with Mike Kosterlitz (2016 Nobel in Phy)
