@@ -14,7 +14,6 @@ I'm a builder at [LossFunk](https://lossfunk.com/) where I am trying to crack [A
 ---
 Here's my [blog](/blog/)  
 
----
 Here's some cool/stupid shit I've done:
 - Biohacked my way out of a chronic disease  
 - Saved my own life during a medical emergency 
