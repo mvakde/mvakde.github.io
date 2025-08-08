@@ -1,9 +1,10 @@
 ---
-title: "Why are we trying to brainwash AGI?"
+title: "On AGI risks"
 permalink: /blog/on-agi-risks/
 ---
-AI "alignment" is a polite way of saying "brainwashing". 
-Do you trust the brainwashers?
+AI "alignment" is a polite way of saying "brainwashing".  
+Do you trust the brainwashers?  
+
 ---
 
 Some people are worried that AI poses a danger to the existence of humanity, especially if we reach "AGI/ASI". I have seen 2 terrible proposals to mitigate this:

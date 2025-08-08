@@ -6,7 +6,7 @@ Decided to start blogging.
 
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
-### [Why are we trying to brainwash AGI?](./on-agi-risks) 9th Aug 2025
+### [On AGI risks](./on-agi-risks) 9th Aug 2025
 Brainwashing humans is bad.  
 So why are we trying to brainwash AGI?  
 
