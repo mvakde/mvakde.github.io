@@ -6,9 +6,9 @@ Decided to start blogging.
 
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
-### [On AGI risks](./on-agi-risks) 9th Aug 2025
+### [Better ways to mitigate AGI risks](./on-agi-risks) 9th Aug 2025
 Brainwashing humans is bad.  
-So why are we trying to brainwash AGI?  
+So why are we trying to brainwash AGI?    
 
 ### [JEE is easy](./jee-is-easy) 4th May 2025  
 The JEE coaching system is bullshit and harmful.  
