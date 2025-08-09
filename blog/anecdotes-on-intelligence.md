@@ -1,6 +1,6 @@
 ---
 title: "Anecdotes on intelligence"
-permalink: /blog/anecdotes-on-intelligence/
+permalink: /blog/anecdotes-on-intelligence-sklfjnfaskjfnasjfnadsjfnkasjnkdnfksdajnfnksadj/
 ---
 I've met a lot of smart people in my life. I'm compiling interesting stories here (ongoing)
 
