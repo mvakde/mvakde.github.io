@@ -42,10 +42,13 @@ In fact, every single human (nature's equivalent of AGI) is already capable is d
 
 ## Rebuttals
 > playing devil’s advocate, why do you think nonproliferation of AI research wont work? it did work with nuclear weapons  
+
 - Nuclear non-proliferation didn't really work. India, Pak, South Africa, North Korea and Israel were successful. Apart from that, there is also the existence of Nuclear threshold states like Japan  
 - If one of the 2 giants (US and China) succeed in building AGI, I don't see how it is possible to stop the other one. Maybe if AGI allows one country to become way more powerful than the other almost immediately, but I find this very hard to believe this extremely hard takeoff scenario  
 - If both the giants succeed, then maybe there is a case for them stopping the rest of the world, but even then it requires an implicit assumption that AI research will always require extreme amounts of compute. We don't have concrete evidence that the final AGI algorithm can't be tiny or easy to run on cheap hardware. (This might be a controversial opinion lol)  
 - Lastly there is hardly any AI secrets in the world today. I think there will be a "4-min mile" like effect where once someone shows its possible, everyone will follow really fast  
+
+
 ---
 P.S.  
 Sometimes all of this seems silly when we can barely agree on what intelligence means. I'm still not sure we won't hit a wall.
