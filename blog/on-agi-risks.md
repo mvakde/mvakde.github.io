@@ -50,6 +50,7 @@ In fact, every single human (nature's equivalent of AGI) is already capable is d
 
 
 ---
+
 P.S.  
 Sometimes all of this seems silly when we can barely agree on what intelligence means. I'm still not sure we won't hit a wall.
 
