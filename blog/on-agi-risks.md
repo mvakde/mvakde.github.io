@@ -38,7 +38,9 @@ Best case scenario is if it turns out that AGI requires trillions of dollars to 
 
 Humans are really good at inventing new X-risks. Nukes, drones and bioweapons already exist. Research in almost any domain will lead to more such inventions (Eg: fusion research -> relativistic weapons). But this same tech progress is what makes everyone's lives better. AI is a double boost in that sense. We can accellerate all research fields at the same time. Are you willing to give up potential cancer cures in the fear of bioweapons? 
  
-In fact, every single human (nature's equivalent of AGI) is already capable is doing great damage. For damage on a mass scale - it isn't too hard to build bioweapons in your own house today. For damage on a small scale, we often forget how powerful we are as individuals too. A single punch can kill another human. A small tool like a knife can kill/permanently damage 10s of people. Mass shootings happen with a gun every other day. We can't forever live in fear of our own capabilities as a species. This is a barrier that we will have to cross someday or the other. 
+In fact, every single human (nature's equivalent of AGI) is already capable is doing great damage. For damage on a mass scale - it isn't too hard to build bioweapons in your own house today. For damage on a small scale, we often forget how powerful we are as individuals too. A single punch can kill another human. A small tool like a knife can kill/permanently damage 10s of people. Mass shootings happen with a gun every other day.  
+
+We can't forever live in fear of our own capabilities as a species. This is a barrier that we will have to cross someday or the other. 
 
 ## Rebuttals
 > playing devil’s advocate, why do you think nonproliferation of AI research wont work? it did work with nuclear weapons  
