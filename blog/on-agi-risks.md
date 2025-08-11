@@ -26,7 +26,7 @@ Even if safety research itself is not dangerous, it is making us complacent. Too
 
 We should also pour money into thinking about alternate solutions. One example is research that makes humans much much smarter. Other examples include:
 
-> TODO: add a list here 
+> TODO: add a list here   
 > I don't have more ideas rn so yes this is a cop-out. But I will get back
 
 There is one idea I have seen floating around a lot - "Ban AI research itself". I think this is even worse.
@@ -47,4 +47,4 @@ P.S.
 Sometimes all of this seems silly when we can barely agree on what intelligence means. I'm still not sure we won't hit a wall.
 
 P.P.S.  
-All the discourse today reminds me of the UV .catastrophe 
+All the discourse today sounds like the physics discourse you read about right before the UV .catastrophe 
