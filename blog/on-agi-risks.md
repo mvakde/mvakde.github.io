@@ -55,5 +55,5 @@ P.S.
 Sometimes all of this seems silly when we can barely agree on what intelligence means. I'm still not sure we won't hit a wall.
 
 P.P.S.  
-All the discourse today sounds like the physics discourse you read about right before the UV .catastrophe 
+All the discourse today sounds like the physics discourse right before the UV .catastrophe 
 
