@@ -17,7 +17,7 @@ Here's my [blog](/blog/)
 Here's some cool/stupid shit I've done:
 - Biohacked my way out of a misdiagnosed health condition 
 - Saved my own life during a medical emergency 
-- Cracked JEE in an [extremely unconventional manner](./blog/jee-is-easy.md)
+- Cracked JEE in an [extremely unconventional manner](./blog/jee-is-easy)
 - Got stuck solo in a random French city at midnight without a room 
   - Greatest night of my life
 - Slid down a slope in the swiss alps taking a shortcut on a trek
