@@ -5,7 +5,7 @@ title: "Why all ARC solvers fail today (and how to fix them)"
 
 <figure>
   <img src="../img-hero.png" alt="my alt text"/>
-  <span style = "text-align:center;"><figcaption><b>Sneak Peak</b>: Before and after solving the flaw</figcaption></span>
+  <span style = "text-align:center;"></span>
 </figure>
 <!-- {Sneak peak: Before/after} -->
 
