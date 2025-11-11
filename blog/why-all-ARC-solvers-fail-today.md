@@ -24,7 +24,7 @@ Blog outline:
 
 
 ## Introduction
-This ideas in this blog are built on the MDL principle:
+The ideas in this blog are built on the MDL principle:
 > **Minimum Description Length**  
 > The best model describes the data (and itself) in the fewest bits
 
@@ -34,13 +34,16 @@ If you take MDL seriously, then every current ARC-AGI solver has a fatal flaw:
 > **Fatal flaw**  
 > Not compressing all available data
 
-These are  3 uncompressed data sources. At least one is always ignored:
+Specifically, there are  3 uncompressed data sources.  
+Every approach ignores at least one:  
  - example input grids
  - test input grids
  - private puzzles
 
 Instead of fixing the flaw, solvers rely on human scaffolding (augmentations, architectures and DSLs).  
-This is bad: It is not scalable, is mathematically unnecessary and can backfire
+This is bad: It is not scalable, is mathematically unnecessary and can backfire  
+
+First, let's look at the fatal flaw  
 
 ## Uncompressed data sources
 We'll explore each data source use this naive approach[^1]:
@@ -50,10 +53,10 @@ We'll explore each data source use this naive approach[^1]:
 
 This looks like MDL, but it is mathematically wrong.  
 It leaves all 3 sources uncompressed
-### 1) Example inputs
+### <span style = "font-size:1.25em;">Source 1: Example inputs</span>
 <figure>
   <img src="../img-inputs-compressible.png" alt="my alt text"/>
-  <span style = "text-align:center;"><figcaption>Fig 2: The example pairs of a particular puzzle. The inputs are highlighted in pink. <br> Clearly they have common patterns</figcaption></span>
+  <span style = "text-align:center;"><figcaption>Fig 2: The example pairs of a particular puzzle. The inputs are highlighted in pink.  Clearly they have common patterns</figcaption></span>
 </figure>
 
 In the naive solver, $P$ *consumes* the input and *produces* the output.  
@@ -67,7 +70,7 @@ $$D_E = (I_1, O_1, \dots, I_n, O_n).$$
 Each grid is expensive to describe (~=3000 bits), so $D_E$ is long.  
 
 **Naive method**:  
-We search for the shortest $P$ such that $P(I_k) = O_k$ for all $k$.  
+We find the shortest $P$ such that $P(I_k) = O_k$ for all $k$.  
 We can now shorten the description: 
   
 $$\boxed{D_E = \big(I_1, \dots, I_n, \text{"apply on every input"}, P\big).}$$
@@ -76,9 +79,10 @@ Look closely:
 This only replaces the ***outputs*** by a short program.   
 The inputs $I_1,\dots,I_n$ are still listed verbatim, so they are not compressed at all.  
 
-But in ARC the inputs are highly regular and compressible. This means a shorter description exists. Eg: In Fig 2, all example inputs share obvious structure: same kinds of red squares, same object layouts, same background patterns, etc. These patterns can be used to compress the input.  
+This is terrible because the input grids in ARC are highly regular and compressible. This means a shorter description definitely exists.  
+(Eg: In Fig 2, all example inputs share obvious structure: same kinds of red squares, same object layouts, same background patterns, etc. These patterns can be used to compress the input.)  <!-- maybe add path TM exception-->
 
-Hence, the naive method violates MDL: **we know $D_E$ can be shortened further.[^2]**  
+In short, the naive method violates MDL: **we know $D_E$ can be shortened further.[^2]**  
 
 **Better alternative:**  
 Instead, let's find a program $F$ such that $F(k) = (I_k,O_k)$
@@ -86,14 +90,14 @@ Immediately we have a much shorter description[^3]:
   
 $$\boxed{D_E = \big(\text{"for every integer from 1 to n, apply"}, F\big).}$$  
   
-Here $F$ jointly explains **both** inputs and outputs. Any regularity that appears in *either* the inputs, the outputs, or their relationship can be folded into a single short program.   
+Here $F$ jointly compresses **both** inputs and outputs. Any regularity that appears in *either* the inputs, the outputs, or their relationship can be folded into a single short program.   
 
-This is strictly a better compression[^3] than only explaining $O_k$ given $I_k$.  
+This is strictly a better compression[^4] than only explaining $O_k$ given $I_k$.  
 
 The only approach doing this is CompressARC (though it still has problem 2).
 
 
-> We can generalise this:
+> We can generalise this concept:
 > > Whenever datasets $A$ and $B$ share **mutual information**,  
 > > compressing them **together** is shorter (in bits) than separately
 > 
@@ -103,14 +107,14 @@ The only approach doing this is CompressARC (though it still has problem 2).
 > Eg: Both the inputs and outputs are grids built from the same kinds of objects, shapes, colors, symmetries, etc.
 > 
 > Notes:
-> - This can be made technically sound with Kolmogorov complexity[^4]
-> - Jointly modelling inputs and outputs feels strange from a supervised-learning perspective, but we already do this in many self-supervised setups (e.g. language modelling)
+> - This can be made technically sound with Kolmogorov complexity[^5]
+> - Jointly[^6] modelling inputs and outputs feels strange from a supervised-learning perspective, but we already do this in many self-supervised setups (e.g. language modelling)
 >  
   
-Using this principle, the next 2 data sources are easy to explain:
+This generalised principle makes it easy to prove the MDL violation for the next 2 uncompressed sources:  
 
 
-### 2) Private puzzles
+### <span style = "font-size:1.25em;">Source 2: Private puzzles</span>
 <figure>
   <img src="../img-concept-reused.png" alt="my alt text"/>
   <span style = "text-align:center;"><figcaption>Fig 3. Multiple puzzles use the same concept - "fill in the blanks"</figcaption></span>
@@ -118,18 +122,22 @@ Using this principle, the next 2 data sources are easy to explain:
 There is a HUGE amount of mutual information among all puzzles.  
 
 1. Every puzzle in ARC is built using the same basic concepts like objectness, geometric transforms, etc.  
-2. Almost all concepts needed for the eval puzzles already appear in the train puzzles. Eg: occlusion, symmetry, color swaps, etc.  
+2. Crucially, almost all concepts needed for the eval puzzles already appear in the train puzzles. Eg: occlusion, symmetry, color swaps, etc.  
   
-Now we apply the same (generalised) argument: MDL demands compressing ALL the puzzles together (including the private ones) because they share common patterns. Hence, the naive solver fails again - it trains on each puzzle separately.  
-  
-Notes:
-- This is why "test time training" was a big deal. It jointly[^5] compressed train puzzles offline and private puzzles during runtime. (However, all current implementations still have problems 1 and 3. They ignore the inputs)  
-- This also explain why "No-pretraining" methods like CompressARC and NCAs are suboptimal MDL wise. They compress each puzzle separately  
+Now we apply the same (generalised) argument:  
+Because every puzzle shares common patterns, MDL demands compressing ALL of them  together, **including the private ones**.  
 
-### 3) Test inputs
+Hence, the naive solver fails again - it trains on each puzzle separately. (This also applies to "no-pretraining" methods like CompressARC and NCAs)
+  
+#### Test time training
+The need to compress private puzzles implies that test time training is 100% necessary.  
+Every approach must train on the public puzzles offline AND on the private puzzles during runtime.  
+However, all current "test time training" methods are suboptimal because they ignore data sources 1 and 3
+
+### <span style = "font-size:1.25em;">Source 3: Test inputs</span>
 <figure>
   <img src="../img-test-input.png" alt="my alt text"/>
-  <span style = "text-align:center;"><figcaption>Fig 4. The test input shares common patterns with the example grids. <br> Note that it has some extra information: rotation equivariance</figcaption></span>
+  <span style = "text-align:center;"><figcaption>Fig 4. The test input shares common patterns with the example grids.  Note that it has some extra information: rotation equivariance</figcaption></span>
 </figure>
 
 The test grid in the figure clearly shares patterns with the example grids. Hence, MDL says compressing them jointly will improve performance (same mutual info argument). Obviously, this proves that the naive method fails too.  
@@ -145,25 +153,28 @@ Vanilla MDL applies ONLY when training and inference are from the **same** distr
   
 Luckily, jointly compressing the example pairs and train input grids does exactly this.  
   
- *"But wait, unsupervised generalisation happens on different distributions!"*  
+ *"Doesn't unsupervised generalisation happens on different distributions"*  
   
 No, generalisation only happens AFTER you jointly compress some part of the new distribution.  
 Eg: Base LLMs are terrible chatbots. They only become good at chatting AFTER they are trained on chat conversations (supervised finetuning).  
   
-**The “none of these solvers should work” problem**  
-Right now, CompressARC is the only approach that actually compresses the test inputs.    
-From an MDL perspective, **none of the other solvers should work at all!**   
-The distribution shift should make them score 0  
+**Wait, then most ARC solvers are dead on arrival!**  
+Yeah, the only approach today that compresses the test inputs is CompressARC
+The rest should all score 0 since they can't generalise across the distribution shift  
   
-So why do they still get a non-zero score? Turns out:  
+Obviously, many of them do get a non-zero score. This is because:  
 1. In some puzzles $\mathcal{f}$ is an identity transform. Here, MDL works  
-2. Some puzzles reuse $\mathcal{f}$ from the example grids of other puzzles. Here too, MDL works.  
-3. Some approaches are designed with hardcoded augmentations, DSLs and network architectures.  
+2. Some puzzles reuse $\mathcal{f}$ from the example grids of other puzzles. (This makes $\mathcal{f}$ a part of $X$, hence MDL works)  
+3. Some approaches are designed with hardcoded augmentations or special DSLs/architectures.  
+
 
 (3) is actually very problematic.  
-It works by either hardcoding $\mathcal{f}$ into the model or expanding $X$ into a superset of $\mathcal{f}(X)$, which allows MDL to apply again. However such human intervention is anti-bitter lesson, is not scalable and goes against the spirit of the benchmark. It should not be done.  
+Special architectures/DSLs  essentially bake $\mathcal{f}$ into the model itself. Augmentations expand $X$, making it a superset of $\mathcal{f}(X)$. Both these tricks allow MDL to apply again. 
 
-We discuss this hardcoding below.
+However such human intervention is **anti-bitter lesson**.  
+It is not scalable and goes against the spirit of the benchmark. It should not be done.  
+
+We discuss this below.
 ## Human interventions 
 ### Hardcoding augmentations
 Augmentations can make a lot of puzzles trivial to solve. We just discussed why this happens - it expands the train distribution to cover the test distribution. For example, a tiny NCA model immediately solves this when augmented:
@@ -174,7 +185,7 @@ Augmentations can make a lot of puzzles trivial to solve. We just discussed why 
 </figure>
 
 But augmentations can also make a puzzle impossible to solve. 
-In this puzzle for example, an AI model might memorise brown to be filling color. It won't know what to do when it sees the test input:
+In this puzzle for example, an AI model might memorise brown to be filling color. It won't know what to do when it sees the test input: <!-- fix this fool -->
 
 <figure>
   <img src="../img-bad-augment.png" alt="my alt text"/>
@@ -182,10 +193,10 @@ In this puzzle for example, an AI model might memorise brown to be filling color
 </figure>
 
 Theoretically, augmentations are unnecessary. 
-By definition, a Kolmogorov compressor with access to all data will solve the puzzle without augmentations.[^5] Augmentations can only worsen its performance (by contradicting correct information)
+By definition, a Kolmogorov compressor with access to all data will solve the puzzle without augmentations.[^7] Augmentations can only worsen its performance (by contradicting correct information)
 
 So if your AI model _needs_ augmentations, that means:
-- it is a weak compressor (and the augmentation transforms the data into a format it recongises) or
+- it is a weak compressor (augmentation transforms data into a format it recongises) or
 - it forgot to compress some necessary source of data (and the augmentation is accidentally leaking bits from here)
 
 Keeping the math aside, the main problem is that it is hardcoded
@@ -246,6 +257,7 @@ If you can repeatedly violate these predictions, the theory in this post is wron
 [^1]: Everything below applies to deep learning just as well as program synthesis. Gradient descent is just a locally aware search algorithm. A Neural network is a set of programs. Each unique weights combination corresponds to one program  
 [^2]: There are some technical caveats here. It is possible to find a pathological turing machine where this is the best compression, but a more careful application of MDL avoids this.  
 [^3]: These comparisons hold asymptotically. The original length is ~$O(2n)$ bits. Naive solver costs  ~$O(n) + O(1)$ bits. Alternate solver costs  $O(log(n)$ bits  
-[^4]:  $$KC(X|Y) \le KC(X) + O(1)$$ but some caveats  
-[^5]: Technically, there are 2 types of compression possible here: *conditional* and *joint*. We use it interchangeably because you can prove that both are better than isolated compression.  
-[^6]: Unless you're in a pathological turing machine. If that's the case, move to a better one.  
+[^4]: explain this fool
+[^5]: with some caveats  $KC(X\|Y) \le KC(X) + O(1)$  
+[^6]: Technically, there are 2 types of compression possible here: *conditional* and *joint*. We use it interchangeably because you can prove that both are better than isolated compression.  
+[^7]: Unless you're in a pathological turing machine. If that's the case, move to a better one.  
