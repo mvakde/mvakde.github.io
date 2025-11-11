@@ -213,11 +213,11 @@ For example, the puzzle above requires partial color equivariance. If you bake i
 ## Testable predictions  
   
 **Predictions**:  
-1. EVERY approach today can be improved by compressing the ignored sources of data  
-2. In EVERY approach, handcrafted tricks can be removed without reducing accuracy  
-3. In SOME approaches, removing handcrafted tricks will increase performance  
+1.⁠ Every solver will improve once it starts compressing currently ignored data sources  
+2.⁠ ⁠Once those are compressed, handcrafted tricks can be removed without losing performance  
+3.⁠ ⁠For some methods, performance will improve when you remove the tricks
   
-Note that the modifications required to execute (2) and (3) might be very complex.  
+Note that the modifications required to execute (2) and (3) might be very complex.  The appendix lists the ignore 
 
 ***Steps to test***  
 1. Take any ARC-AGI approach  
@@ -233,21 +233,21 @@ If you can repeatedly violate these predictions, the theory in this post is wron
 
 | Approach | Uncompressed Test Input | Uncompressed Example Inputs  | Uncompressed Private Puzzles | Human Intervention | Comments |  
 | --- | --- | --- | --- | --- | --- |  
-| [MindsAI (TTFT, AIRV)](https://arxiv.org/pdf/2506.14276)  | ✓   | ✓ | ✓ (inputs in private puzzles uncompressed) | Augmented puzzles |  |  
+| [MindsAI (TTFT, AIRV)](https://arxiv.org/pdf/2506.14276)  | ✓   | ✓ | ✓ (example outputs are compressed though) | Augmented puzzles |  |  
 |[Combining induction and transduction](https://arxiv.org/pdf/2411.02272) (both approaches) | ✓ | ✓ | ✓ | Large synthetic dataset |  |  
 | [CompressARC](https://iliao2345.github.io/blog_posts/arc_agi_without_pretraining/arc_agi_without_pretraining.html)   | | | ✓ | special decoder architecture with ARC-related biases |   |  
+| [TRM](https://github.com/SamsungSAILMontreal/TinyRecursiveModels) / [HRM](https://github.com/sapientinc/HRM) |✓ | ✓ | ✓ (example outputs are compressed though) | Augmented puzzles | |
+| [ARChitects](https://da-fr.github.io/arc-prize-2024/the_architects.pdf) |✓ | ✓ | ✓ (example outputs are compressed though)| Augmentations |  |
+| [Surprising Effectiveness of Test-Time Training](https://ekinakyurek.github.io/papers/ttt.pdf) | ✓ | ? | ✓ (coz test inputs uncompressed) | Synthetic dataset | training on example inputs performed worse for them, but lots of confounding factors  |
+| [Ouellette' Neurally-Guided Program Induction](https://arxiv.org/html/2411.17708v1)| ✓ | ✓ | ✓ | hardcoded DSL + synthetic data | |
+| [OmniARC](https://ironbar.github.io/arc24/05_Solution_Summary/) |  | ✓ | ✓ (example outputs are compressed though) | puzzle augmentations, extra datasets | TBD. | 
 | [Latent program network](https://arxiv.org/pdf/2411.08706) | ✓ | ✓  | ✓ |  Augmented puzzles | Searches in latent space for a function that solves the example pairs; encoder/decoder conditioned on the train set. |  
 | [Greenblatt's "Draw more samples"](https://blog.redwoodresearch.org/p/getting-50-sota-on-arc-agi-with-gpt) | ✓ (only on private set) | ✓ (only on private set) | ✓ | Some, [mentioned here](https://blog.redwoodresearch.org/i/145731248/appendix-a-bunch-of-tricks-used-in-my-solutions)  | Frontier LLMs likely trained on public set |  
 | [Evolutionary Test-time compute](https://jeremyberman.substack.com/p/how-i-got-the-highest-score-on-arc-agi-again)   | ✓ (only on private set) | ✓ (only on private set) |✓ | -  | Frontier LLMs likely trained on public set |  
 | [Efficient Evolutionary Program Synthesis](https://ctpang.substack.com/p/arc-agi-2-sota-efficient-evolutionary) | ✓ (only on private set) | ✓ (only on private set) |✓ | - | Frontier LLMs likely trained on public set |  
 | [Icecuber](https://github.com/victorvikram/ARC-icecuber) | ✓ | ✓ | ✓ | Intentionally designed DSL |  |  
-| [A 2D nGPT Model for ARC Prize](https://www.kaggle.com/competitions/arc-prize-2024/discussion/545844)| ✓ | ✓ | ✓ (inputs in private puzzles uncompressed)| Augmented puzzles |  |  
-| [Partial Functions](https://github.com/cristianoc/arc-agi-2-abstraction-dataset/blob/main/dsl/arc_model_domains.pdf) | ? | ✓ | ✓ | - | This is a theoretical approach. Maximises a score over programs that solve example pairs and whose domain includes the test input; I am unsure if the domain restriction leads to some amount of test input compression |  
-<!-- | `TRM***` | | | | TBD | TBD. |
-| `ARChitects***` | | | | TBD | TBD. |
-| `Ekin Akyürek***` | | | | TBD | TBD. |
-| [`Ouellette`](https://arxiv.org/html/2411.17708v1)***| | | | TBD | TBD. |
-| `OmniARC***` | | | | TBD | TBD. | -->
+| [A 2D nGPT Model for ARC Prize](https://www.kaggle.com/competitions/arc-prize-2024/discussion/545844)| ✓ | ✓ | ✓ (example outputs are compressed though)| Augmented puzzles |  |  
+| [Partial Functions](https://github.com/cristianoc/arc-agi-2-abstraction-dataset/blob/main/dsl/arc_model_domains.pdf) | ? | ✓ | ✓ | - | (Theoretical approach) Domain restriction might cause some test input compression |  
 
 [^1]: Everything below applies to deep learning just as well as program synthesis. Gradient descent is just a locally aware search algorithm. A Neural network is a set of programs. Each unique weights combination corresponds to one program  
 [^2]: There are some technical caveats here. It is possible to find a pathological turing machine where this is the best compression, but a more careful application of MDL avoids this.  
