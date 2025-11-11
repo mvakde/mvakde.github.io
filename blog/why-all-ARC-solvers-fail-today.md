@@ -1,8 +1,7 @@
 ---
 permalink: /blog/why-all-ARC-solvers-fail-today/
+title: "Why all ARC solvers fail today (and how to fix them)"
 ---
-
-# Why all ARC solvers fail today (and how to fix them)
 
 <figure>
   <img src="../img-hero.png" alt="my alt text"/>
