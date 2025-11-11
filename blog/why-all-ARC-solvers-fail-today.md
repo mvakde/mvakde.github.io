@@ -2,6 +2,7 @@
 permalink: /blog/why-all-ARC-solvers-fail-today/
 title: "Why all ARC-AGI solvers fail today (and how to fix them)"
 ---
+Twitter thread: https://x.com/evilmathkid/status/1988233092663050340
 
 <figure>
   <img src="../img-hero.png" alt="my alt text"/>
