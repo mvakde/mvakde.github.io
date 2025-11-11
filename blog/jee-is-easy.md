@@ -2,7 +2,9 @@
 title: "JEE is easy"
 permalink: /blog/jee-is-easy/
 ---
-The JEE coaching system is bullshit and harmful. Here's an easier way.
+> JEE is a tough exam written by a million students. There is a massive industry around tutoring students for this exam that pushes kids to study insanely hard.  
+
+Here's an easier way.
 
 ---
 

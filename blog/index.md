@@ -6,16 +6,17 @@ Decided to start blogging.
 
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
-### [Better ways to mitigate AGI risks](./on-agi-risks) 9th Aug 2025
+### [Why all ARC-AGI solvers fail today (and how to fix them)](./why-all-ARC-solvers-fail-today) 11th Nov 2025
+Reason: They all leave some data uncompressed.  
+Fixing this will boost accuracy and allow us to drop hard-coded tricks like augmentations. 
+
+### [We should diversify AI safety research](./on-agi-risks) 9th Aug 2025
 Brainwashing humans is bad.  
-So why are we trying to brainwash AGI?    
+Is brainwashing AGI the only solution to safety?
 
 ### [JEE is easy](./jee-is-easy) 4th May 2025  
 The JEE coaching system is bullshit and harmful.  
 Here's an easier way.
-
-<!-- ### [Anecdotes on intelligence](./anecdotes-on-intelligence) 10th March 2025
-Interesting stories of some of the smartest people I know -->
 
 ### [Chat with a Nobel Laureate](./chat-with-a-nobel-laureate) 10th March 2025
 Reflecting on a chat with Mike Kosterlitz (2016 Nobel in Phy)
