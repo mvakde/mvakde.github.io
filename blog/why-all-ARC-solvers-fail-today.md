@@ -1,6 +1,6 @@
 ---
 permalink: /blog/why-all-ARC-solvers-fail-today/
-title: "Why all ARC solvers fail today (and how to fix them)"
+title: "Why all ARC-AGI solvers fail today (and how to fix them)"
 ---
 
 <figure>
@@ -10,12 +10,14 @@ title: "Why all ARC solvers fail today (and how to fix them)"
 <!-- {Sneak peak: Before/after} -->
 
 Every solver today fails because it leaves some data uncompressed.  
+
 Fixing this will boost accuracy and allow us to drop hard-coded tricks like augmentations. 
 
-Blog outline:
-- there are 3 uncompressed data sources (each omission violates MDL)
-- compressing each one mathematically boosts performance 
+Outline:
+- there are 3 uncompressed data sources
+- compressing each one will boost performance mathematically
 	- this explains why "test time training" is necessary
+
 - augmentations / other tricks are unnecessary and can backfire
 - simple predictions you can falsify
 
@@ -23,30 +25,38 @@ Blog outline:
 ## Introduction
 The ideas in this blog are built on the MDL principle:
 > **Minimum Description Length**  
-> The best model describes the data (and itself) in the fewest bits
+> The best AI model describes the data (and itself) in the fewest bits
 
-This essentially says "better compression leads to higher intelligence"
+This act of describing lots of data in very few "bits" (read: words) is called compression.  
 
-If you take MDL seriously, then every current ARC-AGI solver has a fatal flaw:  
-> **Fatal flaw**  
-> Not compressing all available data
+MDL says that a more intelligent AI model will compresses its training dataset better
 
-Specifically, there are  3 uncompressed data sources.  
-Every approach ignores at least one:  
+If "compression" sounds weird anywhere, replace it with "is trained to predict"
+
+---
+[ARC-AGI](https://arcprize.org/play?task=3e6067c3) is a  benchmark that tests how well your AI model can solve simple spatial puzzles.  
+
+Every AI model today fails at it.  
+
+I claim  this is because **no AI model compresses all data sources** provided by ARC.  
+
+Specifically, there are  3 uncompressed sources:  
  - example input grids
  - test input grids
  - private puzzles
 
-Instead of fixing the flaw, solvers rely on human scaffolding (augmentations, architectures and DSLs).  
-This is bad: It is not scalable, is mathematically unnecessary and can backfire  
+Instead of fixing this flaw, **approaches today rely on human scaffolding** 
+(This means hardcoded data augmentations, special architectures and custom DSLs)  
 
-First, let's look at the fatal flaw  
+This is bad - It is not scalable, is mathematically unnecessary and can backfire  
+
+First, let's look at the   
 
 ## Uncompressed data sources
-We'll explore each data source use this naive approach[^1]:
-> **Naive solver:**  
+We'll explore each data source use this naive approach[^1]:  <!-- wtf is this line bro -->
+> **Naive AI model:**  
 > Given an ARC puzzle,  
-> find the shortest program $P$ such that $P(\text{Input}) = \text{Output}$ for all example pairs.
+> Find the shortest program $P$ such that $P(\text{Input}) = \text{Output}$ for all example pairs.
 
 This looks like MDL, but it is mathematically wrong.  
 It leaves all 3 sources uncompressed
@@ -217,17 +227,18 @@ For example, the puzzle above requires partial color equivariance. If you bake i
 2.⁠ ⁠Once those are compressed, handcrafted tricks can be removed without losing performance  
 3.⁠ ⁠For some methods, performance will improve when you remove the tricks
   
-Note that the modifications required to execute (2) and (3) might be very complex.  The appendix lists the ignore 
+The modifications required to execute (2) and (3) might be very complex.  
 
-***Steps to test***  
-1. Take any ARC-AGI approach  
-2. Identify a datasource it currently ignores (appendix lists them all)  
-3. Add the simplest possible component that explicitly compresses that data source, keeping everything else fixed. Loop till all sources compressed  
-	- Prediction: the ARC score improves  
-4. Only after step 3, remove one handcrafted trick (appendix lists them all)  
-	- Prediction: the score stays the same or increases.  
-  
-If you can repeatedly violate these predictions, the theory in this post is wrong.  
+The appendix lists the exact problems of each approach
+
+## Conclusion
+
+Scores on ARC-AGI can be improved  
+
+You just gotta compress everything
+
+I'm gonna test this in the next few days.
+
 ## Appendix  
 ### List of problems in each approach
 
