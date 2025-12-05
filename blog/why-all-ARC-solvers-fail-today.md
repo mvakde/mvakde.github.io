@@ -28,7 +28,7 @@ The ideas in this blog are built on the MDL principle:
 > **Minimum Description Length**  
 > The best AI model describes the data (and itself) in the fewest bits
 
-This act of describing lots of data in very few "bits" (read: words) is called compression.  
+This act of describing lots of data in very few "bits" is called compression.  
 
 MDL says that a more intelligent AI model will compresses its training dataset better
 
@@ -46,7 +46,7 @@ Specifically, there are  3 uncompressed sources:
  - test input grids
  - private puzzles
 
-Instead of fixing this flaw, **approaches today rely on human scaffolding** 
+Instead of fixing this flaw, **approaches today rely on human scaffolding**  
 (This means hardcoded data augmentations, special architectures and custom DSLs)  
 
 This is bad - It is not scalable, is mathematically unnecessary and can backfire  
