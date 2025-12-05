@@ -20,7 +20,7 @@ Here's some cool shit I've done:
 - Biohacked my way out of a misdiagnosed health condition 
 - Saved my own life during a medical emergency 
     - My arms ballooned ridiculously after a bad gym session. I had learnt enough medicine during the biohacking to know it was rhabdomyolysis.
-    - Did the CPK blood test on my own to confirm - my values were 200x the upper limit (diagnostic confirmation + immediate hospitalisation levels)
+    - Went to the lab and got the CPK blood test done - my values were 200x the upper limit (diagnostic confirmation + immediate hospitalisation levels)
     - ER doctor hadn't heard of rhabdo (Indian doctors are so bad). Said, "go home, we'll see again tomorrow"
     - I freaked out, knew I could lose my kidneys if I wasn't hospitalised immediately
     - So i faked a heart attack (CPK values go ridiculously high during any muscle cell death scenario, including heart attacks, so I went to the cardiac emergency room, lied about chest pain and showed them this report)

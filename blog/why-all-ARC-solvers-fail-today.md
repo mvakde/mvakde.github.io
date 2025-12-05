@@ -94,7 +94,9 @@ This is terrible because the input grids in ARC are highly regular and compressi
 In short, the naive method violates MDL: **we know $D_E$ can be shortened further.[^2]**  
 
 **Better alternative:**  
-Instead, let's find a program $F$ such that $F(k) = (I_k,O_k)$
+Instead, let's find a program $F$ such that $F($k$) = (I_k,O_k)$  
+*Note the difference: the old one was $P(I_k) = O_k$*
+
 Immediately we have a much shorter description[^3]:  
   
 $$\boxed{D_E = \big(\text{"for every integer from 1 to n, apply"}, F\big).}$$  
