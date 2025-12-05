@@ -2,7 +2,8 @@
 permalink: /blog/why-all-ARC-solvers-fail-today/
 title: "Why all ARC-AGI solvers fail today (and how to fix them)"
 ---
-Twitter thread: https://x.com/evilmathkid/status/1988233092663050340
+***Update 5th Dec 2025:***
+I tested this hypothesis out and broke the pareto frontier on ARC-1. Here's its [twitter thread](https://x.com/evilmathkid/status/1996815851882995728) and here's [the code](https://github.com/mvakde/mdlARC). These experiments are still in progress and I expect performance to hit 30%. Currently its at 12%. Also, here's the original [twitter thread](https://x.com/evilmathkid/status/1988233092663050340) of this blog post that gives a good summary of this blog
 
 <figure>
   <img src="../img-hero.png" alt="my alt text"/>
