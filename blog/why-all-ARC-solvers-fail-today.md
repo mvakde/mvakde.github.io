@@ -32,7 +32,7 @@ This act of describing lots of data in very few "bits" is called compression.
 
 MDL says that a more intelligent AI model will compresses its training dataset better
 
-If "compression" sounds weird anywhere, replace it with "is trained to predict"
+(Btw: If "compression" sounds weird anywhere, replace it with "is trained to predict")
 
 ---
 [ARC-AGI](https://arcprize.org/play?task=3e6067c3) is a  benchmark that tests how well your AI model can solve simple spatial puzzles.  
@@ -51,7 +51,7 @@ Instead of fixing this flaw, **approaches today rely on human scaffolding**
 
 This is bad - It is not scalable, is mathematically unnecessary and can backfire  
 
-First, let's look at the   
+But first, let's look at the   
 
 ## Uncompressed data sources
 We'll explore each data source use this naive approach[^1]:  <!-- wtf is this line bro -->
