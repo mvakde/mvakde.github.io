@@ -7,9 +7,11 @@ redirect_from:
 ---
 Hi, I'm Mithil.  
 
-I graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+I graduated from IIT Bombay with a B.Tech in Engineering Physics. 
 
-I'm a builder at [LossFunk](https://lossfunk.com/) where I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company. 
+I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company.  
+
+I started this project as a part of the (now defunct) deeptech accelerator program at [LossFunk](https://lossfunk.com/)  
 
 ---
 Here's my [blog](/blog/)  
