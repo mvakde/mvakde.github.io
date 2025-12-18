@@ -30,7 +30,7 @@ We should also pour money into thinking about alternate solutions. One example i
 There is one idea I have seen floating around a lot - "Ban AI research itself". I think this is even worse.
 
 ## Because pandora's box is already open
-If AGI/ASI is possible, then it seems inevitable that we will get there - there are hardly any secrets in AI research today. If so, then banning AI research is the worst possible action. It will ensure rogue actors get there first.  
+If AGI/ASI is possible, then it seems inevitable that we will build it - there are hardly any secrets in AI research today. If so, then banning AI research is the worst possible action. It will ensure rogue actors get there first.  
 
 Best case scenario is if it turns out that AGI requires trillions of dollars to get there which is too high for rogue actors. But how much are you willing to bet that this is the case?  
 
