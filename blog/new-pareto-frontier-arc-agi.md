@@ -7,7 +7,7 @@ Train from scratch in 2 hrs (333x cheaper than TRM) <!--   brag more here? -->
 No special architectures - just a vanilla transformer  
 Fully open source  
 
-Summary/Discussion on [Twitter]()  
+Summary/Discussion on [Twitter](https://x.com/evilmathkid/status/2001689479476879448)  
 Code on [Github](https://github.com/mvakde/mdlARC)  
 
 <figure>
