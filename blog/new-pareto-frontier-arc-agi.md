@@ -19,7 +19,8 @@ Code on [Github](https://github.com/mvakde/mdlARC)
 1) This draws a **completely new Pareto frontier** on public eval of ARC-AGI-1.  
 The cost is so low, its literally off the charts. This is both training and inference costs together btw.
 
-No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM, in fact by 14x - see below)
+No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. 
+<!-- (Yes this also beats TRM/HRM, in fact by 14x - see below) -->
 
 **Beats every single non-thinking LLM in existence**
 Beats them in both performance AND cost. In fact, the combined costs of my training and inference are less than the inference costs of most LLM based methods.
@@ -40,7 +41,7 @@ Fully open source. Try it yourself: [code](https://github.com/mvakde/mdlARC)
 If you're too lazy to read the technical details, this twitter thread summarises it.
 
 Notes
-[0] TRM/HRM seem lower with 7M / 27M model parameters, but they additionally train 400M embedding params. All of it is used during inference. My model just needs 60k embedding params
+<!-- [0] TRM/HRM seem lower with 7M / 27M model parameters, but they additionally train 400M embedding params. All of it is used during inference. My model just needs 60k embedding params -->
 ## Content:  
 
 1. What is new in my approach?  
@@ -90,7 +91,7 @@ Instead I use a vanilla 4 layer transformer, with standard autoregression - Simp
 
 The reason why a vanilla transformer has never worked before is because nobody tried to train it unsupervised. (Surprising, I know)
 
-### 3) No offline training (put this before at 2) (3) 
+### 3) No offline training <!--(put this before at 2) (3) -->
 
 For inference, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than transductive approaches since the model doesn't do computations on the example pairs during inference time.
 
@@ -150,7 +151,7 @@ The input-output separator token is always (0,0,2)
 The output grid is placed in the z=3 plane, with the top left token being (0,0,3)
 The end token is always (0,0,4)
 
-This allows a clean mapping between the input-output grids as they are placed on top of each other. 2D RoPE was often discussed among friends (someone implemented recently iirc). I think its suboptimal because it makes the transformer figure out the size of grid in a convoluted manner
+This allows a clean mapping between the input-output grids as they are placed on top of each other. 2D RoPE was often discussed among friends (someone implemented recently iirc). I think its suboptimal because it forces the transformer to learn the size of grid in a convoluted manner
 
 ### Per-task embedding
 A single embedding is used for every pair in a task, whether augmented or not. This teaches the model that all pairs follow the same rule, and not to treat augmentations differently. The embedding vector is added to all tokens in the sequence.
@@ -166,7 +167,10 @@ Previous approaches like TRM and HRM use per-pair embedding. I didn't like this 
 1) It incentivises memorisation
    The model can store the exact transform of each pair in the embedding (like a lookup table)
 2) It increases number of params and training time considerably
-   For example, TRM has 7M active params during inference but trains 410M+ params totally - 99% of these are embedding parameters. This is one reason why it takes very long to train (3 days on 4 H100s).
+   For example, TRM has 7M active params during inference but trains 410M+ params totally - 99% of these are embedding parameters. This is one reason why it takes very long to train (3 days on 4 H100s).  
+
+
+**NOTE**: Just in case, I will check the count of the embedding params of HRM/TRM again. I did this a long time ago
 
 ### Augmentations
 I use dihedral (rotations/reflections) and color augmentations during both training and inference in a standard AAIVR fashion. I also add extra tasks to the training set (ConceptARC). I did not include any tasks from ARC-2 dataset.
@@ -197,9 +201,9 @@ If there is any confusion, please do ask me on the twitter thread. I'll answer t
 - Basic ablations and hyperparameter sweeps. I expect 35%, maybe more with just basic stuff like this. I was too GPU poor to try anything. I invite the community to do this too. The code is open source
 - Reduce training and inference costs. I expect 10x is possible. 100x is a bit ambitious but possible if we do a nanogpt speedrun like optimisation.
 	- I haven't yet learnt GPU programming so haven't tried this. 
-- Scaling - haven't hit the ceiling yet. I think performance will scale with more data and compute. I have only added the conceptARC dataset. What happens if I add other ARC datasets?
+- Scaling - haven't hit the ceiling yet. I think performance will scale with more data and compute. I have only added the conceptARC dataset. What happens if I add other ARC datasets? What about the non-overlapping puzzles from ARC-2? What about all the synthetic datasets? Idk the answer yet, but we'll see soon.
 	- Be careful not to mix ARC1 and ARC2 for the public eval. Should not matter for private eval.
-- I expect to hit 50% with scaling and potentially a few research ideas 
+- I expect to hit 50% with scaling and a few obvious research ideas
 - I now genuinely think 85% is possible at human efficiency. That is my goal 
 - Data augmentations MUST be removed. It will be my main focus next. Its ugly and I hate it. It must go.
 
@@ -209,13 +213,15 @@ I started by thinking about how exactly humans solve ARC puzzles. I sat for 3 ho
 - I look at the train grids and come up with a hypothesis that fits all
 - Then when I look at the test input, I immediately corrected the hypothesis
 
-This correction obviously cannot happen during inference. I am actually learning something new from the test input. Learning implies I need to train on the test input. I looked at the every approach and realised not a single one of them do this (other than compressARC). The obvious next thing was to think what about the train inputs? I checked and none of the approaches did that either. 
+This correction obviously cannot happen during inference - I am actually learning something new from the test input. Learning implies I need to train on the test input. 
+
+I looked at the every approach and realised not a single one of them do this (other than compressARC). The obvious next thing was to think what about the train inputs? I checked and none of the approaches did that either. 
 
 Now I could justify training on test inputs as "modifying train hypothesis", but I wasn't sure how to justify training on the train input grids. Training on it would be unsupervised learning, so I watched Ilya's video on generalisation and unsupervised learning. He talked about kolmogorov complexity, so I read the book and the MDL tutorial suggested by him. I got conviction and immediately posted a blog on my theory last month.
 
 No one read the blog (ofc, talk is cheap). So I decided to do it myself.
 
-We know a good predictor is a good compressor so a vanilla transformer should be enough to compress everything. Figuring out most of the implementation details in about an hour. Per-example embeddings and 3D RoPE were pretty obvious (to compress info better). Everyone talks about 2D RoPE for ARC (later on someone implemented it iirc), but its obviously suboptimal in this case so never tried it. 
+We know a good predictor is a good compressor so a vanilla transformer should be enough to compress everything. Figuring out most of the implementation details took about an hour. Per-example embeddings and 3D RoPE were pretty obvious (to compress info better). Everyone talks about 2D RoPE for ARC (later on someone implemented it iirc), but its obviously suboptimal in this case so never tried it. 
 
 And that's pretty much it. It worked first try. 
 
