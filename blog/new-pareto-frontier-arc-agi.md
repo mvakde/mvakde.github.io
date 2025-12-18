@@ -2,10 +2,13 @@
 permalink: /blog/new-pareto-frontier-arc-agi/
 title: "New Pareto Frontier on ARC-AGI"
 ---
-27.5% on ARC-AGI-1 for just $2. 
-Train from scratch in 2 hrs (333x cheaper than TRM) <!--   brag more here? -->
-No special architectures - just a vanilla transformer
-Fully open source
+27.5% on ARC-AGI-1 for just $2.  
+Train from scratch in 2 hrs (333x cheaper than TRM) <!--   brag more here? -->  
+No special architectures - just a vanilla transformer  
+Fully open source  
+
+Summary/Discussion on [Twitter]()  
+Code on [Github](https://github.com/mvakde/mdlARC)  
 
 <figure>
   <img src="../arc-leaderboard.png" alt="New pareto on arc"/>
@@ -13,7 +16,7 @@ Fully open source
 </figure>
 <!-- {Sneak peak: Before/after} -->
 ## First, some bragging 
-This draws a **completely new Pareto frontier** on public eval of ARC-AGI-1.  
+1) This draws a **completely new Pareto frontier** on public eval of ARC-AGI-1.  
 The cost is so low, its literally off the charts. This is both training and inference costs together btw.
 
 No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM, in fact by 14x - see below)
@@ -38,19 +41,21 @@ If you're too lazy to read the technical details, this twitter thread summarises
 
 Notes
 [0] TRM/HRM seem lower with 7M / 27M model parameters, but they additionally train 400M embedding params. All of it is used during inference. My model just needs 60k embedding params
-## Contents:
-1) What is new in my approach?
-2) Why does this work?
-3) Implementation details
-4) What's next?
-5) Thought process behind this research
+## Content:  
 
-### What is new in my approach?
+1. What is new in my approach?  
+2. Why does this work?  
+3. Implementation details  
+4. What's next?  
+5. Thought process behind this research  
+
+## What is new in my approach?
 ---
 I apply Minimum Description Length (MDL) principles to fix all the faults in previous deep learning methods on ARC-AGI.
 
-> I learnt about MDL recently, wrote this blog last month on how to improve every model on ARC. This is an application of what I talk about in the blog
-### 1) Joint self-supervised compression
+<!-- > I learnt about MDL recently, wrote this blog last month on how to improve every model on ARC. This is an application of what I talk about in the blog -->  
+
+## 1) Joint self-supervised compression
 Every previous attempt[1] uses a supervised learning approach on ARC. This means the models were only predicting the outputs. 
 <!-- ### <span style = "font-size:1.25em;">Source 1: Example inputs</span> -->
 <figure>
@@ -73,7 +78,7 @@ Instead, I train the model from scratch during runtime on all public and private
   <span style = "text-align:center;"><figcaption>Test time training approach</figcaption></span>
 </figure>
 
-### 2) No special architectures - just a vanilla 4 layer transformer
+## 2) No special architectures - just a vanilla 4 layer transformer
 Other deep learning methods use specially engineered architectures like:
 - multi-level recursion on transformers (HRM/TRM), 
 - equivariant VAEs (CompressARC), 
@@ -100,7 +105,7 @@ Empirically, performance seems to improve with:
 - increasing training datapoints (requires more compute)
 
 Note:
-- I do use augmentation during inference - AAIVR - like most other approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.
+- I do use augmentation during inference - AAIVR - like most other approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
 ## Why does this work?
 There are 3 questions to be answered here
 1) Why is compression useful?
@@ -119,7 +124,7 @@ To see this, take a string with a million 0s: `"000...0"`. We can shorten it int
 **Why compress these extra grids?**
 All the grids in the dataset have common patterns and structures that are often repeated. If you don't compress all the grids (every previous method skipped input grids), you have lesser chances of finding better abstractions. In technical terms, whenever mutual information is present between 2 datasources, it is always better to jointly compress both of them.
 
-I explain this in a lot more depth in my previous blogpost
+I explain this in a lot more depth in my [previous blogpost](./why-all-ARC-solvers-fail-today.md)
 
 **So how do I compress the input grids too?**  
 We already know that a good predictor is a good compressor. Previous methods only try to predict the output. Instead, my model tries to predict both the outputs AND inputs. 
@@ -134,10 +139,10 @@ I use a simple 4 layer transformer, with 28M parameters. First I convert an ARC 
 
 I use the same "puzzle" embedding for every sequence in a puzzle, 3D RoPE for position embeddings, and both color and dihedral data agumentations. For inference I use the standard AAIVR. (I hate AAIVR with the passion of a 1000 suns. It will be removed asap).
 
-I expand more on this in the "implementation details" section.
 
-## Standard autoregressive training
-Each input-output pair is tokenised into a single sequence. We have a vocabulary of 14 tokens: 10 numbers (0-9) and 4 special tokens `<start>, <\n>, <inp_out_sep>, <end>`. Then we use normal autoregressive loss exactly like the pre-training phase of an LLM. The loss is on the entire sequence, not just the output.
+### Standard autoregressive training
+Each input-output pair is tokenised into a single sequence. We have a vocabulary of 14 tokens: 10 numbers (0-9) and 4 special tokens `<start>, <\n>, <inp_out_sep>, <end>`. Then we use normal autoregressive loss exactly like the pre-training phase of an LLM. The loss is on the entire sequence, not just the output.  
+
 ### 3D RoPE
 The start token is always (0,0,0).
 The input grid is placed in the z=1 plane, with the top left token being (0,0,1)
@@ -147,7 +152,7 @@ The end token is always (0,0,4)
 
 This allows a clean mapping between the input-output grids as they are placed on top of each other. 2D RoPE was often discussed among friends (someone implemented recently iirc). I think its suboptimal because it makes the transformer figure out the size of grid in a convoluted manner
 
-## Per-task embedding
+### Per-task embedding
 A single embedding is used for every pair in a task, whether augmented or not. This teaches the model that all pairs follow the same rule, and not to treat augmentations differently. The embedding vector is added to all tokens in the sequence.
 
 I am particularly proud of this. I think its is very suited for self-supervised compression, because it reduces description length and gives a clean separation of common patterns and differing patterns between the pairs. 
