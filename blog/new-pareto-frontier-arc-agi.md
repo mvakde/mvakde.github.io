@@ -17,7 +17,7 @@ Code on [Github](https://github.com/mvakde/mdlARC)
 <!-- {Sneak peak: Before/after} -->
 ## First, some bragging 
 1) This draws a **completely new Pareto frontier** on public eval of ARC-AGI-1.  
-The cost is so low, its literally off the charts. This is both training and inference costs together btw.
+The cost is so low, its literally off the chart. This is both training and inference costs together btw, 
 
 No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. 
 <!-- (Yes this also beats TRM/HRM, in fact by 14x - see below) -->
@@ -26,10 +26,11 @@ No other model comes close in terms of training cost or speed. It is also unmatc
 Beats them in both performance AND cost. In fact, the combined costs of my training and inference are less than the inference costs of most LLM based methods.
 
 **333x cheaper** to train than TRM/HRM/other models
-The recent models on ARC-AGI require **multiple H100s for multiple days**. You can train my model from scratch in **2 hours on a single A100**. It will work on smaller GPUs too.
+The recent models on ARC-AGI require multiple H100s for multiple days. You can train my model from scratch in 2 hours on a single A100. It will work on smaller GPUs too.
 
 **Bitter lesson pilled**.
-There are no special handcrafted architectures, no recursion. Just a vanilla transformer with only 4 layers with standard autoregression.
+There are no special handcrafted architectures, no recursion. Just a vanilla transformer, 4 layers, standard autoregression.
+
 
 Oh btw, all this is early results. 
 I haven't yet ran hyperparameter sweeps (expect them to push performance to 35%). I haven't tried scaling the model and data either (I haven't found a ceiling yet). I haven't done GPU level performance engineering (10x improvements on the table, maybe more). There are also a few obvious research ideas to tackle next.  
@@ -38,9 +39,9 @@ I am confident of hitting 50% in the next few weeks. I also think its possible t
 
 Fully open source. Try it yourself: [code](https://github.com/mvakde/mdlARC)
 
-If you're too lazy to read the technical details, this twitter thread summarises it.
+<!-- If you're too lazy to read the technical details, this twitter thread summarises it. -->
 
-Notes
+<!-- Notes -->
 <!-- [0] TRM/HRM seem lower with 7M / 27M model parameters, but they additionally train 400M embedding params. All of it is used during inference. My model just needs 60k embedding params -->
 ## Content:  
 

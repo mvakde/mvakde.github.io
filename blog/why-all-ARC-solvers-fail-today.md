@@ -2,7 +2,10 @@
 permalink: /blog/why-all-ARC-solvers-fail-today/
 title: "Why all ARC-AGI solvers fail today (and how to fix them)"
 ---
-***Update 5th Dec 2025:***
+***Update 18th Dec 2025:***  
+I reached 27.5%. I did it at an unbelieveable cost of $2. The pareto frontier is literally off the charts. [Went viral on twitter](https://x.com/evilmathkid/status/2001689479476879448). I now make my next prediction: 50% in the next 2 weeks.
+
+***Update 5th Dec 2025:***  
 I tested this hypothesis out and broke the pareto frontier on ARC-1. Here's its [twitter thread](https://x.com/evilmathkid/status/1996815851882995728) and here's [the code](https://github.com/mvakde/mdlARC). These experiments are still in progress and I expect performance to hit 30%. Currently its at 12%. Also, here's the original summary of the blog I posted on [twitter](https://x.com/evilmathkid/status/1988233092663050340)
 
 <figure>
@@ -89,7 +92,8 @@ This only replaces the ***outputs*** by a short program.
 The inputs $I_1,\dots,I_n$ are still listed verbatim, so they are not compressed at all.  
 
 This is terrible because the input grids in ARC are highly regular and compressible. This means a shorter description definitely exists.  
-(Eg: In Fig 2, all example inputs share obvious structure: same kinds of red squares, same object layouts, same background patterns, etc. These patterns can be used to compress the input.)  <!-- maybe add path TM exception-->
+
+Eg: In Fig 2, all inputs share common structures: same kinds of red squares, same object layouts, same background patterns, etc. These patterns can be used to compress the input.  <!-- maybe add path TM exception-->
 
 In short, the naive method violates MDL: **we know $D_E$ can be shortened further.[^2]**  
 
@@ -140,9 +144,9 @@ Because every puzzle shares common patterns, MDL demands compressing ALL of them
 
 Hence, the naive solver fails again - it trains on each puzzle separately. (This also applies to "no-pretraining" methods like CompressARC and NCAs)
   
-#### Test time training
-The need to compress private puzzles implies that test time training is 100% necessary.  
-Every approach must train on the public puzzles offline AND on the private puzzles during runtime.  
+**Test time training**
+The need to compress private puzzles implies that test time training is 100% necessary. Every approach must train on the public puzzles offline AND on the private puzzles during runtime.  
+
 However, all current "test time training" methods are suboptimal because they ignore data sources 1 and 3
 
 ### <span style = "font-size:1.25em;">Source 3: Test inputs</span>

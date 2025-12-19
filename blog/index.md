@@ -6,13 +6,17 @@ Decided to start blogging.
 
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
+### [Setting a new Pareto Frontier on ARC-AGI](.new-pareto-frontier-arc-agi) 18th Dec 2025
+Performance so good, its literally off the charts (really)
+
 ### [Why all ARC-AGI solvers fail today (and how to fix them)](./why-all-ARC-solvers-fail-today) 11th Nov 2025
 Reason: They all leave some data uncompressed.  
 Fixing this will boost accuracy and allow us to drop hard-coded tricks like augmentations. 
 
 ### [We should diversify AI safety research](./on-agi-risks) 9th Aug 2025
-Brainwashing humans is bad.  
 Is brainwashing AGI the only solution to safety?
+(or alignment research may make the problem worse)
+
 
 ### [JEE is easy](./jee-is-easy) 4th May 2025  
 The JEE coaching system is bullshit and harmful.  
