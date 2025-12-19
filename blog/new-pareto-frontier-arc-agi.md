@@ -3,7 +3,7 @@ permalink: /blog/new-pareto-frontier-arc-agi/
 title: "New Pareto Frontier on ARC-AGI"
 ---
 27.5% on ARC-AGI-1 for just $2.  
-Train from scratch in 2 hrs (333x cheaper than TRM) <!--   brag more here? -->  
+Train from scratch in 2 hrs (333x cheaper than TRM)
 No special architectures - just a vanilla transformer  
 Fully open source  
 
@@ -12,15 +12,13 @@ Code on [Github](https://github.com/mvakde/mdlARC)
 
 <figure>
   <img src="../arc-leaderboard.png" alt="New pareto on arc"/>
-  <span style = "text-align:center;"></span>
+  <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval (Note: this is superimposed on private eval chart - see why below)</figcaption></span>
 </figure>
 <!-- {Sneak peak: Before/after} -->
 ## First, some bragging 
-1) This draws a **completely new Pareto frontier** on public eval of ARC-AGI-1.  
-The cost is so low, its literally off the chart. This is both training and inference costs together btw, 
 
-No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. 
-<!-- (Yes this also beats TRM/HRM, in fact by 14x - see below) -->
+**This draws a completely new Pareto frontier** on public eval of ARC-AGI-1.  
+The cost is so low, its literally off the chart. No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM in perf/params, in fact by more than 10x! - check notes)
 
 **Beats every single non-thinking LLM in existence**
 Beats them in both performance AND cost. In fact, the combined costs of my training and inference are less than the inference costs of most LLM based methods.
@@ -31,6 +29,10 @@ The recent models on ARC-AGI require multiple H100s for multiple days. You can t
 **Bitter lesson pilled**.
 There are no special handcrafted architectures, no recursion. Just a vanilla transformer, 4 layers, standard autoregression.
 
+**Quick Notes**:
+- My cost includes inference AND training. Most others on this chart are just inference costs (and yet I beat them - another bragging point xD)
+- One disclaimer, my results are on the public eval, while the chart is actually private eval. I admit, this is shady. But its a risky bet I'm making. I think my performance will be higher on private eval (which is unprecedented on ARC1). Reasons in appendix. 
+- TRM has 7M parameters in the core network, but it trains a massive embedding table that has 100s of millions of parameters. A conservative estimate of total trainable parameters is then 300M+. Similar story for HRM. So while they perform better (~40%), they need to train 300M params to do so (hence take time)
 
 Oh btw, all this is early results. 
 I haven't yet ran hyperparameter sweeps (expect them to push performance to 35%). I haven't tried scaling the model and data either (I haven't found a ceiling yet). I haven't done GPU level performance engineering (10x improvements on the table, maybe more). There are also a few obvious research ideas to tackle next.  
@@ -110,10 +112,14 @@ Note:
 - I do use augmentation during inference - AAIVR - like most other approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
 
 ## Why does this work?
+
+> Being honest, idk. This is ongoing research. I am posting things as they evolve. Here is my best guess below. There are other theories - some ppl think its the 3D RoPE. I will keep running ablations and update the blog as I get new information. I encourage you to do so too
+
+My best guess - **Compression**.  
 There are 3 questions to be answered here
-1) Why is compression useful?
-2) Why would compressing these extra grids help?
-3) How to compress something?
+1) Why is compression useful?  
+2) Why would compressing these extra grids help?  
+3) How to compress something?  
 
 **How is compression useful?**
 Empirically, we have found that greater the compression of a model, the greater the intelligence and generalisation. This has been studied under MDL and Kolmogorov complexity extensively.
@@ -125,7 +131,7 @@ To see this, take a string with a million 0s: `"000...0"`. We can shorten it int
 
 
 **Why compress these extra grids?**
-All the grids in the dataset have common patterns and structures that are often repeated. If you don't compress all the grids (every previous method skipped input grids), you have lesser chances of finding better abstractions. In technical terms, whenever mutual information is present between 2 datasources, it is always better to jointly compress both of them.
+All the grids in the dataset have common patterns and structures that are often repeated. If you don't compress every single one of them, you have lesser chances of finding better abstractions. In technical terms, whenever mutual information is present between 2 datasources, it is always better to jointly compress both of them than it is to compress them in isolation which in turn is better than not compressing at all.
 
 I explain this in a lot more depth in my [previous blogpost](./why-all-ARC-solvers-fail-today.md)
 
@@ -169,10 +175,9 @@ Previous approaches like TRM and HRM use per-pair embedding. I didn't like this 
 1) It incentivises memorisation
    The model can store the exact transform of each pair in the embedding (like a lookup table)
 2) It increases number of params and training time considerably
-   For example, TRM has 7M active params during inference but trains 410M+ params totally - 99% of these are embedding parameters. This is one reason why it takes very long to train (3 days on 4 H100s).  
+   For example, TRM has 7M core network params but trains 300M+ params totally - most of which are parameters of the dataset embedding table. This is one reason why it takes very long to train (3 days on 4 H100s or more).  
 
 
-**NOTE**: Just in case, I will check the count of the embedding params of HRM/TRM again. I did this a long time ago
 
 ### Augmentations
 I use dihedral (rotations/reflections) and color augmentations during both training and inference in a standard AAIVR fashion. I also add extra tasks to the training set (ConceptARC). I did not include any tasks from ARC-2 dataset.
@@ -200,11 +205,13 @@ That's it
 If there is any confusion, please do ask me on the twitter thread. I'll answer the question and also add it to this blog 
 
 ### What's next?
-- Basic ablations and hyperparameter sweeps. I expect 35%, maybe more with just basic stuff like this. I was too GPU poor to try anything. I invite the community to do this too. The code is open source
+- I want to understand why this works. So I'll start with basic ablations and hyperparameter sweeps. 
+   - I expect 35%, maybe more with just basic stuff like hparam sweeps. I invite the community to do this too. The code is open source
+   - Why this works can only be answered by more ablations. I was too GPU poor to try anything. I will do so now. Feel free to try some yourself and improve the theories
 - Reduce training and inference costs. I expect 10x is possible. 100x is a bit ambitious but possible if we do a nanogpt speedrun like optimisation.
 	- I haven't yet learnt GPU programming so haven't tried this. 
 - Scaling - haven't hit the ceiling yet. I think performance will scale with more data and compute. I have only added the conceptARC dataset. What happens if I add other ARC datasets? What about the non-overlapping puzzles from ARC-2? What about all the synthetic datasets? Idk the answer yet, but we'll see soon.
-	- Be careful not to mix ARC1 and ARC2 for the public eval. Should not matter for private eval.
+	- Be careful not to mix ARC1 and ARC2 for the public eval. This should not matter for private eval though.
 - I expect to hit 50% with scaling and a few obvious research ideas
 - I now genuinely think 85% is possible at human efficiency. That is my goal 
 - Data augmentations MUST be removed. It will be my main focus next. Its ugly and I hate it. It must go.
