@@ -65,7 +65,7 @@ Every previous attempt[1] uses a supervised learning approach on ARC. This means
   <span style = "text-align:center;"><figcaption>The inputs are fixed, and the model is only trained to predict the outputs. (A representative example of previous methods) </figcaption></span>
 </figure>
 
-Instead, I use an unsupervised learning approach - my model is trained on both outputs AND inputs. The loss function measures how well it predicts BOTH the grids. 
+Instead, I use an unsupervised learning approach - my model is trained on both **outputs AND inputs**. The loss function measures how well it predicts BOTH the grids. 
 <figure>
   <img src="../arc-unsup.png" alt="my alt text"/>
   <span style = "text-align:center;"><figcaption>My model learns everything from scratch, including the inputs</figcaption></span>
@@ -108,6 +108,7 @@ Empirically, performance seems to improve with:
 
 Note:
 - I do use augmentation during inference - AAIVR - like most other approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
+
 ## Why does this work?
 There are 3 questions to be answered here
 1) Why is compression useful?

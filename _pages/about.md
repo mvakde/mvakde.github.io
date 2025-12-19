@@ -23,11 +23,11 @@ Here's some cool shit I've done:
 - Saved my own life during a medical emergency 
     - My arms ballooned ridiculously after a bad gym session. I had learnt enough medicine during the biohacking to know it was rhabdomyolysis.
     - I remembered that confirmation requires a blood test that measures CPK values. Went to the lab, ordered one - my values were 200x the upper limit (diagnostic confirmation + requires immediate hospitalisation levels)
-    - Went to the ER with my report and swollen arms. Doctor hadn't heard of rhabdo (Indian doctors are terrible). She refused, saying "go home, nothing to worry about. We'll repeat it tomorrow". Called a second ER - same response.
+    - Went to the ER with my report and swollen arms. Doctor hadn't heard of rhabdo (the avg doctor is terrible at their job. always go to the best). She refused, saying "go home, nothing to worry about. We'll repeat it tomorrow". Called a second ER - same response.
     - I freaked out, knew I could lose my kidneys if I didn't get treatment
     - I immediately began drinking massive amounts of ORS as a proxy for saline to protect kidneys till I figure something out. But I knew I needed hospitalisation *immediately*
     - So i faked a heart attack (Logic: CPK values go ridiculously high during any muscle cell death scenario, including heart attacks, so I went to the cardiac emergency room, lied about chest pain and showed them this report)
-    - They admitted me immediately but turned out the cardio didn't know about rhabdo either! (yeah fml, never go to an indian doc)
+    - They admitted me immediately but turned out the cardio didn't know about rhabdo either! (yeah fml, next time only go to the best docs)
     - So I fought with them for a few hours, saying "screw the heart attack, call a nephro". They finally relented and rang him at 3am. He told them over call that I'm right and its obviously rhabdo, and gave the correct treatment plan
     - The nephro (who came the next day) said he didn't like my actions but it saved my kidneys, and probably my life. 
 
