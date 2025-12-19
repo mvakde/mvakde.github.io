@@ -15,6 +15,8 @@ Code on [Github](https://github.com/mvakde/mdlARC)
   <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval (Note: this is superimposed on private eval chart - see why below)</figcaption></span>
 </figure>
 <!-- {Sneak peak: Before/after} -->
+<!-- Update: I ran an ablation by turning off test inputs. This drops perf to 21%. That is not high -->
+
 ## First, some bragging 
 
 **This draws a completely new Pareto frontier** on public eval of ARC-AGI-1.  
@@ -57,10 +59,12 @@ Fully open source. Try it yourself: [code](https://github.com/mvakde/mdlARC)
 ---
 I apply Minimum Description Length (MDL) principles to fix all the faults in previous deep learning methods on ARC-AGI.
 
+> Note: This is my justification of why I made these particular technical choices. Whether this justification is correct, requires a lot more ablations. I am running them now. Feel free to run some yourselves.
+
 <!-- > I learnt about MDL recently, wrote this blog last month on how to improve every model on ARC. This is an application of what I talk about in the blog -->  
 
 ## 1) Joint self-supervised compression
-Every previous attempt[1] uses a supervised learning approach on ARC. This means the models were only predicting the outputs. 
+Other than CompressARC, every previous attempt uses a supervised learning approach on ARC-AGI. This means the models were only predicting the outputs. 
 <!-- ### <span style = "font-size:1.25em;">Source 1: Example inputs</span> -->
 <figure>
   <img src="../arc-sup.png" alt="my alt text"/>
@@ -72,48 +76,48 @@ Instead, I use an unsupervised learning approach - my model is trained on both *
   <img src="../arc-unsup.png" alt="my alt text"/>
   <span style = "text-align:center;"><figcaption>My model learns everything from scratch, including the inputs</figcaption></span>
 </figure>
-This one change (training on inputs) dramatically reduces the cost and time needed to train and also increases the performance.
+This one change (training on inputs) seems to dramatically reduces the cost and time needed to train and also increase the performance. (update: this statement is a little too confident. This can be due to other reasons too, will need to check with ablations)  
 
-Now, test time training is common tactic used in ARC-AGI (the answer grids of eval puzzles are hidden, so there's no cheating). Previously, every attempt[1] used 2 phases - offline training on all the public puzzles and then finetuning on the private puzzles during runtime.
+Now, test time training is common tactic used in ARC-AGI (the answer grids of eval puzzles are hidden, so there's no cheating). Previously, every attempt (again, other than CompressARC) used 2 phases - offline training on the training set and then either finetuning or continued pretraining on the test set during runtime.  
 
-Instead, I train the model from scratch during runtime on all public and private puzzles (answers hidden). This maximally compresses all available information. This is only possible because the training cost and time are so much lower thanks to the unsupervised approach. 
+Instead, I train the model from scratch during runtime on all puzzles in the training set and eval set (answers hidden). The hope was this maximally compresses all available information. This is only possible because the training cost and time are so much lower (thanks to the unsupervised approach? Unsure)
 <figure>
   <img src="../arc-ttt.png" alt="my alt text"/>
   <span style = "text-align:center;"><figcaption>Test time training approach</figcaption></span>
 </figure>
 
-## 2) No special architectures - just a vanilla 4 layer transformer
+## 3) No special architectures - just a vanilla 4 layer transformer
 Other deep learning methods use specially engineered architectures like:
 - multi-level recursion on transformers (HRM/TRM), 
 - equivariant VAEs (CompressARC), 
 - DFS sampling/recursive latent sampling (The ARChitects), etc. 
 
-Such approaches are not "bitter lesson" pilled.  They don't scale well and don't generalise to other problems. While within rules, its against the spirit of the benchmark. (Very cool engineering though!)
+Such approaches are not "bitter lesson" pilled.  They don't scale well and don't generalise to other problems. While within rules, its against the spirit of the benchmark. (But they are very cool engineering feats!)
 
 Instead I use a vanilla 4 layer transformer, with standard autoregression - Simple, scalable and bitter lesson friendly. 
 
-The reason why a vanilla transformer has never worked before is because nobody tried to train it unsupervised. (Surprising, I know)
+I think the reason why a vanilla transformer has never worked before is because nobody tried to train it unsupervised. (update: Atleast none of the major recent approaches when I made this codebase did. I found this surprising too. After the discussion on twitter, there are also other possible candidates for why this works: 3D RoPE or 3D RoPE+ Augmentations. Will check)
 
-### 3) No offline training <!--(put this before at 2) (3) -->
+### 4) Inference <!--(put this before at 2) (3) -->
 
-For inference, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than transductive approaches since the model doesn't do computations on the example pairs during inference time.
+Nothing new here. For each task, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than transductive approaches since the model doesn't do computations on the example pairs during inference time. Benefits of using per-task embedding (same embedding for even the )
+
+I also do use augmentation during inference - this is called AAIVR - like most recent approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
 
 <!-- %% The reason it works is that it follows the Minimum Description Length principle. Previous methods were training lookup tables. I am focusing on generalisation. %% -->
 
-### 4) Scalable (?)
+### 5) Scalable (?)
 Theoretically, the model should improve with more puzzles added to the dataset. Unfortunately, I was too GPU poor to test this properly. It seems to be true at small scales, and I haven't found a ceiling yet. I will be testing this hypothesis properly now.
 
-Empirically, performance seems to improve with:
+Empirically, at small scales, performance seems to improve with:
 - increasing number of layers
 - increasing training time
 - increasing training datapoints (requires more compute)
 
-Note:
-- I do use augmentation during inference - AAIVR - like most other approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
 
 ## Why does this work?
 
-> Being honest, idk. This is ongoing research. I am posting things as they evolve. Here is my best guess below. There are other theories - some ppl think its the 3D RoPE. I will keep running ablations and update the blog as I get new information. I encourage you to do so too
+> Being honest, idk. This is ongoing work. I am posting things as they evolve. Here is my best guess below. There are other theories - some ppl think its the 3D RoPE. I will keep running ablations and update the blog as I get new information. I encourage you to do so too
 
 My best guess - **Compression**.  
 There are 3 questions to be answered here
@@ -175,7 +179,7 @@ Previous approaches like TRM and HRM use per-pair embedding. I didn't like this 
 1) It incentivises memorisation
    The model can store the exact transform of each pair in the embedding (like a lookup table)
 2) It increases number of params and training time considerably
-   For example, TRM has 7M core network params but trains 300M+ params totally - most of which are parameters of the dataset embedding table. This is one reason why it takes very long to train (3 days on 4 H100s or more).  
+   For example, TRM has 7M core network params but trains 300M+ params totally - most of which are parameters of the dataset embedding table. I think this is one reason why it takes very long to train (3 days on 4 H100s or more).  
 
 
 
@@ -218,7 +222,7 @@ If there is any confusion, please do ask me on the twitter thread. I'll answer t
 
 ---
 ### What led me to try this
-I started by thinking about how exactly humans solve ARC puzzles. I sat for 3 hours solving every puzzle in existence and I noticed this pattern:
+I started by thinking about how exactly humans solve ARC puzzles. I sat for 3 hours solving every puzzle ARC-2 puzzle in the test set and I noticed this pattern:
 - I look at the train grids and come up with a hypothesis that fits all
 - Then when I look at the test input, I immediately corrected the hypothesis
 
@@ -233,6 +237,8 @@ No one read the blog (ofc, talk is cheap). So I decided to do it myself.
 We know a good predictor is a good compressor so a vanilla transformer should be enough to compress everything. Figuring out most of the implementation details took about an hour. Per-example embeddings and 3D RoPE were pretty obvious (to compress info better). Everyone talks about 2D RoPE for ARC (later on someone implemented it iirc), but its obviously suboptimal in this case so never tried it. 
 
 And that's pretty much it. It worked first try. 
+
+Now I figure out why
 
 <!-- Okay the one exception was compressARC. This does unsupervised compression. Its brilliant, but my approach performs better, is much much cheaper, is more bitter-lesson pilled and can scale in the future:
 1) Joint compression is better than separate compression
