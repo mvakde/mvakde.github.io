@@ -76,7 +76,7 @@ Instead, I use an unsupervised learning approach - my model is trained on both *
   <img src="../arc-unsup.png" alt="my alt text"/>
   <span style = "text-align:center;"><figcaption>My model learns everything from scratch, including the inputs</figcaption></span>
 </figure>
-This one change (training on inputs) seems to dramatically reduces the cost and time needed to train and also increase the performance. (update: this statement is a little too confident. This can be due to other reasons too, will need to check with ablations)  
+This one change (training on inputs) seems to dramatically reduces the cost and time needed to train and also increase the performance. (update: this statement is too confident. This can be due to other reasons too, will need to check with more ablations)  
 
 Now, test time training is common tactic used in ARC-AGI (the answer grids of eval puzzles are hidden, so there's no cheating). Previously, every attempt (again, other than CompressARC) used 2 phases - offline training on the training set and then either finetuning or continued pretraining on the test set during runtime.  
 
@@ -100,7 +100,7 @@ I think the reason why a vanilla transformer has never worked before is because 
 
 ### 4) Inference <!--(put this before at 2) (3) -->
 
-Nothing new here. For each task, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than transductive approaches since the model doesn't do computations on the example pairs during inference time. Benefits of using per-task embedding (same embedding for even the )
+Nothing new here. For each task, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than ~~transductive approaches~~ models that take in all the grids in the task (transductive was wrongly used here) since the model doesn't do computations on the example pairs during inference time. Benefits of using per-task embedding (same embedding for even the )
 
 I also do use augmentation during inference - this is called AAIVR - like most recent approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
 
