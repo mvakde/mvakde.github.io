@@ -3,7 +3,7 @@ permalink: /blog/new-pareto-frontier-arc-agi/
 title: "New Pareto Frontier on ARC-AGI"
 ---
 27.5% on ARC-AGI-1 for just $2.  
-Train from scratch in 2 hrs (333x cheaper than TRM)
+Train from scratch in 2 hrs (333x cheaper than TRM)  
 No special architectures - just a vanilla transformer  
 Fully open source  
 
@@ -22,7 +22,7 @@ Code on [Github](https://github.com/mvakde/mdlARC)
 **This draws a completely new Pareto frontier** on public eval of ARC-AGI-1.  
 The cost is so low, its literally off the chart. No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM in perf/params, in fact by more than 10x! - check notes)
 
-**Beats every single non-thinking LLM in existence**
+**Beats every single non-thinking LLM in existence** (clarification: I meant the ones released by frontier labs, ppl have finetuned LLMs on ARC and this does performs better)
 Beats them in both performance AND cost. In fact, the combined costs of my training and inference are less than the inference costs of most LLM based methods.
 
 **333x cheaper** to train than TRM/HRM/other models
