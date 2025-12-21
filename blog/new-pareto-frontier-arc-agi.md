@@ -98,21 +98,32 @@ Instead I use a vanilla 4 layer transformer, with standard autoregression - Simp
 
 I think the reason why a vanilla transformer has never worked before is because nobody tried to train it unsupervised. (update: Atleast none of the major recent approaches when I made this codebase did. I found this surprising too. After the discussion on twitter, there are also other possible candidates for why this works: 3D RoPE or 3D RoPE+ Augmentations. Will check)
 
-### 4) Inference <!--(put this before at 2) (3) -->
+### 4) Task specific embeddings added to each token
+(I am particularly proud of this, but unsure if no one did this before). The idea was to promote cross task learning and to make the model mdl friendly when using autoregressive transformers (whether this actually is the case needs to be tested). 
 
-Nothing new here. For each task, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than ~~transductive approaches~~ models that take in all the grids in the task (transductive was wrongly used here) since the model doesn't do computations on the example pairs during inference time. Benefits of using per-task embedding (same embedding for even the )
+Why cross task learning? Because different ARC-AGI tasks often reuse similar rules. Eg: In both the train and eval set, you'll see 4-5 different tasks that have a similar rule - "fill the holes to make the grids symmetric". So now the hope is the model pushes the embeddings of these tasks closer together. By adding the embedding to every single token, the trajectories of all these tasks remain in the same general area of the vector space.
 
-I also do use augmentation during inference - this is called AAIVR - like most recent approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.  
 
-<!-- %% The reason it works is that it follows the Minimum Description Length principle. Previous methods were training lookup tables. I am focusing on generalisation. %% -->
+More details in the implementation section below. 
 
-### 5) Scalable (?)
+### 5) 3D RoPE
+I don't think any previous approach on ARC tried this. In my head this made sense because its much easier for the transformer to learn the structure of grids and the input-output relation (since output plane is parallel to input plane). No spending tokens understanding how grids work. Whether this actually helps is yet to be proven.
+
+### 6) Scalable (?)
 Theoretically, the model should improve with more puzzles added to the dataset. Unfortunately, I was too GPU poor to test this properly. It seems to be true at small scales, and I haven't found a ceiling yet. I will be testing this hypothesis properly now.
 
 Empirically, at small scales, performance seems to improve with:
 - increasing number of layers
 - increasing training time
 - increasing training datapoints (requires more compute)
+
+### 7) Inference <!--(put this before at 2) (3) -->
+
+Nothing new here. For each task, I provide the test input grid tokens to the transformer and ask it to predict the output (like an LLM). This is faster than ~~transductive approaches~~ models that take in all the grids in the task (transductive was wrongly used here) since the model doesn't do computations on the example pairs during inference time. Benefits of using per-task embedding (same embedding for even the augmentations.)
+
+I also do use augmentation during inference - this is called AAIVR - like most recent approaches on ARC-AGI. This is the one part of my model that is not "bitter lesson" pilled. Obviously, I hate it. My main focus next will be to remove this. I am confident of being able to do so without losing performance.   
+
+<!-- %% The reason it works is that it follows the Minimum Description Length principle. Previous methods were training lookup tables. I am focusing on generalisation. %% -->
 
 
 ## Why does this work?
