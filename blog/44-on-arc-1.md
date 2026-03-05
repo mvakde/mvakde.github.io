@@ -149,22 +149,18 @@ Listed the criticisms here with answers
 	- This dogma of ignoring test inputs doesn't make sense in a world trying to solve continual learning
 	- Note: I have removed input training for now, but it is still allowed
 - This is against testing policy
-    - No this is false. There is some ambiguous wording in the policy that causes the confusion but anyone who has . Keeping the legalese aside, it also follows the spirit of a meta learning benchmark. 
+    - No this is false. There is some ambiguous wording in the policy that causes the confusion but anyone who has worked on the benchmark/has context knows that I didn't violate testing policy. Keeping the legalese aside, it also follows the spirit of a meta learning benchmark. 
 - You are not including training costs
-	- No, this is false. Lifetime compute is cost of training the model  from scratch + cost of running inference on all tasks. Yes it totally amounts to 70 cents. Check the prices for 1.5hrs of a 5090 on vast.ai
+	- No, this is false. Lifetime compute is cost of training the model  from scratch + cost of running inference on all tasks. Yes it totally amounts to 67 cents. Check the prices of a 5090 for 2hrs on vast.ai
 - Test time training is traditionally done one task at a time. All tasks at once is unrealistic
 	- This is valid, but again nuanced.
 	- Humans can only learn from one test input at a time (unclear)
 	- Brought up [here](https://x.com/BlackHC/status/2002316964010557444), here and here
-- Providing cost per task amortises cost of training since all test tasks are trained on at once
-	- This is nuanced. I showed cost per task because that's how the organisers compare every model. They did the same for TRM which also trains on all tasks at once
-	- I was also more generous by including training and inference costs while LLMs and other models exclude pre-training/offline training costs.
-	- But I agree its apples to oranges so I have switched to (a) showing lifetime compute cost, (b) only compare with TRM, HRM and CompressARC and (c) added ablations with comparable training styles.
-
-I made 3 changes to sort this out
-- Show charts on lifetime compute instead of per task, remove LLMs and compare only with similar approaches like CompressARC, TRM, HRM
-- Switched to supervised training regime so no training on Inputs (I think inputs are absolutely fine btw, but this is easier to train and shows how good a transformer can perform with less controversy)
-- Ablations showing performance in different scenarios without test time training
+- Providing cost per task amortises cost of training since all test tasks are trained on at once. So comparing other models is unfair
+	- Yeah this is fair. In my defense:
+	    - That's how the organisers compare every model, including TRM which also trains on all test tasks at once
+	    - I was also more generous by including training and inference costs while LLMs and other models exclude pre-training/offline training costs.
+	- I have now switched to (a) showing lifetime compute cost instead of per-task, (b) comparing only with TRM, HRM and CompressARC and not with LLMs / other methods and (c) I added ablations with comparable training styles
 
 ## Previous criticism about ARC-AGI itself
 When I posted last time, there was a lot of debate about ARC-AGI itself. Some were valid, but a lot of them were questions Chollet has answered many times before:
@@ -178,18 +174,40 @@ Chollet's paper and these tweets[^1] are good sources. Summing up his stance: Th
 I mainly care about ARC since it can be used to test for sample efficiency which is an important unsolved problem today! It's also a well constructed meta-learning benchmark, and is accessible to GPU poor peeps. Historically, its been great at [pointing out the strengths and flaws](#learnings-from-llms-on-arc-agi) of LLMs. I also think its cool that the benchmark stood unsaturated for 6 years, despite being high profile / having a large cash prize since we now know DL can perform extraordinarily well on ARC-1/2.
 
 There are some valid criticisms IMO:
-- They should switch focus of ARC-1/2 to sample efficiency instead of only trying to test fluid intelligence now that its saturated. This would also complement ARC-3 very well. 
-	- Disallow synthetic data for ARC-1/2 (it made sense till 2024 when DL scores on it sucked). We now know LLMs/DL can learn anything given enough training data.
+- They should switch focus of ARC-1/2 to sample efficiency instead of only trying to test fluid intelligence.  
+    - We now know LLMs/DL can learn anything given enough training data
+	- Do this by disallowing synthetic data for ARC-1/2 (it made sense till 2024 when DL scores on it sucked)
+	- This would also complement ARC-3 very well
 - A single leaderboard graph comparing multiple types of models doesn't make sense. It brings the following 3 problems (solution: separate charts)
-	- The x-axis is cost/task. But it only counts online compute cost.Some of these models (like LLMs) have massive offline pretraining phases whose costs arent counted. You can use infinite training compute to effectively bring the test set into distribution, so these models should be evaluated separately.
+	- The x-axis is cost/task. But it only counts online compute cost. Some of these models (like LLMs) have massive offline pretraining phases whose costs arent counted. You can use infinite training compute to effectively bring the test set into distribution, so these models should be evaluated separately.
     - Dividing cost by number of tasks makes no sense for the models that train on all test tasks at once (like mine, TRM & HRM)
 	- Comparing LLMs on the public eval set makes no sense since the answers to the public puzzles are available on the internet
 - They drew premature conclusions from TRM and HRM and attributed success to recursive loops+deep supervision. I think this bias is because they hypothesise pure deep learning can't solve ARC (eg: base LLMs still suck at ARC-2). I disagree
 - The wording of the testing policy can be improved
 
-Regarding testing policy: The policy says "test taker must not know what the test will be". People interpreted this as saying TTT is banned. But it actually refers to the human designing the AI system, not the AI system itself. Eg: to discourage designing inductive biases based on the eval set. (Its a meta learning benchmark. This is fine)
+Regarding testing policy: The policy says "test taker must not know what the test will be". People interpreted this as saying TTT is banned. But it actually refers to the human designing the AI system, not the AI system itself. Eg: to discourage designing inductive biases based on the eval set. (Its a meta learning benchmark. This is fine!)
 
 To anyone active in the ARC community, this has always been clear since test time training has been allowed and encouraged. [Steven](https://x.com/sd_marlow/status/2002498207235125669) and [Chew's](https://x.com/chewkokwah/status/2002686360344527304) comments clarify this and other concerns. 
+
+## Learnings from LLMs on ARC-AGI
+LLMs have now saturated v1 and v2 of this benchmark. Here's what I infer from their progress:
+
+ARC-AGI predates LLMs. They performed terribly on the benchmarks initially, showing that pretraining doesn't confer general reasoning capabilities and that LLMs can suck at tasks that are incredibly easy for humans 
+
+OpenAI's O1 getting 75% was a big win for LLMs. It suggested that given enough data, LLMs can learn any task during post-training. I assume this is what Sholto Douglas [often argues about](https://www.youtube.com/watch?v=64lXQP6cs5M).  
+
+When ARC-2 came out, it reset progress of all LLMs, including the thinking ones. This suggests even post-training doesn't confer general reasoning capabilities, otherwise a model that performs well on ARC-1 would automatically perform well on ARC-2.  
+
+(Basically, the models are learning how to solve ARC puzzles, not general abstract reasoning and its scores on a task are dependent on how well it is represented in its training data. Also, I'm not sure whether "general reasoning" even exists in the first place? Maybe humans are specialised too)
+
+Since then, thinking LLMs have made steady progress on ARC-2. People often think this means models are better at general reasoning BUT what they don't notice is that the base models are stuck at single digits. Taken with [other evidence](https://arcprize.org/blog/arc-prize-2025-results-analysis#overfitting-on-knowledge), this suggests:
+- Scores on ARC-2 are driven by post-training. (Probably largely depend on amount of synthetic ARC data?)
+- Labs are benchmaxxing (probably coz customers care about benchmark performance?)
+- LLMs are not sample efficient in any way.
+
+Don't get me wrong, I am very bullish on LLMs. The trends on ARC-2 show that performance will keep improving with increase in compute and data. Its also incredible to see the reduction in inference costs.
+
+<!-- Then what's the use of the benchmark? Sample efficiency (and related problems like continual learning). There will always be tasks where there is simply no training data or very little of it. ARC is a good benchmark as it has very few samples per concept, is well constructed to require very few priors and is easy to solve for humans. But you gotta be disciplined. No pretraining on the internet or using synthetic data or augmentations.  -->
 
 ## Full list of changes
 Changes that modify training dynamics
@@ -219,25 +237,7 @@ Misc.
 1. Resume behavior changed: optimizer-switch/hparam-change detection now can reset/rewarm schedule, altering resumed-run dynamics.
 2. Scheduler stepping changed to fractional epoch progress when training, instead of pure per-step cosine progression.
 
-## Learnings from LLMs on ARC-AGI
-LLMs have now saturated v1 and v2 of this benchmark. Here's what I infer from their progress:
 
-ARC-AGI predates LLMs. They performed terribly on the benchmarks initially, showing that pretraining doesn't confer general reasoning capabilities and that LLMs can suck at tasks that are incredibly easy for humans 
-
-OpenAI's O1 getting 75% was a big win for LLMs. It suggested that given enough data, LLMs can learn any task during post-training. I assume this is what Sholto Douglas [often argues about](https://www.youtube.com/watch?v=64lXQP6cs5M).  
-
-When ARC-2 came out, it reset progress of all LLMs, including the thinking ones. This suggests even post-training doesn't confer general reasoning capabilities, otherwise a model that performs well on ARC-1 would automatically perform well on ARC-2.  
-
-Basically, the models are learning how to solve ARC puzzles, not general abstract reasoning and its scores on a task are dependent on how well it is represented in its training data. (I'm not sure whether "general reasoning" even exists in the first place? Maybe humans are specialised too)
-
-Since then, thinking LLMs have made steady progress on ARC-2. People often think this means models are better at general reasoning BUT what they don't notice is that the base models are stuck at single digits. Taken with [other evidence](https://arcprize.org/blog/arc-prize-2025-results-analysis#overfitting-on-knowledge), this suggests:
-- Scores on ARC-2 are driven by post-training. (Probably largely depend on amount of synthetic ARC data?)
-- Labs are benchmaxxing (probably coz customers care about benchmark performance?)
-- LLMs are not sample efficient in any way.
-
-Don't get me wrong, I am very bullish on LLMs. The trends on ARC-2 show that performance will keep improving with increase in compute and data. Also its incredible to see the reduction in inference costs.
-
-<!-- Then what's the use of the benchmark? Sample efficiency (and related problems like continual learning). There will always be tasks where there is simply no training data or very little of it. ARC is a good benchmark as it has very few samples per concept, is well constructed to require very few priors and is easy to solve for humans. But you gotta be disciplined. No pretraining on the internet or using synthetic data or augmentations.  -->
 
 TODO: ADD CITATIONS
 
