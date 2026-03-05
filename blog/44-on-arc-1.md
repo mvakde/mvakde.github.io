@@ -33,13 +33,16 @@ ARC is a great benchmark to test this:
 - It is incredibly easy for humans to solve, and accessible to even poor AI researchers
 - Benchmark is still unsaturated (for data efficiency, ignore LLMs and approaches that use tons of synthetic data or human inductive biases) 
 
-Next, I'll work on new research ideas to break the limits. I intend to continue keeping the costs low so that anyone in the world can work on this.
+Next, I'll work on new research ideas to break these limits. I'll try to keep costs low so that anyone in the world can work on this.
 
 ## Changes since last time:
-This mainly an upgrade to the previous model. One exception is that I don't train on input tokens anymore. You can read the [technical details of the old model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details) to understand how it works. Find the full list of changes [here](#full-list-of-changes)
+The approach is largely the same except  I don't train on input tokens anymore.I implemented well known ideas that improve the performance of a transformer
+
+The old model has the [technical details of the approach](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details), and here are the [full list of changes](#full-list-of-changes)
+
 
 The biggest increases in scores were due to
-- modern architecture (SwiGlu instead of GELU, RMSnorm not layernorm, etc.)
+- Modern architecture (SwiGlu instead of GELU, RMSnorm not layernorm, etc.)
 - More data diversity, better shuffling of data 
 - scaling up: 8 layers instead of 4, 
 
@@ -48,16 +51,18 @@ Cost decreases mainly due to:
 - AdamW -> Normuon
 - flash attention with varlen training + flex attention kernels for inference
 
-I also switched from an unsupervised training approach to supervised (no longer training on inputs). Turns out the performance is pretty much the same, with supervised giving less variance and more stability. 
+**Interesting results**
+Since I am no longer training on inputs, this approach is now supervised. Both training and test loss are now worse, yet it scores better! Also its more stable and there's less variance in scores. 
 
 <!-- This also completely negates the criticism of training on test inputs  -->
 
 <!-- (EXPLAIN IN DEPTH)  -->
 
-Interestingly, the supervised training has a much worse training loss. Yet the performance is about the same. 
 <!-- (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?) -->
 
-I still think the unsupervised style training can be used in other scenarios, and I am evaluating this.
+I think the unsupervised style training will be better in some scenarios, and I am evaluating this.
+
+Before NorMuon, I tried vanilla Muon. Obviously it trained much faster than AdamW, but the loss (and scores) would loiter at the end instead of converging. I found that cranking down the momentum and/or LR drastically at this point helped, but I didn't want to make manually changes like this. When I switched to NorMuon, the problem disappeared
 
 ## Ablations and analysis
 
