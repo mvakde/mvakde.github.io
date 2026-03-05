@@ -2,15 +2,22 @@
 permalink: /blog/44-on-arc-1/
 title: "44% on ARC-AGI-1 in 67 cents"
 ---
---TODO ADD IMAGE, ADD SCORE ON ARC2?--
 
 I trained a small transformer from scratch in 1.5hrs on a 5090  
 Same performance as TRM, beats HRM and many LLMs
 
-This is an upgrade to my previous model posted here and here.  
+This is an upgrade to my previous model posted [here](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/) and [here](https://x.com/evilmathkid/status/2001689479476879448).  
 Faster, better, cheaper and still open source.  
 
-(Find discussion on X and HN here)
+Also gets 7% on ARC-2
+
+[Discussion on Twitter](https://x.com/evilmathkid/status/2029519274835148829), Discussion on HN 
+
+<figure>
+  <img src="../hero-img.png" alt="ARC-1 Public Eval"/>
+  <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval. I only compare against models that do similar test time training</figcaption></span>
+</figure>
+
 ## Changes since last time:
 The biggest increases in scores were due to
 - More data diversity, better shuffling of data 
@@ -24,7 +31,8 @@ Cost decreases mainly due to:
 
 I also switched from an unsupervised training approach to supervised (no longer training on inputs). Turns out the performance is pretty much the same, with supervised giving less variance and more stability. This also completely negates the criticism off training on test inputs (EXPLAIN IN DEPTH) 
 
-Interestingly, Supervised training has a much worse training loss. Yet the performance is about the same. (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?)
+Interestingly, Supervised training has a much worse training loss. Yet the performance is about the same. 
+<!-- (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?) -->
 
 I still think the unsupervised style training can be used in other scenarios, and I am evaluating this.
 
@@ -103,7 +111,8 @@ Watching LLMs climb the ARC leaderboard has been useful as [explained below](#le
 I have already argued [before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce these anti-bitter lesson tricks.
 
 ### Previous criticism about my approach
-There was a lot of heated discussion on twitter last time, with lot of experienced researchers chipping in, both for and against. Thread 1, [thread 2](https://x.com/giffmana/status/2002128356901597509), ... (TODO Link stuff like Lucas' tweet, Howard, Susan, improve wording)
+There was a lot of heated discussion on twitter last time, with lot of experienced researchers chipping in, both for and against. Thread 1, [thread 2](https://x.com/giffmana/status/2002128356901597509), 
+<!-- ... (TODO Link stuff like Lucas' tweet, Howard, Susan, improve wording) -->
 
 Listed the criticisms here with answers
 - This is "training on test"
