@@ -36,9 +36,7 @@ ARC is a great benchmark to test this:
 Next, I'll work on new research ideas to break these limits. I'll try to keep costs low so that anyone in the world can work on this.
 
 ## Changes since last time:
-The approach is largely the same except  I don't train on input tokens anymore.I implemented well known ideas that improve the performance of a transformer
-
-The old model has the [technical details of the approach](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details), and here are the [full list of changes](#full-list-of-changes)
+The approach is largely the same except  I don't train on input tokens anymore. I implemented well known ideas that improve the performance of a transformer. The old model has the [technical details of the approach](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details), and here are the [full list of changes](#full-list-of-changes)
 
 
 The biggest increases in scores were due to
@@ -60,17 +58,18 @@ Since I am no longer training on inputs, this approach is now supervised. Both t
 
 <!-- (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?) -->
 
-I think the unsupervised style training will be better in some scenarios, and I am evaluating this.
+Many ppl today are working on sample efficiency by aiming for the lowest val loss on a small dataset. I think that's great, but this points out [a failure mode](https://arxiv.org/pdf/2601.22950) in such an approach
+
+I do think the unsupervised style training will be better in some scenarios, and I am evaluating this.
 
 Before NorMuon, I tried vanilla Muon. Obviously it trained much faster than AdamW, but the loss (and scores) would loiter at the end instead of converging. I found that cranking down the momentum and/or LR drastically at this point helped, but I didn't want to make manually changes like this. When I switched to NorMuon, the problem disappeared
 
-## Ablations and analysis
-
-Ablations:
-- Running the model compressARC style (training on each task separately), gives a drops performance down to 20%
-- Unsupervised style performs about the same -> ~40%
-- Switching from 3D RoPE to 1D drops score to 24%
-- Removing the per-task embeddings drops score to 24%
+## Ablations
+- Running the model [CompressARC](https://github.com/iliao2345/CompressARC) style (training on each task separately), gives a drops performance down to ~18%
+- Unsupervised style performs slightly worse -> ~38%
+- Restricting training set to ARC-1 puzzles performs about the same -> ~40%
+- Switching from 3D RoPE to 1D drops score to ~24%
+- Removing the per-task embeddings drops score to ~24%
 
 <!-- Traditional test time finetuning, No augmentations, Removing extra datasets or when training on test examples one at a time-->
 
