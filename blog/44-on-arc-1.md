@@ -21,8 +21,22 @@ Also gets 7% on ARC-2
   <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval. I only compare against models that do similar test time training</figcaption></span>
 </figure>
 
+## Why work on this?
+I think sample efficiency is the most important problem in AI today and I want to solve it. 
+
+The intention behind this work is to (1) find the limits of sample efficiency when restricted to transformers and today's deep learning methods and (2) reduce costs so iteration is much faster and cheaper. 
+
+ARC is a great benchmark to test this:
+- Very few samples (only a 1000 puzzles) in a high dimensional space
+- Its a metalearning benchmark, so each puzzle uses a different rule, with some common concepts
+- Very few priors needed: every concept needed in the eval set is present in the train set
+- It is incredibly easy for humans to solve, and accessible to even poor AI researchers
+- Benchmark is still unsaturated (for data efficiency, ignore LLMs and approaches that use tons of synthetic data or human inductive biases) 
+
+Next, I'll work on new research ideas to break the limits. I intend to continue keeping the costs low so that anyone in the world can work on this.
+
 ## Changes since last time:
-This is just an upgrade to the previous model. The only major change is I don't train on input tokens anymore. Here are the links to the [technical details of the old model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details) and the [full list of changes in this model](#full-list-of-changes)
+This mainly an upgrade to the previous model. One exception is that I don't train on input tokens anymore. You can read the [technical details of the old model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details) to understand how it works. Find the full list of changes [here](#full-list-of-changes)
 
 The biggest increases in scores were due to
 - modern architecture (SwiGlu instead of GELU, RMSnorm not layernorm, etc.)
@@ -44,26 +58,6 @@ Interestingly, the supervised training has a much worse training loss. Yet the p
 <!-- (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?) -->
 
 I still think the unsupervised style training can be used in other scenarios, and I am evaluating this.
-
-## Why is this work important?
-I think sample efficiency is the most important problem in AI today and I want to solve it. 
-
-ARC is a great benchmark for this:
-- Very few samples (only a 1000 puzzles) in a high dimensional space
-- Its a metalearning benchmark, so each puzzle uses a different rule, with some common concepts
-- Very few priors needed: every concept needed in the eval set is present in the train set
-- It is incredibly easy for humans to solve, and accessible to even poor AI researchers
-- Benchmark is still unsaturated if you ignore approaches that use tons of synthetic data or human inductive biases.
-
-The intention behind this work is to find the limits of sample efficiency when restricted to transformers and today's deep learning methods. Next, I'll work on new research ideas to break the limits.
-
-For example, I didn't expect to reach 45% with just the transformer, I thought this would need new ideas. I certainly didn't expect to reach it at such low costs/flops. The ablations show that a surprising amount of perfomance is retained even without augmentations or synthetic data. Now I'm pretty sure 65% can be reached within the transformer framework
-
-<!-- or when training on test examples one at a time -->
-
-Tbh, I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Blindsided by LLMs or using harnesses?
-
-I intend to continue keeping the costs low so that anyone in the world can work on this.
 
 ## Ablations and analysis
 
@@ -108,10 +102,17 @@ Costs can probably be reduced 10x with handmade GPU code. There are architectura
 
 Lastly, figure out how to remove data augmentations. (I hate that I used it, ignore everyone who thinks its okay). There are a few obvious ways to do so, but the challenge is keeping training costs low. 
 
+## Misc 
+TBH, I didn't expect to reach 45% with just the transformer, I thought this would need new ideas. I certainly didn't expect to reach it at such low costs/flops. The ablations show that a surprising amount of perfomance is retained even without augmentations or synthetic data. Now I'm pretty sure 65% can be reached within the transformer framework
+
+<!-- or when training on test examples one at a time -->
+
+I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Blindsided by LLMs or using harnesses?
+
 ## Appendix
 ### Mistakes that I think other approaches are making
 **Assuming recursion is the next big thing**  (Eg: [HRM](https://arxiv.org/pdf/2506.21734), [TRM](https://arxiv.org/pdf/2510.04871), [Arcprize blog](https://arcprize.org/blog/arc-prize-2025-results-analysis))  
-I do see the appeal, but there aren't good enough ablations to prove this. And my model shows you can reach the same performance without recursion. The only confirmed benefit of recursion is allowing you to increase compute without increasing memory movement.
+I do see the appeal, but there aren't enough ablations to prove this. And my model shows you can reach the same performance without recursion. The only confirmed benefit of recursion is allowing you to increase compute without increasing memory movement.
 
 I also don't like that TRM was called a 7M model when there are [O(100M+) embedding weights being trained](https://github.com/SamsungSAILMontreal/TinyRecursiveModels/issues/18). It is misleading, makes it more like a lookup table, and calls into question what causes the performance. It should have been called 7M "active" weights. [Same for HRM](https://github.com/sapientinc/HRM/issues/67). 
 
