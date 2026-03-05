@@ -6,7 +6,7 @@ Decided to start blogging.
 
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
-### [44% on ARC-AGI-1 in just 70 cents](./44-on-ARC-in-70-cents) 3rd March 2026
+### [44% on ARC-AGI-1 in just 70 cents](./44-on-arc-in-70-cents) 5th March 2026
 Improvements just keep coming
 
 ### [Setting a new Pareto Frontier on ARC-AGI](./new-pareto-frontier-arc-agi) 18th Dec 2025
