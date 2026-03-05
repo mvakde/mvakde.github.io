@@ -34,14 +34,36 @@ Cost decreases mainly due to:
 - AdamW -> Normuon
 - flash attention with varlen training + flex attention kernels for inference
 
-I also switched from an unsupervised training approach to supervised (no longer training on inputs). Turns out the performance is pretty much the same, with supervised giving less variance and more stability. This also completely negates the criticism off training on test inputs 
+I also switched from an unsupervised training approach to supervised (no longer training on inputs). Turns out the performance is pretty much the same, with supervised giving less variance and more stability. 
+
+<!-- This also completely negates the criticism of training on test inputs  -->
 
 <!-- (EXPLAIN IN DEPTH)  -->
 
-Interestingly, Supervised training has a much worse training loss. Yet the performance is about the same. 
+Interestingly, the supervised training has a much worse training loss. Yet the performance is about the same. 
 <!-- (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?) -->
 
 I still think the unsupervised style training can be used in other scenarios, and I am evaluating this.
+
+## Why is this work important?
+I think sample efficiency is the most important problem in AI today and I want to solve it. 
+
+ARC is a great benchmark for this:
+- Very few samples (only a 1000 puzzles) in a high dimensional space
+- Its a metalearning benchmark, so each puzzle uses a different rule, with some common concepts
+- Very few priors needed: every concept needed in the eval set is present in the train set
+- It is incredibly easy for humans to solve, and accessible to even poor AI researchers
+- Benchmark is still unsaturated if you ignore approaches that use tons of synthetic data or human inductive biases.
+
+The intention behind this work is to find the limits of sample efficiency when restricted to transformers and today's deep learning methods. Next, I'll work on new research ideas to break the limits.
+
+For example, I didn't expect to reach 45% with just the transformer, I thought this would need new ideas. I certainly didn't expect to reach it at such low costs/flops. The ablations show that a surprising amount of perfomance is retained even without augmentations or synthetic data. Now I'm pretty sure 65% can be reached within the transformer framework
+
+<!-- or when training on test examples one at a time -->
+
+Tbh, I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Blindsided by LLMs or using harnesses?
+
+I intend to continue keeping the costs low so that anyone in the world can work on this.
 
 ## Ablations and analysis
 
@@ -51,7 +73,7 @@ Ablations:
 - Switching from 3D RoPE to 1D drops score to 24%
 - Removing the per-task embeddings drops score to 24%
 
-<!-- Traditional test time finetuning, No augmentations, Removing extra datasets -->
+<!-- Traditional test time finetuning, No augmentations, Removing extra datasets or when training on test examples one at a time-->
 
 So biggest contribution to performance seems to be good representations (3D RoPE + per-task embedding). 
 
@@ -75,25 +97,8 @@ But its very well possible that these ablations will reach the same performance 
 I now realise that engineering skills/implementation details matter a lot and am generally blackpilled on ML research papers in general. I bet a significant number of them have minor implementation bugs that completely change results or didn't put enough effort in ablations (PUT THIS HERE OR NEXT ) -->
 
 <!-- Muon Loiters (ADD) -->
-## Why is this work important?
-I think sample efficiency is the most important problem in AI today and I want to solve it. 
-
-ARC is a great benchmark to measure sample efficiency (More details in the appendix):
-- Very few samples (only a 1000 puzzles) in a high dimensional space
-- Its a metalearning benchmark, so each puzzle uses a different rule, with some common concepts
-- Very few priors needed: every concept needed in the eval set is present in the train set
-- It is incredibly easy for humans to solve, and accessible to even poor AI researchers
-- Benchmark is still unsaturated if you ignore approaches that use tons of synthetic data or human inductive biases.
-
-The intention behind this work is to find the limits of sample efficiency when restricted to transformers and today's deep learning methods. Next, I'll work on new research ideas to break the limits.
-
-For example, I didn't expect to reach 45% with just the transformer, I thought this would need new ideas. I certainly didn't expect to reach it at such low costs/flops. The ablations show that a surprising amount of perfomance is retained even without augmentations or synthetic data or when training on test examples one at a time. Now I'm pretty sure 65% can be reached within the transformer framework
-
-Tbh, I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Engineering skills?
-
-I intend to continue keeping the costs low so that anyone in the world can work on this.
 ## How can others contribute?
-The code is open source. Feel free to find modifications that improve score or reduce cost. (Pls don't increase training data)
+The code is open source. Feel free to modify it and improve score or reduce cost. (Pls don't increase training data)
 
 Try reaching 65% -- you won't need many modifications. Evidence: I took the union of all solved tasks from multiple runs, and got 55%. Also a bunch of other tasks are "almost" solved. Some ideas:
 - RoPE mixes positional and content information, which probably worsens performance. PoPE should perform on par or better. Or maybe invent a new pos embedding
