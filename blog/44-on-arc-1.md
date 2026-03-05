@@ -6,12 +6,15 @@ title: "44% on ARC-AGI-1 in 67 cents"
 I trained a small transformer from scratch in 1.5hrs on a 5090  
 Same performance as TRM, beats HRM and many LLMs
 
-This is an upgrade to my previous model posted [here](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/) and [here](https://x.com/evilmathkid/status/2001689479476879448).  
+This is an upgrade to my [previous](https://x.com/evilmathkid/status/2001689479476879448) [model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)    
 Faster, better, cheaper and still open source.  
+
 
 Also gets 7% on ARC-2
 
-[Discussion on Twitter](https://x.com/evilmathkid/status/2029519274835148829), Discussion on HN 
+[Discussion on Twitter](https://x.com/evilmathkid/status/2029519274835148829), [Code on github](https://github.com/mvakde/mdlARC/)
+
+<!-- HN discussion -->
 
 <figure>
   <img src="../hero-img.png" alt="ARC-1 Public Eval"/>
@@ -19,10 +22,12 @@ Also gets 7% on ARC-2
 </figure>
 
 ## Changes since last time:
+This is just an upgrade to the previous model. The only major change is I don't train on input tokens anymore. Here are the links to the [technical details of the old model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details) and the [full list of changes in this model](#full-list-of-changes)
+
 The biggest increases in scores were due to
-- More data diversity, better shuffling of data 
-- 8 layers instead of 4, 
 - modern architecture (SwiGlu instead of GELU, RMSnorm not layernorm, etc.)
+- More data diversity, better shuffling of data 
+- scaling up: 8 layers instead of 4, 
 
 Cost decreases mainly due to:
 - Way fewer augmentations (more sample efficient!)
@@ -41,21 +46,27 @@ I still think the unsupervised style training can be used in other scenarios, an
 ## Ablations and analysis
 
 Ablations:
-- Running the model compressARC style (training on each task separately), gives a drops performance down to 24%
-- Unsupervised style
-- Removing 3D RoPE drops score to 20%
-- Per-task embeddings 
+- Running the model compressARC style (training on each task separately), gives a drops performance down to 20%
+- Unsupervised style performs about the same -> ~40%
+- Switching from 3D RoPE to 1D drops score to 24%
+- Removing the per-task embeddings drops score to 24%
 
 <!-- Traditional test time finetuning, No augmentations, Removing extra datasets -->
 
-So biggest contribution to performance seems to be good representation (3D RoPE + per-task embedding). 
+So biggest contribution to performance seems to be good representations (3D RoPE + per-task embedding). 
 
-My analysis.  
+<figure>
+  <img src="../rep-ablation.png" alt="Ablating RoPE and per-task embeddings"/>
+  <span style = "text-align:center;"><figcaption>Removing 3D RoPE or the per-task embedding gives a steep drop. Both ablations saturate at 25%</figcaption></span>
+</figure>
+
+
+<!-- My analysis.  
 Obviously I hate augmentations
 
 Unlike augmentations, I think 3D RoPE is fair. The positional information it provides is also given to human solvers. Per-task embeddings are also fine, otherwise the model will not be able to distinguish between different tasks (same info provided to human solvers). Both their representations are learnt by the model not handcoded anyway.
 
-Unsupervised has lower test loss yet score is the same. This is super weird.
+Unsupervised has lower test loss yet score is the same. This is super weird. -->
 
 <!-- My best guess is 3D RoPE + per-task embeddings. 50% drop in performance when either of them are independently removed (CHECK WITH SL). Feels weird coz these were decisions I made in 5 min. But if true, then maybe the takeaway is good representations is all you need.
 
