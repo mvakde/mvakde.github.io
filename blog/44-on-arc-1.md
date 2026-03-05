@@ -29,7 +29,9 @@ Cost decreases mainly due to:
 - AdamW -> Normuon
 - flash attention with varlen training + flex attention kernels for inference
 
-I also switched from an unsupervised training approach to supervised (no longer training on inputs). Turns out the performance is pretty much the same, with supervised giving less variance and more stability. This also completely negates the criticism off training on test inputs (EXPLAIN IN DEPTH) 
+I also switched from an unsupervised training approach to supervised (no longer training on inputs). Turns out the performance is pretty much the same, with supervised giving less variance and more stability. This also completely negates the criticism off training on test inputs 
+
+<!-- (EXPLAIN IN DEPTH)  -->
 
 Interestingly, Supervised training has a much worse training loss. Yet the performance is about the same. 
 <!-- (POINT TOWARDS THE RECENT NEOLAB AND THE PERPLEXITY PAPER -- DO RREAD IT THOUGH, ALSO CHECK LOSS WITH THE WHOLE AUGMENTED DATASET?) -->
@@ -43,9 +45,8 @@ Ablations:
 - Unsupervised style
 - Removing 3D RoPE drops score to 20%
 - Per-task embeddings 
-<!-- - Traditional test time finetuning
-- No augmentations
-- Removing extra datasets -->
+
+<!-- Traditional test time finetuning, No augmentations, Removing extra datasets -->
 
 So biggest contribution to performance seems to be good representation (3D RoPE + per-task embedding). 
 
