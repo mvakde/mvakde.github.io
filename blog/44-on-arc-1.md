@@ -44,13 +44,15 @@ The biggest increases in scores were due to
 - More data diversity, better shuffling of data 
 - scaling up: 8 layers instead of 4, 
 
-Cost decreases mainly due to:
+Biggest decreases in cost due to:
 - Way fewer augmentations (more sample efficient!)
 - AdamW -> Normuon
 - flash attention with varlen training + flex attention kernels for inference
 
+Rest of the changes were incremental
+
 **Interesting results**
-Since I am no longer training on inputs, this approach is now supervised. Both training and test loss are now worse, yet it scores better! Also its more stable and there's less variance in scores. 
+Since I am no longer training on inputs, this approach is now supervised. Both training and test loss are now worse, yet it scores better! Also it is more stable and there's less variance in scores. 
 
 <!-- This also completely negates the criticism of training on test inputs  -->
 
@@ -65,21 +67,26 @@ I do think the unsupervised style training will be better in some scenarios, and
 Before NorMuon, I tried vanilla Muon. Obviously it trained much faster than AdamW, but the loss (and scores) would loiter at the end instead of converging. I found that cranking down the momentum and/or LR drastically at this point helped, but I didn't want to make manually changes like this. When I switched to NorMuon, the problem disappeared
 
 ## Ablations
-- Running the model [CompressARC](https://github.com/iliao2345/CompressARC) style (training on each task separately), gives a drops performance down to ~18%
-- Unsupervised style performs slightly worse -> ~38%
-- Restricting training set to ARC-1 puzzles performs about the same -> ~40%
-- Switching from 3D RoPE to 1D drops score to ~24%
-- Removing the per-task embeddings drops score to ~24%
-
-<!-- Traditional test time finetuning, No augmentations, Removing extra datasets or when training on test examples one at a time-->
-
-So biggest contribution to performance seems to be good representations (3D RoPE + per-task embedding). 
+The biggest contribution to performance seems to be good representations (3D RoPE + per-task embedding). 
 
 <figure>
   <img src="../rep-ablation.png" alt="Ablating RoPE and per-task embeddings"/>
   <span style = "text-align:center;"><figcaption>Removing 3D RoPE or the per-task embedding gives a steep drop. Both ablations saturate at 25%</figcaption></span>
 </figure>
 
+- Training on inputs performs slightly worse -> ~39%
+- Restricting training set to ARC-1+ConceptARC only performs about the same: ~40%
+- Switching from 3D RoPE to 1D drops score to ~24%
+- Removing the per-task embeddings drops score to ~24%
+- Running the model [CompressARC](https://github.com/iliao2345/CompressARC) style (training from scratch on each task separately, and unsupervised), gives a drops performance down to ~18%
+- CompressARC but supervised gets ~15%
+
+<figure>
+  <img src="../ablate-best-scores.png" alt="Other ablations, best scores"/>
+  <span style = "text-align:center;"><figcaption>Finding the best scores on other ablations. Comparing costs makes little sense here as all but the first ablation requires a lot more compute</figcaption></span>
+</figure>
+
+<!-- Traditional test time finetuning, No augmentations, Removing extra datasets or when training on test examples one at a time-->
 
 <!-- My analysis.  
 Obviously I hate augmentations
@@ -93,8 +100,6 @@ Unsupervised has lower test loss yet score is the same. This is super weird. -->
 But its very well possible that these ablations will reach the same performance when trained for long enough. Hard to say. I defer to Noam Shazeer's quote, and am blackpilled any ML paper that explains why something works. I do not think enough effort is put into ablations. I now think how fast a model learns (in both time and number of samples), is way more important than
 
 I now realise that engineering skills/implementation details matter a lot and am generally blackpilled on ML research papers in general. I bet a significant number of them have minor implementation bugs that completely change results or didn't put enough effort in ablations (PUT THIS HERE OR NEXT ) -->
-
-<!-- Muon Loiters (ADD) -->
 ## How can others contribute?
 The code is open source. Feel free to modify it and improve score or reduce cost. (Pls don't increase training data)
 
