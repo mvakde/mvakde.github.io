@@ -51,7 +51,7 @@ Biggest decreases in cost due to:
 
 Rest of the changes were incremental
 
-**Interesting results**
+**Interesting results**  
 Since I am no longer training on inputs, this approach is now supervised. Both training and test loss are now worse, yet it scores better! Also it is more stable and there's less variance in scores. 
 
 <!-- This also completely negates the criticism of training on test inputs  -->
@@ -118,8 +118,8 @@ TBH, I didn't expect to reach 45% with just the transformer, I thought this woul
 
 I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Blindsided by LLMs or using harnesses?
 
-## Appendix
-### Mistakes that I think other approaches are making
+# Appendix
+## Mistakes that I think other approaches are making
 **Assuming recursion is the next big thing**  (Eg: [HRM](https://arxiv.org/pdf/2506.21734), [TRM](https://arxiv.org/pdf/2510.04871), [Arcprize blog](https://arcprize.org/blog/arc-prize-2025-results-analysis))  
 I do see the appeal, but there aren't enough ablations to prove this. And my model shows you can reach the same performance without recursion. The only confirmed benefit of recursion is allowing you to increase compute without increasing memory movement.
 
@@ -127,17 +127,17 @@ I also don't like that TRM was called a 7M model when there are [O(100M+) embedd
 
 
 
-**I don't like LLM based approaches on ARC anymore**:
+**I don't like LLM based approaches on ARC anymore**:  
 Watching LLMs climb the ARC leaderboard has been useful as [explained below](#learnings-from-llms-on-arc-agi), but I don't think there's much to learn from their ARC-1/ARC-2 anymore:
 - Increases in LLM scores are now mainly driven by post training, and are probably a function of amount of synthetic data. They are learning to solve ARC tasks, not learn general abstract reasoning (if such a thing even exists)
 - There's also too many confounding factors to glean anything from new scores. Comparing LLMs based on benchmarks is bad science in general.
-- Their scores on the public leaderboard is useless, the answers are available on the internet, and are trained on. For LLMs, only private scores should count.
+- Their scores on the public leaderboard are useless, the answers are available on the internet, and are trained on. For LLMs, only private scores should count.
 - Using harnesses on top of LLMs to improve performance makes little sense to me. All the post-training magic is happening inside the frontier labs, and they can build harnesses themselves. I think its unlikely continual learning will be solved by a harness.
 
-**Misc**
+**Misc**   
 I have already argued [before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce these anti-bitter lesson tricks.
 
-### Previous criticism about my approach
+## Previous criticism about my approach
 There was a lot of heated discussion on twitter last time, with lot of experienced researchers chipping in, both for and against. Thread 1, [thread 2](https://x.com/giffmana/status/2002128356901597509), 
 <!-- ... (TODO Link stuff like Lucas' tweet, Howard, Susan, improve wording) -->
 
@@ -166,7 +166,7 @@ I made 3 changes to sort this out
 - Switched to supervised training regime so no training on Inputs (I think inputs are absolutely fine btw, but this is easier to train and shows how good a transformer can perform with less controversy)
 - Ablations showing performance in different scenarios without test time training
 
-### Previous criticism about ARC-AGI itself
+## Previous criticism about ARC-AGI itself
 When I posted last time, there was a lot of debate about ARC-AGI itself. Some were valid, but a lot of them were questions Chollet has answered many times before:
 - What does ARC even test for? (fluid intelligence)
 - Why should we care about ARC? (Fluid intelligence isn't fully solved)
@@ -191,7 +191,7 @@ Regarding testing policy: The policy says "test taker must not know what the tes
 
 To anyone active in the ARC community, this has always been clear since test time training has been allowed and encouraged. [Steven](https://x.com/sd_marlow/status/2002498207235125669) and [Chew's](https://x.com/chewkokwah/status/2002686360344527304) comments clarify this and other concerns. 
 
-### Full list of changes
+## Full list of changes
 Changes that modify training dynamics
 1. Optimizer changed from AdamW-only to NorMuon + auxiliary AdamW
 2. LR schedule changed from warmup+cosine to WSD schedule (warmup %, hold, then linear decay to floor).
@@ -219,7 +219,7 @@ Misc.
 1. Resume behavior changed: optimizer-switch/hparam-change detection now can reset/rewarm schedule, altering resumed-run dynamics.
 2. Scheduler stepping changed to fractional epoch progress when training, instead of pure per-step cosine progression.
 
-### Learnings from LLMs on ARC-AGI
+## Learnings from LLMs on ARC-AGI
 LLMs have now saturated v1 and v2 of this benchmark. Here's what I infer from their progress:
 
 ARC-AGI predates LLMs. They performed terribly on the benchmarks initially, showing that pretraining doesn't confer general reasoning capabilities and that LLMs can suck at tasks that are incredibly easy for humans 
@@ -238,6 +238,8 @@ Since then, thinking LLMs have made steady progress on ARC-2. People often think
 Don't get me wrong, I am very bullish on LLMs. The trends on ARC-2 show that performance will keep improving with increase in compute and data. Also its incredible to see the reduction in inference costs.
 
 <!-- Then what's the use of the benchmark? Sample efficiency (and related problems like continual learning). There will always be tasks where there is simply no training data or very little of it. ARC is a good benchmark as it has very few samples per concept, is well constructed to require very few priors and is easy to solve for humans. But you gotta be disciplined. No pretraining on the internet or using synthetic data or augmentations.  -->
+
+TODO: ADD CITATIONS
 
 
 [^1]: Chollet's [original paper](https://arxiv.org/abs/1911.01547) about the ARC benchmark, some of his tweets [explaining](https://x.com/fchollet/status/2022090111832535354) what it [intends](https://x.com/fchollet/status/1874877373629493548) to [test](https://x.com/fchollet/status/2004276612385108221), and [two](https://x.com/fchollet/status/2022036543582638517) [tweets](https://x.com/fchollet/status/2022040149794967763) explaining the timeline of how the benchmark has evolved. 
