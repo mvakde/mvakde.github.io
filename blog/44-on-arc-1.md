@@ -44,14 +44,20 @@ The biggest increases in scores were due to
 - More data diversity, better shuffling of data 
 - scaling up: 8 layers instead of 4, 
 
-Biggest decreases in cost due to:
+Biggest decreases in cost were due to:
 - Way fewer augmentations (more sample efficient!)
 - AdamW -> Normuon
 - flash attention with varlen training + flex attention kernels for inference
 
-Rest of the changes were incremental
+<!-- The improvements from the other changes were incremental -->
 
-**Interesting results**  
+I also increased the training data by adding the non-overlapping tasks from ARC-2. I did this very carefully to ensure no leakage. You can remove the extra data if you don't like it and it will still scores ~40%, but it will need ~double the compute.
+
+Context: ARC-2 contains 773 ARC-1 puzzles and 347 new puzzles. Most eval puzzles of ARC-1 are repeated, so if you naively train on ARC-2, then its a dataleak and you will score 100%. I avoid this by carefully filtering out the 773 repeated puzzles (so no leak!)
+
+
+
+## Interesting behaviour
 Since I am no longer training on inputs, this approach is now supervised. Both training and test loss are now worse, yet it scores better! Also it is more stable and there's less variance in scores. 
 
 <!-- This also completely negates the criticism of training on test inputs  -->
