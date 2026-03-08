@@ -24,7 +24,7 @@ Also gets 7% on ARC-2
 ## Why work on this?
 I think sample efficiency is the most important problem in AI today and I want to solve it. 
 
-The intention behind this work is to (1) find the limits of sample efficiency when restricted to transformers and today's deep learning methods and (2) reduce costs so iteration is much faster and cheaper. 
+The intention behind this work is to (1) find the limits of sample efficiency when restricted to transformers / today's deep learning methods and (2) reduce costs so iteration is much faster and cheaper. 
 
 ARC is a great benchmark to test this:
 - Very few samples (only a 1000 puzzles) in a high dimensional space
@@ -58,7 +58,7 @@ Context: ARC-2 contains 773 ARC-1 puzzles and 347 new puzzles. Most eval puzzles
 
 
 ## Interesting behaviour
-Since I am no longer training on inputs, this approach is now supervised. Both training and test loss are now worse, yet it scores better! Also it is more stable and there's less variance in scores. 
+Since I am no longer training on inputs, this approach is now supervised. What's weird is that the test loss is now worse, yet it scores better! Also it is more stable and there's less variance in scores. 
 
 <!-- This also completely negates the criticism of training on test inputs  -->
 
@@ -122,26 +122,26 @@ TBH, I didn't expect to reach 45% with just the transformer, I thought this woul
 
 <!-- or when training on test examples one at a time -->
 
-I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Blindsided by LLMs or using harnesses?
+I don't understand why others didn't figure this out. Its just a transformer with the most obvious representation. This benchmark has been open for 6 years, was high profile, and had a million dollar prize! Maybe researchers underestimate deep learning? Maybe the cost of experimentation was high enough that they couldn't run ablations properly? Blindsided by LLMs or using harnesses?
 
 # Appendix
 ## Mistakes that I think other approaches are making
 **Assuming recursion is the next big thing**  (Eg: [HRM](https://arxiv.org/pdf/2506.21734), [TRM](https://arxiv.org/pdf/2510.04871), [Arcprize blog](https://arcprize.org/blog/arc-prize-2025-results-analysis))  
 I do see the appeal, but there aren't enough ablations to prove this. And my model shows you can reach the same performance without recursion. The only confirmed benefit of recursion is allowing you to increase compute without increasing memory movement.
 
-I also don't like that TRM was called a 7M model when there are [O(100M+) embedding weights being trained](https://github.com/SamsungSAILMontreal/TinyRecursiveModels/issues/18). It is misleading, makes it more like a lookup table, and calls into question what causes the performance. It should have been called 7M "active" weights. [Same for HRM](https://github.com/sapientinc/HRM/issues/67). 
+I also don't like that TRM was advertised as a 7M model when there are [O(100M+) embedding weights being trained](https://github.com/SamsungSAILMontreal/TinyRecursiveModels/issues/18). It is misleading, makes it more like a lookup table, and calls into question what causes the performance. It should have been called 7M "active" weights. [Same for HRM](https://github.com/sapientinc/HRM/issues/67). Both didn't mention this anywhere!
 
 
 
 **I don't like LLM based approaches on ARC anymore**:  
-Watching LLMs climb the ARC leaderboard has been useful as [explained below](#learnings-from-llms-on-arc-agi), but I don't think there's much to learn from their ARC-1/ARC-2 anymore:
-- Increases in LLM scores are now mainly driven by post training, and are probably a function of amount of synthetic data. They are learning to solve ARC tasks, not learn general abstract reasoning (if such a thing even exists)
+Watching LLMs climb the ARC leaderboard has been useful as [explained below](#learnings-from-llms-on-arc-agi), but I don't think there's much to learn from their ARC-1/ARC-2 scores anymore:
+- Increases in LLM scores are now mainly driven by post training (evidence in appendix) and are probably a function of amount of synthetic data. They are learning to solve ARC tasks, not learn general abstract reasoning (if such a thing even exists)
 - There's also too many confounding factors to glean anything from new scores. Comparing LLMs based on benchmarks is bad science in general.
 - Their scores on the public leaderboard are useless, the answers are available on the internet, and are trained on. For LLMs, only private scores should count.
 - Using harnesses on top of LLMs to improve performance makes little sense to me. All the post-training magic is happening inside the frontier labs, and they can build harnesses themselves. I think its unlikely continual learning will be solved by a harness.
 
 **Misc**   
-I have already argued [before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce these anti-bitter lesson tricks.
+I have already argued [before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce such tricks that are anti-bitter lesson.
 
 ## Previous criticism about my approach
 There was a lot of heated discussion on twitter last time, with lot of experienced researchers chipping in, both for and against. Thread 1, [thread 2](https://x.com/giffmana/status/2002128356901597509), 
@@ -171,8 +171,8 @@ Listed the criticisms here with answers
 ## Previous criticism about ARC-AGI itself
 When I posted last time, there was a lot of debate about ARC-AGI itself. Some were valid, but a lot of them were questions Chollet has answered many times before:
 - What does ARC even test for? (fluid intelligence)
-- Why should we care about ARC? (Fluid intelligence isn't fully solved)
-- Solving ARC-AGI will not lead to AGI (No one claimed that)
+- Why should we care about ARC? (fluid intelligence isn't fully solved)
+- Solving ARC-AGI will not lead to AGI (no one claimed that)
 - ARC keeps shifting goalposts / its adversarially constructed for LLMs (Both are false)
 
 Chollet's paper and these tweets[^1] are good sources. Summing up his stance: The benchmark intended to test fluid intelligence, which he considers necessary but not sufficient for AGI. Solving ARC-1 / 2 implies non-zero fluid intelligence, but it isn't an upper bound. The benchmarks don't signal AGI is reached, they intend to point out the right research questions to ask. There were no goalposts moved: ARC-1 precedes LLMs, ARC-2 was announced pre-chatGPT and ARC-3 was announced before ARC-2 was saturated. He's also happy about progress on ARC since it documents progress in AI.
@@ -180,10 +180,19 @@ Chollet's paper and these tweets[^1] are good sources. Summing up his stance: Th
 I mainly care about ARC since it can be used to test for sample efficiency which is an important unsolved problem today! It's also a well constructed meta-learning benchmark, and is accessible to GPU poor peeps. Historically, its been great at [pointing out the strengths and flaws](#learnings-from-llms-on-arc-agi) of LLMs. I also think its cool that the benchmark stood unsaturated for 6 years, despite being high profile / having a large cash prize since we now know DL can perform extraordinarily well on ARC-1/2.
 
 There are some valid criticisms IMO:
-- They should switch focus of ARC-1/2 to sample efficiency instead of only trying to test fluid intelligence.  
-    - We now know LLMs/DL can learn anything given enough training data
-	- Do this by disallowing synthetic data for ARC-1/2 (it made sense till 2024 when DL scores on it sucked)
-	- This would also complement ARC-3 very well
+- They should disallow synthetic data for ARC-1/2
+    - Its against the spirit of the benchmark and yet most top scores today rely on large amounts of it
+		- synthetic data lowers the bar of fluid intelligence needed to solve puzzles
+		- It only made sense till 2024 when DL scores sucked. 
+		- We now know LLMs/DL can learn anything given enough training data
+	- This would also make the benchmark a great test for sample efficiency. It would complement ARC-3 very well
+	- Question is how to prevent synthetic data? Simple:
+- No offline training/pretraining. Models must train from scratch after submission
+	- This ensures 
+
+<!-- This brings back the task into distribution. Yes there is generalisation happening nonetheless, but we understand that in domain generalisation is happening. What we now want is OOD generalisation -->
+
+
 - A single leaderboard graph comparing multiple types of models doesn't make sense. It brings the following 3 problems (solution: separate charts)
 	- The x-axis is cost/task. But it only counts online compute cost. Some of these models (like LLMs) have massive offline pretraining phases whose costs arent counted. You can use infinite training compute to effectively bring the test set into distribution, so these models should be evaluated separately.
     - Dividing cost by number of tasks makes no sense for the models that train on all test tasks at once (like mine, TRM & HRM)

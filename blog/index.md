@@ -7,7 +7,7 @@ Decided to start blogging.
 >Upcoming: A brush with death, 21st Century Heliocentricity
 
 ### [44% on ARC-AGI-1 in just 70 cents](./44-on-arc-1) 5th March 2026
-Improvements just keep coming
+I think this is the best non-LLM approach today (keeping training data same)
 
 ### [Setting a new Pareto Frontier on ARC-AGI](./new-pareto-frontier-arc-agi) 18th Dec 2025
 Performance so good, its literally off the charts (really)

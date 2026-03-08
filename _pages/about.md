@@ -7,11 +7,20 @@ redirect_from:
 ---
 Hi, I'm Mithil.  
 
-I graduated from IIT Bombay with a B.Tech in Engineering Physics. 
+I graduated from IIT Bombay with a B.Tech in Engineering Physics. I do research in AI. 
 
-I am trying to crack [ARC-AGI](http://arcprize.org/) and spin the result into a company.  
+I want to solve sample efficiency  
+This should directly lead to superintelligence
 
-I started this project as a part of the (now defunct) deeptech accelerator program at [LossFunk](https://lossfunk.com/)  
+---
+
+
+[I recently showed](./blog/44-on-arc-1) that small transformers can perform way beyond what researchers expected on [ARC-AGI](http://arcprize.org/), a famous metalearning benchmark that is great for sample efficiency.
+
+My model beats many LLMs, and is likely the pareto frontier. I trained it from scratch in 67 cents.
+
+This was my attempt to test the limits of today's deep learning methods. Now I'm working on newer ideas. I expect to beat every LLM soon
+
 
 ---
 Here's my [blog](/blog/)  
@@ -28,7 +37,7 @@ Here's some cool shit I've done:
     - I immediately began drinking massive amounts of ORS as a proxy for saline to protect kidneys till I figure something out. But I knew I needed hospitalisation *immediately*
     - So i faked a heart attack (Logic: CPK values go ridiculously high during any muscle cell death scenario, including heart attacks, so I went to the cardiac emergency room, lied about chest pain and showed them this report)
     - They admitted me immediately but turned out the cardio didn't know about rhabdo either! (yeah fml, next time only go to the best docs)
-    - So I fought with them for a few hours, saying "screw the heart attack, call a nephro". They finally relented and rang him at 3am. He told them over call that I'm right and its obviously rhabdo, and gave the correct treatment plan
+    - So I fought with them for a few hours, saying "screw the chest pain, call a nephro". They finally relented and rang him at 3am. He told them over call that I'm right and its obviously rhabdo, and gave the correct treatment plan
     - The nephro (who came the next day) said he didn't like my actions but it saved my kidneys, and probably my life. 
 
 Stupid/fun shit:
