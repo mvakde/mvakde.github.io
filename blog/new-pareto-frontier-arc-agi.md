@@ -10,16 +10,16 @@ Fully open source
 Summary/Discussion on [Twitter](https://x.com/evilmathkid/status/2001689479476879448)  
 Code on [Github](https://github.com/mvakde/mdlARC)  
 
-<figure>
+<!-- <figure>
   <img src="../arc-leaderboard.png" alt="New pareto on arc"/>
   <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval (Note: this is superimposed on private eval chart - see why below)</figcaption></span>
-</figure>
+</figure> -->
 <!-- {Sneak peak: Before/after} -->
 <!-- Update: I ran an ablation by turning off test inputs. This drops perf to 21%. That is not high -->
 
 ## First, some bragging 
 
-**This draws a completely new Pareto frontier** on public eval of ARC-AGI-1.  
+**This will likely draw a completely new Pareto frontier** on public eval of ARC-AGI-1.  
 The cost is so low, its literally off the chart. No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM in perf/params, in fact by more than 10x! - check notes)
 
 **Beats every single non-thinking LLM in existence** (clarification: I meant the ones on the leaderboard released by frontier labs, eg: ppl have finetuned openweights LLMs on ARC and this improves performance)

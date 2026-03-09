@@ -4,7 +4,7 @@ title: "44% on ARC-AGI-1 in 67 cents"
 ---
 
 I trained a small transformer from scratch in 1.5hrs on a 5090  
-Same performance as TRM, beats HRM and many LLMs
+Beats many LLMs, and scores the same as TRM/HRM
 
 This is an upgrade to my [previous](https://x.com/evilmathkid/status/2001689479476879448) [model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)    
 Faster, better, cheaper and still open source.  
