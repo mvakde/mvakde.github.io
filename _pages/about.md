@@ -7,7 +7,8 @@ redirect_from:
 ---
 Hi, I'm Mithil.  
 
-I graduated from IIT Bombay with a B.Tech in Engineering Physics. I do research in AI. 
+I graduated from IIT Bombay with a B.Tech in Engineering Physics.  
+I do research in AI. 
 
 I want to solve sample efficiency  
 This should directly lead to superintelligence
@@ -15,9 +16,7 @@ This should directly lead to superintelligence
 ---
 
 
-[I recently showed](./blog/44-on-arc-1) that small transformers can perform way beyond what researchers expected on [ARC-AGI](http://arcprize.org/), a famous metalearning benchmark that is great for sample efficiency.
-
-My model beats many LLMs, and is likely the pareto frontier. I trained it from scratch in 67 cents.
+[I recently showed](./blog/44-on-arc-1) that small transformers can perform way beyond what researchers expected on [ARC-AGI](http://arcprize.org/), a famous metalearning benchmark that is great for sample efficiency. My model **beats many LLMs**, and is likely the pareto frontier. I trained it from scratch in just 67 cents.
 
 This was my attempt to test the limits of today's deep learning methods. Now I'm working on newer ideas. I expect to beat every LLM soon
 
