@@ -12,7 +12,7 @@ Code on [Github](https://github.com/mvakde/mdlARC)
 
 <figure>
   <img src="../arc-leaderboard.png" alt="New pareto on arc"/>
-  <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval (Update: this is superimposed on private eval chart. I expect it to perform this way but no way to be sure till the organisers ran it on the private eval - I should have waited or made a graph <a href = "https://x.com/caleb_friesen/status/2030975089001504893">like the one Caleb posted</a>. My bad)</figcaption></span>
+  <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval (Update: I should have made a graph <a href = "https://x.com/caleb_friesen/status/2030975089001504893">like the one Caleb posted here</a> since this is superimposed on private eval chart. My bad)</figcaption></span>
 </figure>
 <!-- {Sneak peak: Before/after} -->
 <!-- Update: I ran an ablation by turning off test inputs. This drops perf to 21%. That is not high -->
