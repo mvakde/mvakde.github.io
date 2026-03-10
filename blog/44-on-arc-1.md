@@ -21,6 +21,10 @@ Also gets 7% on ARC-2
   <span style = "text-align:center;"><figcaption>Performance on ARC-1 public eval. I only compare against models that do similar test time training</figcaption></span>
 </figure>
 
+<!-- ADD THIS: TTT+embedding solves the compute problem of transduction (nothing stops you from bringing your train data with you).  -->
+
+I hope to add the private eval scores, but the organisers said they are too swamped to verify so unsure if this will happen
+
 ## Why work on this?
 I think sample efficiency is the most important problem in AI today and I want to solve it. 
 
@@ -138,7 +142,7 @@ I'm listing all the criticisms here with my answers
 		- These labels were **not** trained on. They are hidden. You can delete it beforehand if you wish
 <!-- - What I did is called "test;-time training", it is completely different from "training on test". -->
 - Training on the inputs of eval puzzles leaks information 
-	- No, this is false. Such an approach is called [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning)) and is well studied/accepted
+	- No, this is false. Such an approach is called [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning)) and has been studied since the time of Vapnik.
 	- Also, this dogma of ignoring eval inputs doesn't make sense in a world trying to solve continual learning
 	- Other approaches train a metalearning algorithm and then deploy it to learn by running a CoT or by modifying latents through a recurrent loo. My approach  or what I did here is directly metalearn by modifying the weights of a single forward function is no different than learning by 
 	- Note: in the new 44% result, training on inputs has been removed as it scores slightly worse
@@ -151,9 +155,9 @@ I'm listing all the criticisms here with my answers
 - This is against testing policy
     - No this is false. There is some ambiguous wording in the policy that causes the confusion but anyone who has worked on the benchmark/has context knows that I didn't violate testing policy. Keeping the legalese aside, it also follows the spirit of a meta learning benchmark. 
 - You are not including training costs
-	- No, this is false. Lifetime compute is cost of training the model  from scratch + cost of running inference on all tasks. Yes it totally amounts to 67 cents. Check the prices of a 5090 for 2hrs on vast.ai
+	- No, this is false. I show the entire lifetime compute. This is the cost of training the model **from init** + the total cost of running inference on **all tasks**. Yes it totally amounts to 67 cents. Check the prices of a 5090 for 2hrs on vast.ai
 - Test time training is traditionally done one task at a time. Training on all test tasks at once is unrealistic
-	- Yes, this is a valid criticism. but again nuanced.
+	- Yes, there is merit to this criticism. but again nuanced.
 	- Humans can only learn from one test input at a time (unclear)
 	- Brought up [here](https://x.com/BlackHC/status/2002316964010557444), here and here
 - Providing cost per task amortises cost of training since all test tasks are trained on at once. So comparing other models is unfair
@@ -181,8 +185,10 @@ There are some valid criticisms IMO:
 		- We now know LLMs/DL can learn anything given enough training data
 	- This would also make the benchmark a great test for sample efficiency. It would complement ARC-3 very well
 	- Question is how to prevent synthetic data? Simple:
-- No offline training/pretraining. Models must train from scratch after submission
-	- This ensures 
+- Ban offline training/pretraining. Models must train from scratch after submission
+	- This ensures that synthetic data can't used
+	- I assume this wasn't the case before because it was thought to be impossible. My model shows this is possible
+	- It makes the comparison fair across differet models. Otherwise some models like LLMs can benchmaxx ARC by using ungodly amounts of offline training. (Since the benchmark has been around a long time, many ARC-like datasets have been created)
 
 <!-- This brings back the task into distribution. Yes there is generalisation happening nonetheless, but we understand that in domain generalisation is happening. What we now want is OOD generalisation -->
 
@@ -200,21 +206,22 @@ To anyone active in the ARC community, this has always been clear since test tim
 
 ## Mistakes that I think other approaches are making
 **Assuming recursion is the next big thing**  (Eg: [HRM](https://arxiv.org/pdf/2506.21734), [TRM](https://arxiv.org/pdf/2510.04871), [Arcprize blog](https://arcprize.org/blog/arc-prize-2025-results-analysis))  
-I do see the appeal, but there aren't enough ablations to prove this. And my model shows you can reach the same performance without recursion. The only confirmed benefit of recursion is allowing you to increase compute without increasing memory movement.
+I do see the appeal, but there aren't enough ablations to prove this. And my model shows you can reach the same performance without recursion. The only confirmed benefit of recursion is allowing you to increase compute without increasing memory movement.  
 
-I also don't like that TRM was advertised as a 7M model when there are [O(100M+) embedding weights being trained](https://github.com/SamsungSAILMontreal/TinyRecursiveModels/issues/18). It is misleading, makes it more like a lookup table, and calls into question what causes the performance. It should have been called 7M "active" weights. [Same for HRM](https://github.com/sapientinc/HRM/issues/67). Both didn't mention this anywhere!
+**Misleading advertising by HRM/TRM:**
+I also don't like that TRM advertised itself as a 7M model when there are [O(100M+) embedding weights being trained](https://github.com/SamsungSAILMontreal/TinyRecursiveModels/issues/18). It is misleading, makes it more like a lookup table, and calls into question what causes the performance. Worst case it should have been called 7M "active" weights. [Same for HRM](https://github.com/sapientinc/HRM/issues/67). Both didn't mention this anywhere!
 
 
 
-**I don't like LLM based approaches on ARC anymore**:  
-Watching LLMs climb the ARC leaderboard has been useful as [explained below](#learnings-from-llms-on-arc-agi), but I don't think there's much to learn from their ARC-1/ARC-2 scores anymore:
+**LLM based approaches on ARC aren't showing new capabilities anymore**:  
+Watching LLMs climb the ARC leaderboard has been extremely useful as [explained below](#learnings-from-llms-on-arc-agi), but I don't think there's much to learn from their ARC-1/ARC-2 scores anymore:
 - Increases in LLM scores are now mainly driven by post training (evidence in appendix) and are probably a function of amount of synthetic data. They are learning to solve ARC tasks, not learn general abstract reasoning (if such a thing even exists)
 - There's also too many confounding factors to glean anything from new scores. Comparing LLMs based on benchmarks is bad science in general.
-- Their scores on the public leaderboard are useless, the answers are available on the internet, and are trained on. For LLMs, only private scores should count.
+- For LLMs, only private scores should count. Their scores on the public leaderboard are useless as the answers are available on the internet, and are trained on. 
 - Using harnesses on top of LLMs to improve performance makes little sense to me. All the post-training magic is happening inside the frontier labs, and they can build harnesses themselves. I think its unlikely continual learning will be solved by a harness.
 
-**Misc**   
-I have already argued [before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce such tricks that are anti-bitter lesson.
+**Anti-bitter lesson tricks**   
+I have already [argued before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce such tricks that are anti-bitter lesson.
 
 ## Learnings from LLMs on ARC-AGI
 LLMs have now saturated v1 and v2 of this benchmark. Here's what I infer from their progress:
