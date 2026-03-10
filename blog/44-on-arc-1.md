@@ -130,12 +130,12 @@ My old result went viral on X and many experienced researchers debated about it,
 <!-- ... (TODO Link stuff like Lucas' tweet, Howard, Susan, improve wording) -->
 
 I'm listing all the criticisms here with my answers
-- This is "training on test"
-	- No this is false. "Training on test" means training on test outputs/labels. But the labels were hidden. 
+- Training on the eval puzzles is cheating / "training on test"
+	- No this is false. "Training on test" specifically means training on the labels of test data. The labels were not trained on. 
 	    - ARC has a set of train puzzles and a set of eval puzzles. Each puzzle has example pairs and test pairs. A pair is an input grid + output grid.
-	    - Here the labels are the output grids of test pairs from eval puzzles.
-		- In my approach, these labels were hidden
-<!-- - What I did is called "test-time training", it is completely different from "training on test". -->
+	    - The label in ARC is only the *output* grid of a *test* pair of an *eval* puzzle
+		- These labels were **not** trained on
+<!-- - What I did is called "test;-time training", it is completely different from "training on test". -->
 - Training on test inputs is bad / leaks information 
 	- Not in this case. This is a metalearning benchmark, and access to test inputs is always provided, and is fair game to train upon.
 	- Training on test inputs falls under [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning))
