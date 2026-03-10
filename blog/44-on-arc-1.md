@@ -132,22 +132,28 @@ My old result went viral on X and many experienced researchers debated about it,
 I'm listing all the criticisms here with my answers
 - Training on the eval puzzles is cheating / "training on test"
 	- No this is false. "Training on test" specifically means training on the labels of test data. The labels were not trained on. 
-	    - ARC has a set of train puzzles and a set of eval puzzles. Each puzzle has example pairs and test pairs. A pair is an input grid + output grid.
-	    - The label in ARC is only the *output* grid of a *test* pair of an *eval* puzzle
-		- These labels were **not** trained on
+	- Also, ARC is a metalearning benchmark, so you're **supposed** to learn from the eval puzzles. 
+	    - Jargon: ARC has a set of train puzzles and a set of eval puzzles. Each puzzle has example pairs and test pairs. A pair consists of an input grid + output grid.
+	    - The ARC, the label is only the *test pair's output grid* in an *eval puzzle*. 
+		- These labels were **not** trained on. They are hidden. You can delete it beforehand if you wish
 <!-- - What I did is called "test;-time training", it is completely different from "training on test". -->
-- Training on test inputs is bad / leaks information 
-	- Not in this case. This is a metalearning benchmark, and access to test inputs is always provided, and is fair game to train upon.
-	- Training on test inputs falls under [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning))
-	- This dogma of ignoring test inputs doesn't make sense in a world trying to solve continual learning
-	- Note: I have removed input training in the new result, but that doesn't mean it wasn't allowed
-- Even if training on inputs is allowed, tr
+- Training on the inputs of eval puzzles leaks information 
+	- No, this is false. Such an approach is called [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning)) and is well studied/accepted
+	- Also, this dogma of ignoring eval inputs doesn't make sense in a world trying to solve continual learning
+	- Other approaches train a metalearning algorithm and then deploy it to learn by running a CoT or by modifying latents through a recurrent loo. My approach  or what I did here is directly metalearn by modifying the weights of a single forward function is no different than learning by 
+	- Note: in the new 44% result, training on inputs has been removed as it scores slightly worse
+- Even if training on eval puzzle inputs is allowed, the test input specifically should be forbidden
+	- No, the same "transduction" argument applies here
+	- A metalearning benchmark can be transductive in 2 ways:
+		- train puzzle $\to$ eval puzzles
+		- within the eval puzzle, example pair $\to$ test pair
+	- This criticism is specifically answered by the latter
 - This is against testing policy
     - No this is false. There is some ambiguous wording in the policy that causes the confusion but anyone who has worked on the benchmark/has context knows that I didn't violate testing policy. Keeping the legalese aside, it also follows the spirit of a meta learning benchmark. 
 - You are not including training costs
 	- No, this is false. Lifetime compute is cost of training the model  from scratch + cost of running inference on all tasks. Yes it totally amounts to 67 cents. Check the prices of a 5090 for 2hrs on vast.ai
-- Test time training is traditionally done one task at a time. All tasks at once is unrealistic
-	- This is valid, but again nuanced.
+- Test time training is traditionally done one task at a time. Training on all test tasks at once is unrealistic
+	- Yes, this is a valid criticism. but again nuanced.
 	- Humans can only learn from one test input at a time (unclear)
 	- Brought up [here](https://x.com/BlackHC/status/2002316964010557444), here and here
 - Providing cost per task amortises cost of training since all test tasks are trained on at once. So comparing other models is unfair
