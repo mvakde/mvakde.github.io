@@ -130,43 +130,48 @@ I don't understand why others didn't figure this out. Its just a transformer wit
 
 # Appendix
 ## Prev criticism/validation on my approach from famous researchers
-My old result went viral on X and many experienced researchers debated about it, both for and against. Threads by [Jeremy](https://x.com/jeremyphoward/status/2002232292857819651), [Lucas](https://x.com/giffmana/status/2002128356901597509), [Susan](https://x.com/suchenzang/status/2002461736071541152), [Andreas](https://x.com/BlackHC/status/2002517862578336166), [Yoav](https://x.com/yoavgo/status/2002337963531776117), and many more.
-<!-- ... (TODO Link stuff like Lucas' tweet, Howard, Susan, improve wording) -->
+My old result went viral on X and many experienced researchers debated about it, both for and against. Threads by [Jeremy](https://x.com/jeremyphoward/status/2002232292857819651), [Lucas](https://x.com/giffmana/status/2002128356901597509), [Susan](https://x.com/suchenzang/status/2002461736071541152), [Andreas](https://x.com/BlackHC/status/2002517862578336166), [Yoav](https://x.com/yoavgo/status/2002337963531776117), and many more. I'm listing all the criticisms here with my answers.   
 
-I'm listing all the criticisms here with my answers
-- Training on the eval puzzles is cheating / "training on test"
-	- No this is false. "Training on test" specifically means training on the labels of test data. The labels were not trained on. 
-	- Also, ARC is a metalearning benchmark, so you're **supposed** to learn from the eval puzzles. 
-	    - Jargon: ARC has a set of train puzzles and a set of eval puzzles. Each puzzle has example pairs and test pairs. A pair consists of an input grid + output grid.
-	    - The ARC, the label is only the *test pair's output grid* in an *eval puzzle*. 
-		- These labels were **not** trained on. They are hidden. You can delete it beforehand if you wish
+Training on the eval puzzles is cheating / "training on test"
+- No this is false. "Training on test" specifically means training on the labels of test data. The labels were not trained on. 
+- Also, ARC is a metalearning benchmark, so you're **supposed** to learn from the eval puzzles. 
+	- Jargon: ARC has a set of train puzzles and a set of eval puzzles. Each puzzle has example pairs and test pairs. A pair consists of an input grid + output grid.
+	- The ARC, the label is only the *test pair's output grid* in an *eval puzzle*. 
+	- These labels were **not** trained on. They are hidden. You can delete it beforehand if you wish
 <!-- - What I did is called "test;-time training", it is completely different from "training on test". -->
-- Training on the inputs of eval puzzles leaks information 
-	- No, this is false. Such an approach is called [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning)) and has been studied since the time of Vapnik.
-	- Also, this dogma of ignoring eval inputs doesn't make sense in a world trying to solve continual learning
-	- Other approaches train a metalearning algorithm and then deploy it to learn by running a CoT or by modifying latents through a recurrent loo. My approach  or what I did here is directly metalearn by modifying the weights of a single forward function is no different than learning by 
-	- Note: in the new 44% result, training on inputs has been removed as it scores slightly worse
-- Even if training on eval puzzle inputs is allowed, the test input specifically should be forbidden
-	- No, the same "transduction" argument applies here
-	- A metalearning benchmark can be transductive in 2 ways:
-		- train puzzle $\to$ eval puzzles
-		- within the eval puzzle, example pair $\to$ test pair
-	- This criticism is specifically answered by the latter
-- This is against testing policy
-    - No this is false. There is some ambiguous wording in the policy that causes the confusion but anyone who has worked on the benchmark/has context knows that I didn't violate testing policy. Keeping the legalese aside, it also follows the spirit of a meta learning benchmark. 
-- You are not including training costs
-	- No, this is false. I show the entire lifetime compute. This is the cost of training the model **from init** + the total cost of running inference on **all tasks**. Yes it totally amounts to 67 cents. Check the prices of a 5090 for 2hrs on vast.ai
-- Test time training is traditionally done one task at a time. Training on all test tasks at once is unrealistic
-	- Yes, there is merit to this criticism. but again nuanced.
-	- Humans can only learn from one test input at a time (unclear)
-	- Brought up [here](https://x.com/BlackHC/status/2002316964010557444), here and here
-- Providing cost per task amortises cost of training since all test tasks are trained on at once. So comparing other models is unfair
-	- Yeah this is fair. In my defense:
-	    - That's how the organisers compare every model, including TRM which also trains on all test tasks at once
-	    - I was also more generous by including training and inference costs while LLMs and other models exclude pre-training/offline training costs.
-	- I have now switched to (a) showing lifetime compute cost instead of per-task, (b) comparing only with TRM, HRM and CompressARC and not with LLMs / other methods and (c) I added ablations with comparable training styles
+Training on the inputs of eval puzzles leaks information 
+- No, this is false. Such an approach is called [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning)) and has been studied since the time of Vapnik.
+- Also, this dogma of ignoring eval inputs doesn't make sense in a world trying to solve continual learning
+- Other approaches train a metalearning algorithm and then deploy it to learn by running a CoT or by modifying latents through a recurrent loo. My approach  or what I did here is directly metalearn by modifying the weights of a single forward function is no different than learning by 
+- Note: in the new 44% result, training on inputs has been removed as it scores slightly worse  
 
-## Previous criticism about ARC-AGI itself
+Even if training on eval puzzle inputs is allowed, the test input specifically should be forbidden
+- No, the same "transduction" argument applies here
+- A metalearning benchmark can be transductive in 2 ways:
+	- train puzzle $\to$ eval puzzles
+	- within the eval puzzle, example pair $\to$ test pair
+- This criticism is specifically answered by the latter
+
+This is against testing policy
+- No this is false. There is some ambiguous wording in the policy that causes the confusion but anyone who has worked on the benchmark/has context knows that I didn't violate testing policy. Keeping the legalese aside, it also follows the spirit of a meta learning benchmark. 
+
+You are not including training costs
+- No, this is false. I show the entire lifetime compute. This is the cost of training the model **from init** + the total cost of running inference on **all tasks**. Yes it totally amounts to 67 cents. Check the prices of a 5090 for 2hrs on vast.ai
+
+Test time training is traditionally done one task at a time. Training on all test tasks at once is unrealistic
+- Yes, this criticism makes sense. But it's nuanced
+- I agree that its rare to see to face problem sets in real life where every problem is given at once. Even if it is (like an exam), humans can usually only attempt one at a time
+-  But just because humans don't have a capability shouldn't mean it invalidates building an AI model with that capability. Otherwise we could say LLMs are unrealistic since humans can't train on the entire internet / can't read tokens as fast / also cheating since its training on the entire internet unlike humans
+- Also, humans might be able to train on different data from multiple sensory at a time, exactly like  
+<!-- - Brought up [here](https://x.com/BlackHC/status/2002316964010557444), here and here -->
+
+Providing cost per task amortises cost of training since all test tasks are trained on at once. So comparing other models is unfair
+- Yeah this is fair. In my defense:
+	- That's how the organisers compare every model, including TRM which also trains on all test tasks at once
+	- I was also more generous by including training and inference costs while LLMs and other models exclude pre-training/offline training costs.
+- I have now switched to (a) showing lifetime compute cost instead of per-task, (b) comparing only with TRM, HRM and CompressARC and not with LLMs / other methods and (c) I added ablations with comparable training styles
+
+## Answering criticism about ARC-AGI itself
 When I posted last time, there was a lot of debate about ARC-AGI itself. Some were valid, but a lot of them were questions Chollet has answered many times before:
 - What does ARC even test for? (fluid intelligence)
 - Why should we care about ARC? (fluid intelligence isn't fully solved)
@@ -186,8 +191,8 @@ There are some valid criticisms IMO:
 	- This would also make the benchmark a great test for sample efficiency. It would complement ARC-3 very well
 	- Question is how to prevent synthetic data? Simple:
 - Ban offline training/pretraining. Models must train from scratch after submission
-	- This ensures that synthetic data can't used
-	- I assume this wasn't the case before because it was thought to be impossible. My model shows this is possible
+	- Previously this was considered impossible so rule. My model shows this is possible
+	- Guarantees no synthetic data can be used
 	- It makes the comparison fair across differet models. Otherwise some models like LLMs can benchmaxx ARC by using ungodly amounts of offline training. (Since the benchmark has been around a long time, many ARC-like datasets have been created)
 
 <!-- This brings back the task into distribution. Yes there is generalisation happening nonetheless, but we understand that in domain generalisation is happening. What we now want is OOD generalisation -->
@@ -197,7 +202,7 @@ There are some valid criticisms IMO:
 	- The x-axis is cost/task. But it only counts online compute cost. Some of these models (like LLMs) have massive offline pretraining phases whose costs arent counted. You can use infinite training compute to effectively bring the test set into distribution, so these models should be evaluated separately.
     - Dividing cost by number of tasks makes no sense for the models that train on all test tasks at once (like mine, TRM & HRM)
 	- Comparing LLMs on the public eval set makes no sense since the answers to the public puzzles are available on the internet
-- They drew premature conclusions from TRM and HRM and attributed success to recursive loops+deep supervision. I think this bias is because they assume pure deep learning can't solve ARC (eg: base LLMs still suck at ARC-2). I disagree
+- The organisers drew premature conclusions from TRM and HRM and attributed success to recursive loops+deep supervision. I think this bias is because they assume pure deep learning can't solve ARC (eg: base LLMs still suck at ARC-2). I disagree
 - The wording of the testing policy can be improved
 
 Regarding testing policy: The policy says "test taker must not know what the test will be". People interpreted this as saying TTT is banned. But it actually refers to the human designing the AI system, not the AI system itself. Eg: to discourage designing inductive biases based on the eval set. (Its a meta learning benchmark. This is fine!)
@@ -215,12 +220,12 @@ I also don't like that TRM advertised itself as a 7M model when there are [O(100
 
 **LLM based approaches on ARC aren't showing new capabilities anymore**:  
 Watching LLMs climb the ARC leaderboard has been extremely useful as [explained below](#learnings-from-llms-on-arc-agi), but I don't think there's much to learn from their ARC-1/ARC-2 scores anymore:
-- Increases in LLM scores are now mainly driven by post training (evidence in appendix) and are probably a function of amount of synthetic data. They are learning to solve ARC tasks, not learn general abstract reasoning (if such a thing even exists)
-- There's also too many confounding factors to glean anything from new scores. Comparing LLMs based on benchmarks is bad science in general.
+- Increases in LLM scores are now mainly driven by post training (evidence in next section) and are probably a function of amount of synthetic data. They are learning to solve ARC tasks, not learn general abstract reasoning
+- There's also too many confounding factors to glean anything from new scores. Comparing LLMs based on benchmarks is bad science in general (eg: differing amounts of training data aimed at a benchmark)
 - For LLMs, only private scores should count. Their scores on the public leaderboard are useless as the answers are available on the internet, and are trained on. 
 - Using harnesses on top of LLMs to improve performance makes little sense to me. All the post-training magic is happening inside the frontier labs, and they can build harnesses themselves. I think its unlikely continual learning will be solved by a harness.
 
-**Anti-bitter lesson tricks**   
+**Anti-bitter lesson cheats**   
 I have already [argued before](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/#human-interventions) that synthetic data and augmentations are bad. Designing inductive biases into the model is also bad. The fact that we can't scale this benchmark without cheating like this shows that there are still breakthroughs waiting. I hope more people try to reduce such tricks that are anti-bitter lesson.
 
 ## Learnings from LLMs on ARC-AGI
