@@ -20,10 +20,9 @@ Code on [Github](https://github.com/mvakde/mdlARC)
 ## First, some bragging 
 
 **This will likely draw a completely new Pareto frontier** on public eval of ARC-AGI-1.  
-The cost is so low, its literally off the chart. No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM in perf/params, in fact by more than 10x! - check notes)
+The cost is so low, its literally off the chart. No other model comes close in terms of training cost or speed. It is also unmatched in performance per training parameters at 28% accuracy in 28M. (Yes this also beats TRM/HRM in perf/params, in fact by more than 10x!)
 
-**Beats every single non-thinking LLM in existence** (clarification: I meant the ones on the leaderboard released by frontier labs, eg: ppl have finetuned openweights LLMs on ARC and this improves performance)
-Beats them in both performance AND cost. In fact, the combined costs of my training and inference are less than the inference costs of most LLM based methods.
+**Beats every single non-thinking LLM in existence**. Beats them in both performance AND cost. In fact, the combined costs of my training and inference are less than the inference costs of most LLM based methods. (edit: I mean the frontier LLMs released by labs, not finetunes on ARC)
 
 **333x cheaper** to train than TRM/HRM/other models
 The recent models on ARC-AGI require multiple H100s for multiple days. You can train my model from scratch in 2 hours on a single A100. It will work on smaller GPUs too.
@@ -33,7 +32,7 @@ There are no special handcrafted architectures, no recursion. Just a vanilla tra
 
 **Quick Notes**:
 - My cost includes inference AND training. Most others on this chart are just inference costs (and yet I beat them - another bragging point xD)
-- One disclaimer, my results are on the public eval, while the chart is actually private eval. I admit, this is shady. But its a risky bet I'm making. I think my performance will be higher on private eval (which is unprecedented on ARC1). Reasons in appendix. 
+- The model hasn't been tested on the private eval yet. I expect the scores to be slightly better. The graph superimposes public eval scores on the private eval chart as there was no other way to make a comparison (Edit: I realise a graph [like the one Caleb posted here](https://x.com/caleb_friesen/status/2030975089001504893) would have been better) 
 - TRM has 7M parameters in the core network, but it trains a massive embedding table that has 100s of millions of parameters. A conservative estimate of total trainable parameters is then 300M+. Similar story for HRM. So while they perform better (~40%), they need to train 300M params to do so (hence take time)
 
 Oh btw, all this is early results. 
