@@ -28,9 +28,11 @@ Also gets 7% on ARC-2
 This is the 3rd blog in a series of works on ARC-AGI. Prev: [Blog 2]((https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)), [Blog 1](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/). It got attention from top researchers and went viral (prob coz it was considered impossible?). Eg: Discussions by [Lucas Beyer](https://x.com/giffmana/status/2002111246225621296), [Jeremy Howard](https://x.com/jeremyphoward/status/2002136723573387537), [Susan Zhang](https://x.com/suchenzang/status/2002424584885449050), and comments by many others.
 
 ## How does it work?
-Each input-output pair is converted to a sequence of tokens. These sequences are autoregressively trained on by a small transformer. This is done from scratch at test time on both the train set and eval set puzzles, with with each test outputs hidden. 
+Each input-output pair is converted to a sequence of tokens. These sequences are autoregressively trained on by a small transformer. This is done from scratch at test time on both the train set and eval set puzzles (test labels hidden). 
 
-To enable cross-task learning, each puzzle is given a separate additive embedding (learnt). Since each sequence has 2 2D grids, positional embeddings are trained using 3D embeddings.
+To enable cross-task learning, each puzzle is given a separate additive embedding (learnt). Since each sequence has two 2D grids, positional are learnt using 3D RoPE embeddings.   
+
+Prev loss function included input tokens (so unsupervised). The new model only trains on outputs (supervised)
 
 ## Why work on this?
 I think sample efficiency is the most important problem in AI today and I want to solve it. 
