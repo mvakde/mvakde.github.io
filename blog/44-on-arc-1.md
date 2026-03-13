@@ -6,7 +6,7 @@ title: "44% on ARC-AGI-1 in 67 cents"
 I trained a small transformer from scratch in 1.5hrs on a 5090  
 Beats many LLMs, and scores the same as TRM/HRM
 
-This is an upgrade to my [previous](https://x.com/evilmathkid/status/2001689479476879448) [model](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)    
+This is an upgrade to my [previous model](https://x.com/evilmathkid/status/2001689479476879448)   
 Faster, better, cheaper and still open source.  
 
 
@@ -23,7 +23,14 @@ Also gets 7% on ARC-2
 
 <!-- ADD THIS: TTT+embedding solves the compute problem of transduction (nothing stops you from bringing your train data with you).  -->
 
-I hope to add the private eval scores, but the organisers said they are too swamped to verify so unsure if this will happen
+<!-- I hope to add the private eval scores, but the organisers said they are too swamped to verify so unsure if this will happen.  -->
+
+This is the 3rd blog in a series of works on ARC-AGI. Prev: [Blog 2]((https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)), [Blog 1](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/). It got attention from top researchers and went viral (prob coz it was considered impossible?). Eg: Discussions by [Lucas Beyer](https://x.com/giffmana/status/2002111246225621296), [Jeremy Howard](https://x.com/jeremyphoward/status/2002136723573387537), [Susan Zhang](https://x.com/suchenzang/status/2002424584885449050), and comments by many others.
+
+## How does it work?
+Each input-output pair is converted to a sequence of tokens. These sequences are autoregressively trained on by a small transformer. This is done from scratch at test time on both the train set and eval set puzzles, with with each test outputs hidden. 
+
+To enable cross-task learning, each puzzle is given a separate additive embedding (learnt). Since each sequence has 2 2D grids, positional embeddings are trained using 3D embeddings.
 
 ## Why work on this?
 I think sample efficiency is the most important problem in AI today and I want to solve it. 
@@ -139,6 +146,8 @@ My old result went viral on X and many experienced researchers debated about it,
 	- The ARC, the label is only the *test pair's output grid* in an *eval puzzle*. 
 	- These labels were **not** trained on. They are hidden. You can delete it beforehand if you wish
 <!-- - What I did is called "test;-time training", it is completely different from "training on test". -->
+ 
+
 ### Training on the inputs of eval puzzles leaks information 
 - No, this is **false**. Such an approach is called [transductive reasoning](https://en.wikipedia.org/wiki/Transduction_(machine_learning)) and has been studied since the time of Vapnik.
 - Also, this dogma of ignoring eval inputs doesn't make sense in a world trying to solve continual learning
