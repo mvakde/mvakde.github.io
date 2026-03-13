@@ -29,13 +29,6 @@ This is the 3rd blog in a series of works on ARC-AGI. Prev: [Blog 2]((https://mv
 
 Many ppl thought the prev result was impossible. It got attention from top researchers and went viral on X. Eg: Discussions by [Lucas Beyer](https://x.com/giffmana/status/2002111246225621296), [Jeremy Howard](https://x.com/jeremyphoward/status/2002136723573387537), [Rohan Anil](https://x.com/_arohan_/status/2001939028606947505), and comments by many others.
 
-## How does it work?
-Each input-output pair is converted to a sequence of tokens. These sequences are autoregressively trained on by a small transformer. This is done from scratch at test time on both the train set and eval set puzzles (test labels hidden). 
-
-To enable cross-task learning, each puzzle is given a separate additive embedding (learnt). Since each sequence has two 2D grids, positional are learnt using 3D RoPE embeddings.   
-
-Prev loss function included input tokens (so unsupervised). The new model only trains on outputs (supervised)
-
 ## Why work on this?
 I think sample efficiency is the most important problem in AI today and I want to solve it. 
 
@@ -50,9 +43,15 @@ ARC is a great benchmark to test this:
 
 Next, I'll work on new research ideas to break these limits. I'll try to keep costs low so that anyone in the world can work on this.
 
-## Changes since last time:
-The approach is largely the same except  I don't train on input tokens anymore. I implemented well known ideas that improve the performance of a transformer. The old model has the [technical details of the approach](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details), and here are the [full list of changes](#full-list-of-changes)
+# Tech details
+## How does it work?
+The overall approach is similar to last time ([full technical details here](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)), but I added a bunch of upgrades. Here's a quick summary of the approach: 
+- Each input-output pair is converted to a sequence of tokens. These sequences are autoregressively trained on by a small transformer. This is done from scratch at test time on both the train set and eval set puzzles (test labels hidden). 
+- To enable cross-task learning, each puzzle is given a separate additive embedding (learnt). Since each sequence has two 2D grids, positional are learnt using 3D RoPE embeddings.   
+- The sequences are augmented with color and dihedral permutations. During inference, the test inputs are augmented, and the inverse aug is applied on the outputs produced. The 2 most common outputs are submitted (AAIVR).
 
+### Changes since last time
+The main goal was to find improvements to the architecture / algorithm that improve the sample efficiency of the model.
 
 The biggest increases in scores were due to
 - Modern architecture (SwiGlu instead of GELU, RMSnorm not layernorm, etc.)
@@ -64,12 +63,13 @@ Biggest decreases in cost were due to:
 - AdamW -> Normuon
 - flash attention with varlen training + flex attention kernels for inference
 
-<!-- The improvements from the other changes were incremental -->
+A major change is that I don't train on input tokens anymore. This means the loss function only includes output tokens (which makes the approach supervised). This. performs slightly better 40% $\to$ 44%  but I don't understand why. Perhaps finite model capacity
 
 I also increased the training data by adding the non-overlapping tasks from ARC-2. I did this very carefully to ensure no leakage. You can remove the extra data if you don't like it and it will still score ~40%, but it will need ~double the compute.
 
-Context: ARC-2 contains 773 ARC-1 puzzles and 347 new puzzles. Most eval puzzles of ARC-1 are repeated, so if you naively train on ARC-2, then its a dataleak and you will score 100%. I avoid this by carefully filtering out the 773 repeated puzzles (so no leak!)
+> Context: ARC-2 contains 773 ARC-1 puzzles and 347 new puzzles. Most eval puzzles of ARC-1 are repeated, so if you naively train on ARC-2, then its a dataleak and you will score 100%. I avoid this by carefully filtering out the 773 repeated puzzles (so no leak!)
 
+There are many other changes that gave incremental improvements in performance or speed. Find the [full list of changes here](#full-list-of-changes).
 
 
 ## Interesting behaviour
