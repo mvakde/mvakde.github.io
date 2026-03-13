@@ -18,7 +18,7 @@ This should directly lead to superintelligence
 
 [I recently showed](./blog/44-on-arc-1) that small transformers can perform extremely well on [ARC-AGI](http://arcprize.org/), a famous metalearning benchmark that is great for sample efficiency.  
 
-These results got attention from famous researchers and went viral on X, since many people considered it impossible previously: My model **beats many LLMs**, and is likely the **pareto frontier** despite needing only **67 cents to train it** (from scratch!)
+These results got attention from famous researchers and went viral on X, since many people considered it impossible previously. My model **beats many LLMs,  despite needing only 67 cents to train it** (from scratch!) and is likely the pareto frontier.
 
 This was my attempt to test the limits of today's deep learning methods. Now I'm working on newer ideas. I expect to beat every LLM soon
 
