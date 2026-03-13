@@ -27,7 +27,7 @@ Also gets 7% on ARC-2
 
 This is the 3rd blog in a series of works on ARC-AGI. Prev: [Blog 2]((https://mvakde.github.io/blog/new-pareto-frontier-arc-agi/#implementation-details)), [Blog 1](https://mvakde.github.io/blog/why-all-ARC-solvers-fail-today/).   
 
-Many ppl thought the prev result was impossible. It got attention from top researchers and went viral on X. Eg: Discussions by [Lucas Beyer](https://x.com/giffmana/status/2002111246225621296), [Jeremy Howard](https://x.com/jeremyphoward/status/2002136723573387537), [Susan Zhang](https://x.com/suchenzang/status/2002424584885449050), and comments by many others.
+Many ppl thought the prev result was impossible. It got attention from top researchers and went viral on X. Eg: Discussions by [Lucas Beyer](https://x.com/giffmana/status/2002111246225621296), [Jeremy Howard](https://x.com/jeremyphoward/status/2002136723573387537), [Rohan Anil](https://x.com/_arohan_/status/2001939028606947505), and comments by many others.
 
 ## How does it work?
 Each input-output pair is converted to a sequence of tokens. These sequences are autoregressively trained on by a small transformer. This is done from scratch at test time on both the train set and eval set puzzles (test labels hidden). 
