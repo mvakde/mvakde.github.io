@@ -43,7 +43,7 @@ Here's some cool shit I've done:
     - I finally got in front of a cardiac but they didn't know about rhabdo either! (yeah fml, next time only go to the best hospital). However they took me in coz the report made them worried about a heart attack
     - I fought for a few hours, saying "screw the chest pain, call a nephro". They finally relented and rang him at 3am. He told them over call that I was right and that its obviously rhabdo, and gave the correct treatment plan
     - The nephro (who came the next day) said he didn't like my actions but it might have saved my kidneys, or even my life. He was stunned that i recognised rhabdo this early AND got the CK test done myself. He wasn't sure if an actual doctor would have clocked it this early
-</details>
+  </details>
 
 Stupid/fun shit:
 - Got stuck solo in a random French city at midnight without a room 
