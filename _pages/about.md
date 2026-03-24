@@ -25,16 +25,18 @@ This was my attempt to test the limits of today's deep learning methods. Now I'm
 ---
 Here's my [blog](/blog/)  
 
-Here's some cool shit I've done:
+Here's some cool shit I've done: <em>(details in dropdown)</em>
+
 - Team India selection camp for the Astronomy Olympiad without studying
 - Cracked JEE in an [extremely unconventional manner](./blog/jee-is-easy)
-- Biohacked my way out of a misdiagnosed health condition 
+- Went founder mode after being misdiagnosed with arthritis at 19.  
+Correctly diagnosed myself & solved it in a year
 - <details markdown="block">
-    <summary style="cursor:pointer; ">Saved myself in a medical emergency <em>(click dropdown for story)</em></summary>
+    <summary style="cursor:pointer; ">Saved myself in a medical emergency</summary>
 
     - My biceps got ridiculously swollen after a bad gym session. The pain was excrutiating, 10x worse than any DOMS i felt before and I couldn't move them at all. I had learnt enough medicine during the biohacking to know it was <a href ="https://my.clevelandclinic.org/health/diseases/21184-rhabdomyolysishttps://my.clevelandclinic.org/health/diseases/21184-rhabdomyolysis">rhabdomyolysis</a>, which is life threatening.
     - I remembered that confirmation requires a blood test that measures CK values. Went to a private lab, ordered one - my values were **200x the upper limit** and rising (diagnostic confirmation + requires immediate hospitalisation). The pain was high enough now that I was also worried about <a href = "https://my.clevelandclinic.org/health/diseases/21184-rhabdomyolysis#:~:text=What%20are%20the%20complications%20of%20rhabdomyolysis">compartment syndrome</a>
-    - Went to the nearest ER with my report and my extremely painful, swollen arms. (This was a mistake, the avg indian hospital is filled with untrained staff. I should have gone to the best hospital in the city)
+    - Went to the nearest ER with my report and my extremely painful, swollen arms. (This was a mistake, the avg indian hospital is filled with untrained staff. I should have gone to the best hospital in the city. This is despite living in a wealthy part of a tier 1 city)
     - The doctors were dumb and didn't know basic stuff. She had never heard of CPK or rhabdo or compartment syndrome! She called a senior ortho consult. He didn't know either! They refused treatment, saying "go home, nothing to worry about. We'll check tomorrow". Called the next closest ER - same story. They hadn't heard of it too!
     - I freaked out. I knew I could potentially lose my kidneys if I didn't get treatment right away. Ideally going to a nephro would solve it since they would clock it immediately but it was late at night and I didn't know any Nephrologists.
     - I immediately began <em>a lot</em> of ORS as a proxy for saline to protect kidneys till I figure something out. But I knew I needed hospitalisation <em>immediately</em>
