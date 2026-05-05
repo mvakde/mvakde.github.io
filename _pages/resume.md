@@ -11,10 +11,10 @@ author_profile: true
 I built a tiny transformer that scores **44% on ARC-AGI**, trained from scratch in just **67 cents**
 
 - This is the best non-LLM method in the world
-- Beats all non-thinking LLM and many thinking ones
-- Also the cheapest, and trains the fastest by far
+- Also the cheapest, and trains the fastest by far (new pareto frontier)
+- Beats *every single non-thinking LLM* and many thinking ones
 - Least # of params at this performance
-- Went viral on X, got the attention of top AI researchers (many considered the result to be impossible initially)
+- Went viral on X, got the attention of top AI researchers (many thought the result to be impossible initially)
 
 Posts on X:
 [https://x.com/evilmathkid/highlights](https://x.com/evilmathkid/highlights)
@@ -23,15 +23,18 @@ Blogs on the work:
 [44% on ARC-AGI 1](https://mvakde.github.io/blog/44-on-arc-1)  
 [A New Pareto Frontier on ARC-AGI](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi)
 
-### Private work
-Since then, I have doubled the score again and saturated v1. Now working on v2 of the benchmark, currently at 21% (**beats GPT-5 Pro**). I expect to beat the WR (40%) in 2 weeks. Winner of v2 gets $425K.
+### Private stuff
+Since then, I have doubled the score again and saturated v1.  
+Now working on v2 of the benchmark, currently at 21% (**beats GPT-5 Pro**).  
+I expect to beat the WR (40%) in 2 weeks.  
+Winner of v2 gets $425K (spoiler: its gonna be me)
 
 <figure>
   <img src="../blog/arc2.png" alt="New pareto on arc"/>
   <span style = "text-align:center;"><figcaption>Current verified ARC-2 score on private leaderboard on kaggle</figcaption></span>
 </figure>
 
-Context: ARC-AGI is a famous metalearning benchmark. Easy for humans, hard for AI models, including LLMs. The benchmark’s been open since 2019 and despite a heavy cash prize, nobody could get a transformer working substantial progress to be made on it
+Context: ARC-AGI is a famous metalearning benchmark. Easy for humans, hard for AI models, including LLMs. The benchmark’s been open since 2019 and despite a heavy cash prize, no substantial progress was made till thinking LLMs in 2024. I showed that vanilla transformers were good enough to make the same progress at OOMs less effort
 
 
 # Achievements
