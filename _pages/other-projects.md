@@ -8,26 +8,31 @@ redirect_from:
   - "/nmp/"
   - "/nmp.html"
 ---
-## Recent Healthcare exploration 
+
+Just a dump of stuff I explored a long time ago. 
+
+## Very quick text-to-SQL:
+- While I worked at Crux (2024), we initially worked on text-to-sql. Our product had a latency of 30s-2min depending on the question. I noticed that a particular customer had a limited set of query types. Created a few postgres functions that spanned their entire query space. When the user asked a question in natural language, a tiny Llama model would extract parameters (parameters being SQL operators) for the functions based on examples in the system prompt. The functions were overloaded such that the list of parameters outputted by the llama model was enough to call it. This entire pipeline required ~2s to run. Made this entirely myself
+
+## Healthcare exploration (~2024 end / 2025 start)
 (One full app + Quick MVPs to test user demands)
-- [PatternLogs](https://github.com/mvakde/PatternLogs) - I use this app to track my muscle twitches. They occur in bursts and I match the pattern and intensity of the twitches by tapping on the screen. (TODO - Add the apk and update readme)
-- [Did your doctor Mess up?](https://mvakde.github.io/demo/) - Record the audio of your doctor visit to check if they made a mistake. This got decent usage when I demoed to friends. Built an [alternate version](https://mvakde.github.io/demo2/) as an audio EHR software for doctors. This seemed to have much lower demand.
-- [AIIMS Delhi](https://github.com/mvakde/AIIMS-Delhi-Which-Resident-On-Call) - "Which resident is currently on call?" - There is no system in place to know which resident is on call for consults leading to massive delays and medical issues (even deaths sometimes) everyday. It was seriously depressing to explore all the problems in govt. hospitals. 
-- [proto-research-paper-finder](https://github.com/mvakde/proto-research-paper-finder): Finding relevant research papers for your disease (this was pre-deepresearch, helped me sometimes come up with new things to read about)
+- [PatternLogs](https://github.com/mvakde/PatternLogs) - I used this app to track my muscle twitches. They occur in bursts and I match the pattern and intensity of the twitches by tapping on the screen. Helped me find triggers
+- [Did your doctor Mess up?](https://mvakde.github.io/demo/) - Record the audio of your doctor visit to check if they made a mistake. This got decent usage when I demoed to friends. In hindsight, this was a very good entry point to build a healthcare AI startup, and I should have continued. I had also tried an [alternate version](https://mvakde.github.io/demo2/): an audio EHR software for doctors. This seemed to have much lower demand.
+- [AIIMS Delhi](https://github.com/mvakde/AIIMS-Delhi-Which-Resident-On-Call) - "Which resident is currently on call?" - There is no system in place to know which resident is on call for consults leading to massive delays and medical issues (and even deaths) every hour, every day. Explore problems in govt. hospitals was vv depressing. Bureaucracy fucking sucks. V few people genuinely care about their work.
+- [proto-research-paper-finder](https://github.com/mvakde/proto-research-paper-finder): Finding relevant research papers for your disease (this was pre-deepresearch, helped me sometimes come up with new things to read about for my own health)
+- Mood tracker, Pain Tracker - For a friends who wanted to track their pain / mental health levels. Both products didn't end up getting used. This made me realise users don't know what they want, and in general have very low agency. No link for obvious reasons
 
-Others I made and closed quickly:
-- Mood Tracker - For a friend who wanted to track his mental health. He didn't end up using it. No link for obvious reasons
-<!-- - Daily Checklist - For another friend who wanted to track her pain levels. She didn't end up using it. No link for obvious reasons -->
 
-## Self initiated project while working at Crux:
-- Extremely quick text-to-sql for a customer: Our text-to-sql product had a latency of 30s-2min depending on the question. I noticed that a particular customer had a limited set of query types. Created a few postgres functions that spanned their entire query space. When the user asked a question in natural language, a tiny Llama model would extract parameters (parameters being SQL operators) for the functions based on examples in the system prompt. The functions were overloaded such that the list of parameters outputted by the llama model was enough to call it. This entire pipeline required ~2s to run. Made this entirely myself
 
-## Older projects:
-- [Shop Monitors on arduino](https://github.com/mvakde/shop-monitors): Did some technically challenging stuff like messing around with the EEPROM and interrupts itself. Had to dig around documentation of the registers to get this done (pre-LLMs)
-- [Quantum Mechanics TAship](/misc/ph107-ph112/): Was a TA for the QM course for 2 years. Created the solution booklet for all the tutorial questions in the course.
-- [ROOT Installation Guide for Windows (WSL)](/misc/root-installation-guide/): A guide for EP students installing WSL graphics support and CERN ROOT for the data analysis course.
-<!-- - [Split personalities](/files/Report_Split_Personality_Simulation.pdf) (AKA ML Trojan horses) on Liquid State Machines - Can a minor reversible change make a model behave differently (but pre-determined)? Later I realised this can be used to create trojan horses. I had independently come up with this concept during my undergrad and implemented it with a couple of friends for a project. (Later found 2018 literature on a similar concept).
-- Image recognition on natural backgrounds - UMIC 2020: Transfer learning on YOLO + a few image manipulation tricks to recognise 10-inch characters 80+ft away on natural backgrounds. Ran the models live on a custom-built drone, optimised the speed 45x over 3 months. Built the entire ML subsystem on my own in my freshman year -->
+## Older stuff in college:
+
+- [Quantum Mechanics TAship](/misc/ph107-ph112/): Was a TA for the QM course for 2 years (2022-23). Was in charge of 1500 freshman and all 40 TAs. Also created the solution booklet for all the tutorial questions in the course. I think its still used today. 
+- Image recognition on natural backgrounds (part of UMIC, a student tech team): Transfer learning on YOLO + a few image manipulation tricks to recognise 10-inch characters 80+ft away on natural backgrounds. Ran the models live on a custom-built drone, optimised the speed 45x over 3 months. Built the entire ML subsystem of the drone on my own in my freshman year 
+- [Shop Monitors on arduino](https://github.com/mvakde/shop-monitors): Did some technically challenging stuff like messing around with the EEPROM and interrupts itself. Had to dig around documentation of the registers to get this done (this was pre-LLMs). Final implementation is much simpler.
+- [ROOT Installation Guide for Windows (WSL)](/misc/root-installation-guide/): A guide to install WSL w graphics support and CERN ROOT for the data analysis course. Made this coz most of my classmates were afraid of the terminal
+
+<!-- - [Split personalities](/files/Report_Split_Personality_Simulation.pdf) (AKA ML Trojan horses) on Liquid State Machines - Can a minor reversible change make a model behave differently (but pre-determined)? Later I realised this can be used to create trojan horses. I had independently come up with this concept during my undergrad and implemented it with a couple of friends for a project. (Later found 2018 literature on a similar concept). -->
+
 
 <!-- > **NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
 
