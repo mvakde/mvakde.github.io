@@ -11,11 +11,8 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
   
-  - title: "Projects"
-    url: /projects  
-
-  - title: "Tutorials"
-    url: /tutorials/
+  - title: "Misc"
+    url: /misc/
   
 
   

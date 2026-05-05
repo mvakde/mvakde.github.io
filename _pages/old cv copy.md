@@ -44,7 +44,7 @@ Facilitated senior leadership in decision making through:
 ● Only freshman to manage an entire subsystem (a role usually reserved for 3rd year students)  
 ●	Cleared the concept review & preliminary design review rounds of the Barcelona Smart Drone Challenge  
 
-**<span style = "font-size:1.2em;">[Other Projects](/other-projects)</span>**
+**<span style = "font-size:1.2em;">[Misc](/misc/)</span>**
 
 <!-- Skills
 ======
@@ -73,7 +73,7 @@ Other - LTspice, Arduino IDE, AutoCAD, SOLIDWORKS -->
 ●	Reduced expenses by 40% per drone by finding inexpensive procurement methods  
 ● Designed a rigorous 7-day training program for recruits & mentored them through a month-long project  
 
-**<span style = "font-size:1.2em;">Teaching Assistant (TA)</span>** (See [tutorials](/tutorials))  
+**<span style = "font-size:1.2em;">Teaching Assistant (TA)</span>** (See [QM resources](/misc/ph107-ph112/))  
 ● Head TA, Quantum Mechanics (PH112 2023)  
 &nbsp; &nbsp; &nbsp; &nbsp; □ In-charge of the 40 TAs & ~1500 freshmen taking the course   
 &nbsp; &nbsp; &nbsp; &nbsp; □ Conducted weekly tutorials, weekly quizzes and course examinations  

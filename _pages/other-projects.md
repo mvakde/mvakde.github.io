@@ -1,8 +1,10 @@
 ---
-permalink: /projects/
-title: "Projects"
+permalink: /misc/
+title: "Misc"
 author_profile: true
 redirect_from: 
+  - "/projects/"
+  - "/projects"
   - "/nmp/"
   - "/nmp.html"
 ---
@@ -22,9 +24,10 @@ Others I made and closed quickly:
 
 ## Older projects:
 - [Shop Monitors on arduino](https://github.com/mvakde/shop-monitors): Did some technically challenging stuff like messing around with the EEPROM and interrupts itself. Had to dig around documentation of the registers to get this done (pre-LLMs)
-- [Quantum Mechanics TAship](https://mvakde.github.io/teaching/ph107-ph112): Was a TA for the QM course for 2 years. Created the solution booklet for all the tutorial questions in the course. 
-- [Split personalities](/files/Report_Split_Personality_Simulation.pdf) (AKA ML Trojan horses) on Liquid State Machines - Can a minor reversible change make a model behave differently (but pre-determined)? Later I realised this can be used to create trojan horses. I had independently come up with this concept during my undergrad and implemented it with a couple of friends for a project. (Later found 2018 literature on a similar concept).
-- Image recognition on natural backgrounds - UMIC 2020: Transfer learning on YOLO + a few image manipulation tricks to recognise 10-inch characters 80+ft away on natural backgrounds. Ran the models live on a custom-built drone, optimised the speed 45x over 3 months. Built the entire ML subsystem on my own in my freshman year
+- [Quantum Mechanics TAship](/misc/ph107-ph112/): Was a TA for the QM course for 2 years. Created the solution booklet for all the tutorial questions in the course.
+- [ROOT Installation Guide for Windows (WSL)](/misc/root-installation-guide/): A guide for EP students installing WSL graphics support and CERN ROOT for the data analysis course.
+<!-- - [Split personalities](/files/Report_Split_Personality_Simulation.pdf) (AKA ML Trojan horses) on Liquid State Machines - Can a minor reversible change make a model behave differently (but pre-determined)? Later I realised this can be used to create trojan horses. I had independently come up with this concept during my undergrad and implemented it with a couple of friends for a project. (Later found 2018 literature on a similar concept).
+- Image recognition on natural backgrounds - UMIC 2020: Transfer learning on YOLO + a few image manipulation tricks to recognise 10-inch characters 80+ft away on natural backgrounds. Ran the models live on a custom-built drone, optimised the speed 45x over 3 months. Built the entire ML subsystem on my own in my freshman year -->
 
 <!-- > **NOTE**: This has NOT been updated for a long time. Was a WIP, will be cringe.  
 
