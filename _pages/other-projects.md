@@ -27,9 +27,10 @@ Just a dump of stuff I explored a long time ago.
 ## Older stuff in college:
 
 - [Quantum Mechanics TAship](/misc/ph107-ph112/): Was a TA for the QM course for 2 years (2022-23). Was in charge of 1500 freshman and all 40 TAs. Also created the solution booklet for all the tutorial questions in the course. I think its still used today. 
-- Image recognition on natural backgrounds (part of UMIC, a student tech team): Transfer learning on YOLO + a few image manipulation tricks to recognise 10-inch characters 80+ft away on natural backgrounds. Ran the models live on a custom-built drone, optimised the speed 45x over 3 months. Built the entire ML subsystem of the drone on my own in my freshman year 
 - [Shop Monitors on arduino](https://github.com/mvakde/shop-monitors): Did some technically challenging stuff like messing around with the EEPROM and interrupts itself. Had to dig around documentation of the registers to get this done (this was pre-LLMs). Final implementation is much simpler.
 - [ROOT Installation Guide for Windows (WSL)](/misc/root-installation-guide/): A guide to install WSL w graphics support and CERN ROOT for the data analysis course. Made this coz most of my classmates were afraid of the terminal
+
+<!-- - Image recognition on natural backgrounds (part of UMIC, a student tech team): Transfer learning on YOLO + a few image manipulation tricks to recognise 10-inch characters 80+ft away on natural backgrounds. Ran the models live on a custom-built drone, optimised the speed 45x over 3 months. Built the entire ML subsystem of the drone on my own in my freshman year  -->
 
 <!-- - [Split personalities](/files/Report_Split_Personality_Simulation.pdf) (AKA ML Trojan horses) on Liquid State Machines - Can a minor reversible change make a model behave differently (but pre-determined)? Later I realised this can be used to create trojan horses. I had independently come up with this concept during my undergrad and implemented it with a couple of friends for a project. (Later found 2018 literature on a similar concept). -->
 

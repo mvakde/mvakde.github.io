@@ -40,11 +40,11 @@ Its a famous metalearning benchmark. Easy for humans, hard for AI models, includ
 ## 2) Topped extremely competitive National Exams without studying much
 **Top 25 all India**, Indian National Astonomy Olympiad
 - This got me invited to the Team India selection & training camp (International Olympiad in Astronomy & Astrophysics)
-- I had read a book on astronomy just a couple days before
+- Didn't study for this at all. I was already among the best in the country at physics and had some general knowledge on Astronomy
 
 **Ranked 1500 out of 1.2 million** starting candidates in JEE Advanced
-- almost everyone else who qualified spent 2-4 years studying 10+ hours a day, and practice 10s of thousands of problems
-- I barely solved ANY questions, skipped 2/3rds of chemistry, studied a few hours a day for less than a year before running away from boarding school. [More details](../blog/jee-is-easy.md)
+- Almost everyone else who qualified spent 2-4 years studying 10+ hours a day, and practice 10s of thousands of problems
+- I barely practiced any questions (< 10 a chapter), skipped 2/3rds of chemistry (and all the memorisation heavy parts of math/phy), studied a only a few hours a day, for only about a year. Difference was I spent all my time on understanding the theory at a ridiculous college lvl depth. [More details](../blog/jee-is-easy.md)
 
 
 # Career deets
@@ -52,7 +52,7 @@ Its a famous metalearning benchmark. Easy for humans, hard for AI models, includ
 B.Tech @ IIT Bombay, 2023 
 Majored in Engineering Physics
 
-## Acad Achievements
+## Academic Achievements
 - NIUS Fellowship by Tata Institute of Fundamental Research, 2021
 - Ranked 324 all India in KVPY. Got the fellowship twice in 2018 & 2019. 
 - Top 300 all India, National Standard Exam in Astronomy
