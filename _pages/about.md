@@ -32,17 +32,17 @@ Here's some cool shit I've done: <em>(details in dropdown)</em>
 - Went founder mode after being misdiagnosed with arthritis at 19.  
 Correctly diagnosed myself & solved it in a year
 - <details markdown="block">
-    <summary style="cursor:pointer; ">Saved myself in a medical emergency</summary>
+    <summary style="cursor:pointer; ">Saved myself in a medical emergency (doctors didn't know what rhabdomyolysis was)</summary>
 
     - My biceps got ridiculously swollen after a bad gym session. The pain was excrutiating, 10x worse than any DOMS i felt before and I couldn't move them at all. I had learnt enough medicine during the biohacking to know it was <a href ="https://my.clevelandclinic.org/health/diseases/21184-rhabdomyolysishttps://my.clevelandclinic.org/health/diseases/21184-rhabdomyolysis">rhabdomyolysis</a>, which is life threatening.
     - I remembered that confirmation requires a blood test that measures CK values. Went to a private lab, ordered one - my values were **200x the upper limit** and rising (diagnostic confirmation + requires immediate hospitalisation). The pain was high enough now that I was also worried about <a href = "https://my.clevelandclinic.org/health/diseases/21184-rhabdomyolysis#:~:text=What%20are%20the%20complications%20of%20rhabdomyolysis">compartment syndrome</a>
     - Went to the nearest ER with my report and my extremely painful, swollen arms. (This was a mistake, the avg indian hospital is filled with untrained staff. I should have gone to the best hospital in the city. This is despite living in a wealthy part of a tier 1 city)
     - The doctors were dumb and didn't know basic stuff. She had never heard of CPK or rhabdo or compartment syndrome! She called a senior ortho consult. He didn't know either! They refused treatment, saying "go home, nothing to worry about. We'll check tomorrow". Called the next closest ER - same story. They hadn't heard of it too!
     - I freaked out. I knew I could potentially lose my kidneys if I didn't get treatment right away. Ideally going to a nephro would solve it since they would clock it immediately but it was late at night and I didn't know any Nephrologists.
-    - I immediately began <em>a lot</em> of ORS as a proxy for saline to protect kidneys till I figure something out. But I knew I needed hospitalisation <em>immediately</em>
+    - I immediately began drinking <em>a lot</em> of ORS as a proxy for saline to protect kidneys till I figure something out. But I knew I needed hospitalisation <em>immediately</em>
     - An idea struck. I realised CK values can go high during any muscle cell death scenario, includin a heart attacks. So a cardiac must know about rhabdo! 
     - I went to the cardiac ER of the same hospital, I needed some excuse to get in so I told the nurses I had chest pain (i had mild soreness)
-    - I finally got in front of a cardiac but they didn't know about rhabdo either! (yeah fml, next time only go to the best hospital). However they took me in coz the report made them worried about a heart attack
+    - I finally got in front of a cardiac but they didn't know about rhabdo either! (yeah fml, next time only go to the best hospital). However they took me in coz the report made them genuinely worried about a heart attack
     - I fought for a few hours, saying "screw the chest pain, call a nephro". They finally relented and rang him at 3am. He told them over call that I was right and that its obviously rhabdo, and gave the correct treatment plan
     - The nephro (who came the next day) said he didn't like my actions but it might have saved my kidneys, or even my life. He was stunned that i recognised rhabdo this early AND got the CK test done myself. He wasn't sure if an actual doctor would have clocked it this early
   </details>
