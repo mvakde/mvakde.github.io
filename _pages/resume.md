@@ -49,7 +49,7 @@ Its a famous metalearning benchmark. Easy for humans, hard for AI models, includ
 
 # Career deets
 ## Education
-B.Tech @ IIT Bombay, 2023 
+B.Tech @ IIT Bombay, 2023  
 Majored in Engineering Physics
 
 ## Academic Achievements
@@ -60,10 +60,14 @@ Majored in Engineering Physics
 
 ## Work Ex
 ### 1. Founding team, GetCrux (YC W24), 2023-24
-Led the project on automated insights for performance marketers. Was a backend dev and product manager on other projects.
+Led a core product - Automating insights for performance marketers  
+Was a backend dev and product manager on other projects.  
+Led many project verticals till we got our first non-tech hire - sales, marketing, research for pivots, prototyping, recruiting, etc. (I was employee #3 and the only generalist)  
 
 ### 2. Research Intern, University of Paris Saclay
-Found a correlation b/w DNA content & light absorption while analysing UV images of viruses. Did a bunch of physics experiments on RNA/protein mixtures
+Found a correlation b/w DNA content & light absorption while analysing UV images of viruses.  
+Did a bunch of physics experiments on RNA/protein mixtures  
 
 ### 3. Intern, New ventures arm @ Tata
-Evaluated business models / industry research for Deeptech investments. Regularly presented to senior leadership of Tata Industries and other companies
+Evaluated business models / industry research for Deeptech investments.  
+Regularly presented to senior leadership of Tata Industries and other companies
