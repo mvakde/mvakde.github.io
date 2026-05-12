@@ -36,7 +36,7 @@ Winner of v2 gets $425K (spoiler: its gonna be me)
 Why ARC?  
 IMO sample efficiency is the most important problem in AI today.  
 ARC is a great benchmark for it: v few examples per task, diff rules for each task, v few tasks.  
-I was using this benchmark to test the limits of transformers. Next I will try to   
+I was using this benchmark to test the limits of transformers. Now I am working on creating new methods better than AR transformers.  
 <!--Ofc ny approach avoids human priors. I only included [information already available to humans](https://x.com/evilmathkid/status/2038966957907886279)-->
 
 Bragging points:
