@@ -65,15 +65,19 @@ Majored in Engineering Physics
 - Runner up, IBM teen hackathon (I was in 9th grade, everyone else in 12th grade)
 
 ## Work Ex
-### 1. Founding team, GetCrux (YC W24), 2023-24
+### 1. Founder, Healthcare AI startup  <span style="font-weight: normal;">Oct 24 - Apr 25</span>
+Explored building in Healthcare+AI. Iterated over many MVPs, most failed, one got some traction.  
+Dropped this when I realised I wanted to build AGI
+
+### 2. Founding team, GetCrux (YC W24), <span style="font-weight: normal;">Dec 23 - Sep 24</span>
 Led a core product - Automating insights for performance marketers  
 Was a backend dev and product manager on other projects.  
 Led many project verticals till we got our first non-tech hire - sales, marketing, research for pivots, prototyping, recruiting, etc. (I was employee #3 and the only generalist)  
 
-### 2. Research Intern, University of Paris Saclay
+### 3. Research Intern, University of Paris Saclay <span style="font-weight: normal;">May 22 - Jul 22, in-person</span>
 Found a correlation b/w DNA content & light absorption while analysing UV images of viruses.  
 Did a bunch of physics experiments on RNA/protein mixtures  
 
-### 3. Intern, New ventures arm @ Tata
+### 4. Intern, New ventures arm @ Tata <span style="font-weight: normal;">Mar 23 - Jun 23</span>
 Evaluated business models / industry research for Deeptech investments.  
 Regularly presented to senior leadership of Tata Industries and other companies
