@@ -10,7 +10,6 @@ redirect_from:
 # Evidence of Exceptional Ability
 ## 1) My work on ARC-AGI
 ### Public stuff
-<!-- I started a year ago, and in 1 year.  -->
 I built a tiny transformer that scores **44% on ARC-AGI**, trained from scratch in just **67 cents**.  
 
 - This is the best non-LLM method in the world
@@ -25,6 +24,7 @@ Code (open source): [https://github.com/mvakde/mdlARC](https://github.com/mvakde
 
 ### Private stuff
 Since then, I have doubled the score again and saturated ARC-1.  
+<!--Still an incredibly low cost-->
 Now working on v2 of the benchmark, currently at ~~21% (**beats GPT-5 Pro**)~~ 27% now and  beats Opus 4.5 Thinking (16k)
 I expect to beat the WR (40%) in 2 weeks.  
 Winner of v2 gets $425K (spoiler: its gonna be me)
@@ -34,8 +34,14 @@ Winner of v2 gets $425K (spoiler: its gonna be me)
   <span style = "text-align:center;"><figcaption>Current verified ARC-2 score on the private leaderboard on Kaggle</figcaption></span>
 </figure>
 
-Why ARC? 
-Its a famous metalearning benchmark. Easy for humans, hard for AI models, including LLMs. The benchmark’s been open since 2019 and despite a heavy cash prize, no substantial progress was made till thinking LLMs in 2024. I showed that vanilla transformers were good enough to make the same progress at OOMs less effort
+Why ARC?
+IMO sample efficiency is the most important problem in AI today.  
+ARC is a great benchmark for it: v few examples per task, diff rules for each task, v few tasks.  
+Ofc ny approach avoids human priors. I only included [information already available to humans](https://x.com/evilmathkid/status/2038966957907886279)
+
+Bragging points:
+- I learnt ML almost from scratch doing this, and in a v short period of time. A year ago I didn't know how transformers worked. Today I am pushing the frontier on a benchmark that has been open since 2019 (Despite fame/heavy cash prize, researchers made no major progress till O1/O3 in 2024)
+- The only models with comparable performance are frontier reasoning LLMs, which need millions in pretraining compute. My model's lifetime cost is just a few dollars
 
 ## 2) Topped extremely competitive National Exams without studying much
 **Top 25 all India**, Indian National Astonomy Olympiad
