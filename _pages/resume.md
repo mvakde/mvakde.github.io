@@ -18,7 +18,7 @@ I built a tiny transformer that scores **44% on ARC-AGI**, trained from scratch 
 - Least # of params at this performance
 - Went viral on X, got the attention of top AI researchers (many thought the result to be impossible initially)
 
-All the posts about my work on X: [https://x.com/evilmathkid/highlights](https://x.com/evilmathkid/highlights)  
+All the posts about my ARC work are on X: [https://x.com/evilmathkid/highlights](https://x.com/evilmathkid/highlights)  
 More details in Blogs: [44% on ARC-AGI 1](https://mvakde.github.io/blog/44-on-arc-1), [A New Pareto Frontier on ARC-AGI](https://mvakde.github.io/blog/new-pareto-frontier-arc-agi).  
 Code (open source): [https://github.com/mvakde/mdlARC](https://github.com/mvakde/mdlARC)
 
@@ -55,7 +55,7 @@ Bragging points:
 
 # Career deets
 ## Education
-B.Tech @ IIT Bombay, 2023  
+B.Tech @ IIT Bombay, 2019-2023
 Majored in Engineering Physics
 
 ## Academic Achievements
@@ -65,19 +65,24 @@ Majored in Engineering Physics
 - Runner up, IBM teen hackathon (I was in 9th grade, everyone else in 12th grade)
 
 ## Work Ex
-### 1. Founder, Healthcare AI startup  <span style="font-weight: normal;">Oct 24 - Apr 25</span>
+### 1. Trying to solve sample efficiency <span style="font-weight: normal;">Nov 25 onwards</span>
+Started this after spending a few months learning ML  
+IMO solving sample efficiency directly leads to superintelligence  
+Tested new techniques on ARC and got some insane results  
+
+### 2. Founder, Healthcare AI startup  <span style="font-weight: normal;">Oct 24 - Apr 25</span>
 Explored building in Healthcare+AI. Iterated over many MVPs, most failed, one got some traction.  
 Dropped this when I realised I wanted to build AGI
 
-### 2. Founding team, GetCrux (YC W24), <span style="font-weight: normal;">Dec 23 - Sep 24</span>
+### 3. Founding team, GetCrux (YC W24), <span style="font-weight: normal;">Dec 23 - Sep 24</span>
 Led a core product - Automating insights for performance marketers  
 Was a backend dev and product manager on other projects.  
 Led many project verticals till we got our first non-tech hire - sales, marketing, research for pivots, prototyping, recruiting, etc. (I was employee #3 and the only generalist)  
 
-### 3. Research Intern, University of Paris Saclay <span style="font-weight: normal;">May 22 - Jul 22, in-person</span>
+### 4. Research Intern, University of Paris Saclay <span style="font-weight: normal;">May 22 - Jul 22, in-person</span>
 Found a correlation b/w DNA content & light absorption while analysing UV images of viruses.  
 Did a bunch of physics experiments on RNA/protein mixtures  
 
-### 4. Intern, New ventures arm @ Tata <span style="font-weight: normal;">Mar 23 - Jun 23</span>
+### 5. Intern, New ventures arm @ Tata <span style="font-weight: normal;">Mar 23 - Jun 23</span>
 Evaluated business models / industry research for Deeptech investments.  
 Regularly presented to senior leadership of Tata Industries and other companies
