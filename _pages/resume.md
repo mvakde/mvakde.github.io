@@ -30,14 +30,15 @@ I expect to beat the WR (40%) in 2 weeks.
 Winner of v2 gets $425K (spoiler: its gonna be me)
 
 <figure>
-  <img src="../blog/arc2.png" alt="New pareto on arc"/>
+  <img src="../blog/arc2.png" alt="New pareto on arc" style="width: 70%; height: auto;"/>
   <span style = "text-align:center;"><figcaption>Current verified ARC-2 score on the private leaderboard on Kaggle</figcaption></span>
 </figure>
 
-Why ARC?
+Why ARC?  
 IMO sample efficiency is the most important problem in AI today.  
 ARC is a great benchmark for it: v few examples per task, diff rules for each task, v few tasks.  
-Ofc ny approach avoids human priors. I only included [information already available to humans](https://x.com/evilmathkid/status/2038966957907886279)
+I was using this benchmark to test the limits of transformers. Next I will try to   
+<!--Ofc ny approach avoids human priors. I only included [information already available to humans](https://x.com/evilmathkid/status/2038966957907886279)-->
 
 Bragging points:
 - I learnt ML almost from scratch doing this, and in a v short period of time. A year ago I didn't know how transformers worked. Today I am pushing the frontier on a benchmark that has been open since 2019 (Despite fame/heavy cash prize, researchers made no major progress till O1/O3 in 2024)
