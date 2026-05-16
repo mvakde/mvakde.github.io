@@ -42,6 +42,8 @@ I was using this benchmark to test the limits of transformers. Now I am working 
 Bragging points:
 - I learnt ML almost from scratch doing this, and in a v short period of time. A year ago I didn't know how transformers worked. Today I am pushing the frontier on a benchmark that has been open since 2019 (Despite fame/heavy cash prize, researchers made no major progress till O1/O3 in 2024)
 - The only models with comparable performance are frontier reasoning LLMs, which need millions in pretraining compute. My model's lifetime cost is just a few dollars
+- I did this alone with no advisor
+- The compute costs of all my experiments over the past few months is only about a 1000 dollars
 
 ## 2) Topped extremely competitive National Exams without studying much
 ### Top 25 all India<span style="font-weight: normal;">, Indian National Astonomy Olympiad</span>
