@@ -19,7 +19,9 @@ This should directly lead to superintelligence
 
 These results got attention from famous researchers and went viral on X, since many people considered it impossible previously. My model **beats many LLMs,  despite needing only 67 cents to train it** (from scratch!) and is likely the pareto frontier.
 
-This was my attempt to test the limits of today's deep learning methods. Now I'm working on newer ideas. I expect to beat every LLM soon
+This was my attempt to test the limits of today's deep learning methods. Now I'm working on newer ideas. I expect to beat every LLM soon.   
+
+Currently [top 5 on the Kaggle Leaderboard](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2/leaderboard) on ARC-2 (**$450K prize**)
 
 
 ---
