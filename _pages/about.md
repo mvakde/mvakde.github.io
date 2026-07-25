@@ -27,9 +27,9 @@ Here's my [blog](/blog/)
 
 Here's some cool shit I've done: <em>(details in dropdown)</em>
 
-- Team India selection camp for the Astronomy Olympiad without studying
-- Cracked JEE in an [extremely unconventional manner](./blog/jee-is-easy)
-- Went founder mode after being misdiagnosed with arthritis at 19.  
+- Team India selection camp for the Astronomy Olympiad without studying  
+- Cracked JEE in an [extremely unconventional manner](./blog/jee-is-easy)  
+- Went founder mode after being misdiagnosed with arthritis at 19 (pre-chatgpt)   
 Correctly diagnosed myself & solved it in a year
 - <details markdown="block">
     <summary style="cursor:pointer; ">Saved myself in a medical emergency (doctors didn't know what rhabdomyolysis was)</summary>
